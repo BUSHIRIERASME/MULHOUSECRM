@@ -10,7 +10,7 @@ public class App {
         int b;
         Scanner scanner;
         float resultat;
-        System.out.println("calcle de la moyenne de nombres:");
+        System.out.println("calcul de la moyenne de nombres:");
         scanner =new Scanner (System.in);
         System.out.println("veillez saisir un nombre:");
         a = scanner. nextInt();
