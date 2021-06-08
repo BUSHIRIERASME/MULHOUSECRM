@@ -12,10 +12,10 @@ public class cecle
     System.out.println("saisie l'angle en dégres:");
     scanner =new Scanner (System.in);
     System.out.println("veillez saisir l'angle: ");
-    angle = scanner. nextInt();
+    angle = scanner.nextInt();
     System.out.println("saisie le rayon");
     rayon = scanner. nextInt();
-    aire = Math.PI*Math.pow(rayon, 2/360);
+    aire = Math.PI*Math.pow(rayon, 2)/360;
     System.out.println("l'aire du secteur circulaire est: "+ aire);
     scanner.close();
    } 
