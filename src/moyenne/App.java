@@ -1,6 +1,5 @@
 package moyenne;
 
- 
 import java.util.Scanner;
 
 public class App {
@@ -20,6 +19,5 @@ public class App {
         resultat = (float)a + (float)b / 2f;
         System.out.println("Le resultat est:"+ resultat);
         scanner.close();
-
     }
 }
