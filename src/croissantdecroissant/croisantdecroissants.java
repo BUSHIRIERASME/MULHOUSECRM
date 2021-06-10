@@ -3,7 +3,7 @@ package croissantdecroissant;
 
 import java.util.Scanner;
 public class croisantdecroissants
- {
+ 
    public static void main(String[] args)
     {
      int a; 
@@ -15,7 +15,7 @@ public class croisantdecroissants
         a = scanner.nextInt();
     
    System.out.println("saisir le nombre ");
-    a = scanner.nextInt();
+        b= scanner.nextInt();
 
     
     if(a < b) {
