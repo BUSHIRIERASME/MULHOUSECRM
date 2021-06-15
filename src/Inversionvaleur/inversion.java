@@ -10,7 +10,6 @@ public class inversion
         int b; 
         int c;
         Scanner  scanner;
-        System.out.println("saisir un 1er nombre");
         scanner =new Scanner(System.in);
         System.out.println("saisir un 1er nombre");
         a = scanner.nextInt();
