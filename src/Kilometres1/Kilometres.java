@@ -1,5 +1,12 @@
 package Kilometres1;
 
-public class kilometres {
-    
+import java.util.Scanner;
+
+public class kilometres 
+{
+    public static void main(String[] args)
+     {
+     int valeur;
+     Scanner scanner;   
+    }
 }
