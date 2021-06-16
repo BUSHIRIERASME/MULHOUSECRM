@@ -6,24 +6,36 @@ public class Kilometre
 {
   public static void main(String[] args) 
   {
-      int saisie = 0;
-      int Q = 0 ;
+      String saisie;
+      int kilometres;
+      double resultat;
       Scanner scanner;
-      scanner = new Scanner(System.in);
-      System.out.println("Saisie une valeur en KM");
-      saisie = scanner.nextInt();
-       saisie = scanner.nextInt();
-     if(saisie <= 0,01  >= 1000000);
-       {
-         System.out.println(" Saisie hors e prté, veuillez en saisir un autre");
-         saisie = saisie*1.609;
-         System.out.println("La reponse en miles est : " +saisie);
-        
-       }
-  
-
       
+      do 
+      {
+        scanner = new Scanner(System.in);
+        System.out.println("Saisie une valeur en KM");
+        saisie = scanner.next();
+      
+        if(saisie.equals("q")) 
+        {
+          System.exit(0); // le programme s'arrête ici
+        }
 
+        kilometres = Integer.parseInt(saisie);  // conversion de la chaine saisie en nombre entier
+        
+        if( kilometres <= 0.01||kilometres >= 1000000 );
+        {
+          System.out.println("saisie hors de portée, veuillez saisir un autre nombre");
+        }
 
-  }  
-}
+        resultat = (kilometres * 1.609);
+        System.out.println(" la conversion attendue est :  "+ resultat  );
+        
+        scanner.close();
+
+   }  while(true);
+  }
+   
+ }  
+
