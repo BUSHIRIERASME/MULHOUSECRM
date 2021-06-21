@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3" timestamp="2021-06-22 01:01:53">
+	<XMI.header>
+		<XMI.documentation>
+			<XMI.exporter>Enterprise Architect</XMI.exporter>
+			<XMI.exporterVersion>2.5</XMI.exporterVersion>
+		</XMI.documentation>
+	</XMI.header>
+	<XMI.content>
+		<UML:Model name="EA Model" xmi.id="MX_EAID_D6A378A2_6589_4a6f_8A93_036770144489">
+			<UML:Namespace.ownedElement>
+				<UML:Collaboration xmi.id="EAID_D6A378A2_6589_4a6f_8A93_036770144489_Collaboration" name="Collaborations">
+					<UML:Namespace.ownedElement>
+						<UML:ClassifierRole xmi.id="EAID_95317502_5D4F_48c4_9532_FC308DCEED93" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Boundary"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D6A378A2_6589_4a6f_8A93_036770144489"/>
+								<UML:TaggedValue tag="date_created" value="2021-06-22 00:57:06"/>
+								<UML:TaggedValue tag="date_modified" value="2021-06-22 00:57:06"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Use Case Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="PC"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="16"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:ClassifierRole>
+					</UML:Namespace.ownedElement>
+					<UML:Collaboration.interaction/>
+				</UML:Collaboration>
+			</UML:Namespace.ownedElement>
+		</UML:Model>
+		<UML:Diagram name="Use Case Model" xmi.id="EAID_295E3996_F8BD_4bdd_9B4C_2AA0A0C033C5" diagramType="UseCaseDiagram" owner="EAPK_295E3996_F8BD_4bdd_9B4C_2AA0A0C033C5" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="PC"/>
+				<UML:TaggedValue tag="created_date" value="2005-11-19 00:00:00"/>
+				<UML:TaggedValue tag="modified_date" value="2021-06-22 00:57:06"/>
+				<UML:TaggedValue tag="package" value="EAPK_D6A378A2_6589_4a6f_8A93_036770144489"/>
+				<UML:TaggedValue tag="type" value="Use Case"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="1"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.0;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.0;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=446;Top=24;Right=580;Bottom=154;imgL=5;imgT=5;imgR=139;imgB=135;" subject="EAID_95317502_5D4F_48c4_9532_FC308DCEED93" seqno="1" style="DUID=7EBE136B;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+	</XMI.content>
+	<XMI.difference/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<UMLPattern name="Use Case Model" category="Basic Patterns" version="1.0" notes="">
+			<UMLPattern.PromptList>
+				<Element name="CHIEN:Boundary" guid="EAID_95317502_5D4F_48c4_9532_FC308DCEED93" id="16" prompt="yes" link="no" classifier="no" type="no"/>
+			</UMLPattern.PromptList>
+			<UMLPattern.PreviewImage xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64" cx="2920" cy="2843">AQAAAGwAAAACAAAAAgAAAI4AAACKAAAAAAAAAAAAAABoCwAAGwsAACBFTUYAAAEAeAQAACgA
+AAAFAAAAAAAAAAAAAAAAAAAAVgUAAAADAAAVAQAAnAAAAAAAAAAAAAAAAAAAAAg6BABgYQIA
+EQAAAAwAAAAIAAAACQAAABAAAAABAAAA/////woAAAAQAAAAuQEAAO3///9SAAAAcAEAAAEA
+AAD2////AAAAAAAAAAAAAAAAAAAAAAAAAAEEAAYAQQBSAEkAQQBMAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAflewNkAfsDZAAxI
+YlcAAAAAqNFkFcoZAfm44SICAOIiAuiFAgH/////fsDZAIit2ACtrNgARLLYAKzgtgS2udkA
+zBwKd6zgtgTSudkAAAAAAKjRZBXMoXAHqOIiAuTm1wAIAAAAqNFkFXBfQADMHAp3qNFkFeND
+dgA44iICAABRFSAAAAC/AGAB2OIiAlS7ZBXQ4iICf2JgdxgAAAAgAAAACAAAAAAAMwNMAAAA
+AAAAAER5ZHeo0WQVAAAzAwAADgEQAAAA0AdRAmQAAAAAAAAAEAAAAGQAAAD4nVAHQLtkFQAA
+AAAAAAAAAABRAgIAAAAAAAAAAAAAACjSZBVkdgAIAAAAACUAAAAMAAAAAQAAACcAAAAYAAAA
+AgAAAAAAAAD88uMAAAAAACUAAAAMAAAAAgAAACYAAAAcAAAAAwAAAAAAAAABAAAAAAAAAAAA
+AAAlAAAADAAAAAMAAAASAAAADAAAAAEAAAAbAAAAEAAAAL4BAADo////XwAAADgAAAAEAAAA
+OAAAAAAAAAA4AAAAAAAAAAABAQABAAAAAAAAAAAAAAAsFah1AAAAAAAAAAAlAAAADAAAAAQA
+AAA2AAAAEAAAAL4BAABm////JQAAAAwAAAADAAAAJQAAAAwAAAAEAAAANgAAABAAAABEAgAA
+Zv///yUAAAAMAAAAAwAAACUAAAAMAAAABAAAADYAAAAQAAAARAIAAOj///8lAAAADAAAAAMA
+AAAlAAAADAAAAAQAAAA2AAAAEAAAAL4BAADo////JQAAAAwAAAADAAAAKAAAAAwAAAAEAAAA
+FgAAAAwAAAABAAAAEgAAAAwAAAABAAAAGwAAABAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAFQA
+AABsAAAAOAAAAAkAAABXAAAAFQAAAAEAAAC5OaJBAICiwfEBAADk////BQAAAEwAAAAAAAAA
+AAAAAAAAAAD//////////1gAAABDAEgASQBFAE4AAAAHAAAABwAAAAMAAAAHAAAABwAAABsA
+AAAQAAAAvgEAAOj///8WAAAADAAAAAAAAAAlAAAADAAAAA0AAIAoAAAADAAAAAEAAAAlAAAA
+DAAAAAAAAIAoAAAADAAAAAIAAAAlAAAADAAAAAcAAIAoAAAADAAAAAMAAAAOAAAAFAAAAAAA
+AAAQAAAAFAAAAA==</UMLPattern.PreviewImage>
+		</UMLPattern>
+	</XMI.extensions>
+</XMI>
