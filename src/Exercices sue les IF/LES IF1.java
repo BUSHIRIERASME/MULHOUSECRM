@@ -1,21 +1,33 @@
-package Exercices
+package Exercices;
+import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
+public class superieur;
 
-sue les IF;
+//import java.util.Scanner; 
 
-public class LES IF1 
-{
-    public static void main(String[] args)
+{   public static void main(String[] args)
      {
         int A = 80;
          int B = 90 ;
+         Scanner scanner;
+
+         System.out.println("Bonjour chez vous");
+         System.out.println("Saisie un nombre");
+        // A = Scanner.next();
+
+        // B = Scanner.next();
         if ( A <= B)
         {
-           System.out.println("Bonjour chez vous");
+           System.out.println("la valeur du premier nombre est inerieur au second.");
+         //  System.out.println("");
+        }
         else
+        {
+           System.out.println("Le second nombre est superieur au premier.");
            System.out.println( " Bonne nuit");
-        }      
-        System.out.println("Au revoir");
-    }
+           System.out.println("Au revoir");
+           scanner.close();
+        }
+          
+      }
 }

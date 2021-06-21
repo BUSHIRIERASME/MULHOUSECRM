@@ -6,7 +6,7 @@ public class cecle
    public static void main(String[] args)
  {
     int rayon;
-    int angle;
+    int angle ;
     Scanner scanner;
     double aire;
     System.out.println("saisie l'angle en dégres:");
