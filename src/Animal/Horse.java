@@ -1,16 +1,18 @@
-Package  Animal;
+package  Animal;
+
 public class  Horse extends Animal
 {
 private String name;
-public Horse(String_name)
+
+public Horse(String _name)
 {
     super("Cheval");
     System.out.println("Contrucreur d'Animal");
-    this.name = -_name;
+    this.name = _name;
 }
 public String getname()
 {
-    return this _name;
+    return this.name;
 }
 public void feed()
 {
@@ -18,6 +20,6 @@ public void feed()
 }
 public void her()
 {
- System.out.println(this.name + "Henit")    
+ System.out.println(this.name + "Henit");    
 }
 }
