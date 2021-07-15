@@ -26,5 +26,9 @@ public class Animal
   {
       System.out.println( this.specie + " se deplace");
   }
+  public void sleep ()
+  {
+  System.out.println(this.specie + " Dors profondement!");
+  }
 
 }
