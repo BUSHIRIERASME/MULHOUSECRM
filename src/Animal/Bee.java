@@ -6,6 +6,8 @@ public class Bee
 {
   public static void main(String[]args)
   {
+   
+
   Animal animal = new Animal("Abeille");
   animal.move();
   animal.feed();
