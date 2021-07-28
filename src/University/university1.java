@@ -2,20 +2,23 @@ package University;
 
 public class university1 
 {
-   private String statut;
+   private String status;
    public university1(String _statut) 
    {
        System.out.println("constructeur de statuts");
-       this.statut = _statut;
+       this.statut = _status;
    }
-   public String getStatut()
+   public String getStatus()
    {
-       return this.statut;
+       return this.status;
    }
-   public void teach();
+   public void teach()
    {
        System.out.println("Dispense les cours");
    }
-   public void study();
+   public void study()
+   {
+
+   }
 
 }
