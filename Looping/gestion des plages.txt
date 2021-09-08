@@ -1,0 +1,46 @@
+Sub Create_Tables()
+
+DoCmd.RunSQL "CREATE TABLE plage(" & _
+   "id_plag INT," & _
+   "nm_plag VARCHAR(30) NOT NULL," & _
+   "longueur DECIMAL(4,1) NOT NULL," & _
+   "nat_plag VARCHAR(30) NOT NULL," & _
+   "PRIMARY KEY(id_plag)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE ville(" & _
+   "id_vil INT," & _
+   "nm_vil VARCHAR(30) NOT NULL," & _
+   "cd_post VARCHAR(5) NOT NULL," & _
+   "nbr_tour INT NOT NULL," & _
+   "id_plag INT NOT NULL," & _
+   "PRIMARY KEY(id_vil)," & _
+   "FOREIGN KEY(id_plag) REFERENCES plage(id_plag)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE nature_plage(" & _
+   "id_plg INT," & _
+   "nom_nat_plag VARCHAR(30) NOT NULL," & _
+   "PRIMARY KEY(id_plg)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE departement_(" & _
+   "id_dpt INT," & _
+   "nm_resp VARCHAR(30) NOT NULL," & _
+   "pren_resp VARCHAR(30) NOT NULL," & _
+   "id_vil INT NOT NULL," & _
+   "id_plag INT NOT NULL," & _
+   "PRIMARY KEY(id_dpt)," & _
+   "FOREIGN KEY(id_vil) REFERENCES ville(id_vil)," & _
+   "FOREIGN KEY(id_plag) REFERENCES plage(id_plag)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE est_forme(" & _
+   "id_plag INT," & _
+   "id_plg INT," & _
+   "PRIMARY KEY(id_plag, id_plg)," & _
+   "FOREIGN KEY(id_plag) REFERENCES plage(id_plag)," & _
+   "FOREIGN KEY(id_plg) REFERENCES nature_plage(id_plg)" & _
+");"   
+
+End Sub

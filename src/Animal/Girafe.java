@@ -4,9 +4,10 @@ public class Giraffe
  {
       public static void main(String[]args) 
    {
-        Animal animal = new Animal("Girafe");
+       Giraffe giraffe;
+        Animal animal = new Animal("Giraffe");
         animal.feed();
-        Giraffe giraffe = new Giraffe("Girafe");
+        Giraffe giraffe = new Giraffe("Giraffe");
         giraffe.feed();
         giraffe.move();
        {

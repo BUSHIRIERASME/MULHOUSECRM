@@ -18,7 +18,7 @@ public class Animal
     public void feed()
 
   {
-  System.out.print(this.specie + "mange !");
+  System.out.println(this.specie + "mange !");
   }
 
   public void move()
