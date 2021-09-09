@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Database>
+   <Name>gestion des plages</Name>
+   <Table>
+      <Name>plage</Name>
+      <Column>
+         <Name>id_plag</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>nm_plag</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>longueur</Name>
+         <Type>DECIMAL(4,1)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>nat_plag</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>id_plag</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>ville</Name>
+      <Column>
+         <Name>id_vil</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>nm_vil</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>cd_post</Name>
+         <Type>VARCHAR(5)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>nbr_tour</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>id_plag</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>id_vil</Key>
+      </PK>
+      <FK>
+         <Key>id_plag</Key>
+         <Reference>plage(id_plag)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>nature_plage</Name>
+      <Column>
+         <Name>id_plg</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>nom_nat_plag</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>id_plg</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>departement_</Name>
+      <Column>
+         <Name>id_dpt</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>nm_resp</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>pren_resp</Name>
+         <Type>VARCHAR(30)</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>id_vil</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>id_plag</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>id_dpt</Key>
+      </PK>
+      <FK>
+         <Key>id_vil</Key>
+         <Reference>ville(id_vil)</Reference>
+      </FK>
+      <FK>
+         <Key>id_plag</Key>
+         <Reference>plage(id_plag)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>est_forme</Name>
+      <Column>
+         <Name>id_plag</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>id_plg</Name>
+         <Type>INT</Type>
+      </Column>
+      <PK>
+         <Key>id_plag, id_plg</Key>
+      </PK>
+      <FK>
+         <Key>id_plag</Key>
+         <Reference>plage(id_plag)</Reference>
+      </FK>
+      <FK>
+         <Key>id_plg</Key>
+         <Reference>nature_plage(id_plg)</Reference>
+      </FK>
+   </Table>
+</Database>

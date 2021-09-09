@@ -6,7 +6,7 @@ public class ABCDEV
      {
          int i=0;
          String[] tableau = new String [14];
-         tableau[0]=" Devoldere Michaël le maestro";
+         tableau[0]="Devoldere Michaël le maestro";
          tableau[1]="Albrecht Denbis";
          tableau[2]="Bardon Xavier";
          tableau[3]="Bouller Axel";
