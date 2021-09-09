@@ -34,17 +34,17 @@ public class Portedegarage
        System.out.println(this.portegarage + "se ferme à 50%");
       
     }*/
-    public boolean verouiller()
+    public boolean verouiller
     {
     
-        if (deverouiller==true)
+        if (deverouiller==false)
         {
-            deverouiller==false;
-            return true;
+            deverouiller==true;
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
     }
 
