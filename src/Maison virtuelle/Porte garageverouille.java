@@ -1,11 +1,11 @@
 package Maisonvirtuelle;
-public class Maisonvirtuelle
+public class portegarage
 {
-    private classporte_garage;
-    public Maisonvirtuelle(String porte_garage)
+    private class portegarage;
+    public Maisonvirtuelle(String portegarage)
     {
         System.out.println("construtcteur des maisons virtuelles"),
-        this.porte_garage= portegarage;
+        this.portegarage= portegarage;
     }
     {
         public String getSpecie()
