@@ -1,0 +1,44 @@
+body{
+    color: darkslategray;
+}
+
+.flex-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article{
+    color: blueviolet;font-size: 30px;
+}
+
+table{
+    
+    color: greenyellow;font-size:40px;
+}
+
+
+{
+    color:blue;font-size:25px
+}
+.titre_rouge{color:red}
+h3{
+    color:rgb(40, 161, 61);font-size: 20px;
+}
+body{
+    color: darkslategray;
+}
+article{
+    color: blueviolet;font-size: 30px;
+}
+table{
+    
+    color: greenyellow;font-size:40px;
+}
+.flex-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
