@@ -1,0 +1,16 @@
+:root {
+    --couleur-verte-bizarre: #27543F;
+}
+body{
+    background-color: var(--couleur-verte-bizarre);
+    /* background-color: grey; */
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.div{
+display:flex;
+flex-direction: row;
+
+}
