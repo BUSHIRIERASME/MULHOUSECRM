@@ -1,0 +1,24 @@
+#document-container {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+div{
+    display: block;
+}
+body {
+    background-color: #E6E6E6;
+    color: #101010;
+    line-height: 154%;
+    margin: 0;
+    overscroll-behavior: none;
+}
+body {
+    font-family: system-ui, system-ui, sans-serif;
+    font-size: 81.25%;
+}
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 75%;
+}
