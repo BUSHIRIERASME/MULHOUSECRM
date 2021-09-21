@@ -1,3 +1,14 @@
+
+/* .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+} */
+
+/* .wrapper{
+  display:grid
+}
+
 #document-container {
     height: 100%;
     position: absolute;
@@ -82,5 +93,5 @@ body{
         border: 2px solid black;
         font-size: 3em;
       }
-  
+   */
 

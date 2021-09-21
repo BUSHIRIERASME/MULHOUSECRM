@@ -1,12 +1,11 @@
 
-/* title{
+title{
     align-items: center;
     color:rgba(0, 0, 0, 0.596);
-    font-family: 20pt; */
-/* } */
-/* ul{
+}
+ul{
    color:white;
-} */
+}
 body{
     background-color:rgba(4, 10, 10, 0.788);
  
@@ -17,22 +16,18 @@ body{
     position: relative;
     left: 50%;
     width: 50%;
-
 }
 
 .header-navigation ul li{
-    width: 35%;
+    width: 20%;
 }
 
 .header-navigation a {
     color:blanchedalmond;
-    font-size: 25px;
 }
  .list-horizontal {
     display: flex;
     flex-direction: row;
-   
-
 }
 
 
@@ -42,16 +37,10 @@ h1{
 }
 li{
     color: red;
-    line-height: 25px;
 }
 img{
     width: 65%;
-    size: 65% ;
-}
-.header-logo p {
-color: white;
-font-weight: 1000;
-font-size:20px ;
+    size: 55% ;
 }
 
 .flex-container {
@@ -61,29 +50,16 @@ font-size:20px ;
     justify-content: space-around;
     column-gap: 30px;
 }
-/* .wrapper {
+.wrapper {
     flex-grow: 1;
-} */
-.wrapper p{
-color:black;
-line-height: 1px;
-/* font-style: italic; */
-/* font-size: 25px; */
 }
-.wrapper ul li{
-    color:blanchedalmond;
-}
-.wrapper a{
-    color:blanchedalmond;
-}
+
+
 
 h2{
    color:white;
    font-weight: medium; 
 
-}
-.lefth{
-    color: white;
 }
 
 
