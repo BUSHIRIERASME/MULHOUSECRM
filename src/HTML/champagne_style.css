@@ -22,3 +22,65 @@ body {
     font-family: system-ui, sans-serif;
     font-size: 75%;
 }
+body{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+    grid-gap: 0px 0px;
+  }
+  .left_bg {
+    display: subgrid;
+    background-color: #3498db;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    z-index: 0;
+  }
+  
+.right_bg {
+    display: subgrid;
+    background-color: #ecf0f1;
+    grid-column: 2 / 2;
+    grid_row: 1 / 1;
+    z-index: 0;
+  }
+  
+  .left_text {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    position: relative;
+    z-index: 1;
+    justify-self: center;
+    font-family: Raleway;
+    font-size: large;
+  }
+  
+  .right_text {
+    grid-column: 2 / 2;
+    grid_row: 1 / 1;
+    position: relative;
+    z-index: 1;
+    justify-self: center;
+    font-family: Raleway;
+    font-size: large;
+  }
+   article{
+        display: inline-grid;
+        grid-template-rows: 100px 100px 100px 100px 100px;
+        /* grid-template-columns: 100px 100px 100px 100px 100px;  */
+        grid-gap: 5px; 
+        justify-items: center;
+        align-items: center;
+      }
+      section {
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        border: 2px solid black;
+        font-size: 3em;
+      }
+  
+
