@@ -6,12 +6,12 @@
 let nom="";
 let prenom="";
 let age="";
- nom=prompt("quel est votre nom ?");
-document.write(nom + "  ")
+ nom=prompt("Quel est votre nom ?");
+// document.write(nom + "  ")
 // console.log(nom +" ");
-prenom=prompt("quel est votre prenom ?");
-document.write(prenom + "  ")
+prenom=prompt("Quel est votre prenom ?");
+// document.write(prenom + "  ")
 // console.log(prenom + " ");
-age=prompt("quel est votre age ?");
-document.write(age)
-console.log(nom+  " " + prenom +  " "  +age + " ");
+age=prompt("Quel est votre age ?");
+document.write(nom+  " " + prenom  +  " " +  + age + " ans");
+// console.log(nom+  " " + prenom +  "a"  +age + " ans");
