@@ -11,9 +11,9 @@ Nbres_Art= Number(prompt("Entrer les nombres d'articles"));
 document.write( "<p>Nbres d'article:" + Nbres_Art);
 
 TVA=Nbres_Art*HT*0.20;
-
 document.write( " <p>TVA est:  " +TVA );
- TTC =  (HT*Nbres_Art+TVA);
+ 
+TTC =  (HT*Nbres_Art+TVA);
 document.write("<p>Le prix TTC est :" + TTC);
 
 
