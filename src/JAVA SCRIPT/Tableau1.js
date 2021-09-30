@@ -8,10 +8,14 @@ if (  reponse==MonTableau[i])
 {
 document.write("la reponse est bonne = bravo");
 }
-document.write(MonTableau[i]+" ");
+else
+{ 
+document.write("le nombre est mauvais")
+}
+ document.write(MonTableau[i]+" ");
 }
 
-MonTableau[0]
+// MonTableau[0]
 
 
 // for(i=0,i<10,i++)
