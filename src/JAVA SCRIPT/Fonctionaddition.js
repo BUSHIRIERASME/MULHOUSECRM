@@ -37,7 +37,5 @@
     // number--;
     // alert(number); // Affiche : « 0 »
 
-        var sayHello = function() {
-        alert('Bonjour !');
-        };
-        sayHello();
+    
+  
