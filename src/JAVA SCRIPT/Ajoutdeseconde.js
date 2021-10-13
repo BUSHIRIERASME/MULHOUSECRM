@@ -18,8 +18,8 @@ const heureComplete = prompt("Donnez une heure en heure:minute:seconde").split("
 let heure = parseInt(heureComplete[0]);
 let minute = parseInt(heureComplete[1]);
 let seconde = parseInt(heureComplete[2]);
-let button = document.createElement("button");
-let body = document.getElementsByTagName("body")[0];
+let button = document.createElement("button");//lors de la création du button
+let body = document.getElementsByTagName("body")[0];//lors de la création du button
 let afficher = document.createElement("h2");
 body.appendChild(afficher);
 body.appendChild(button);
