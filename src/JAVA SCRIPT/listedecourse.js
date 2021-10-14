@@ -70,6 +70,7 @@ ul.classList.add("ulClass");
 main.appendChild(ul);
 
 
+
 function addShopList(){
     let textInput ;
     let li;
