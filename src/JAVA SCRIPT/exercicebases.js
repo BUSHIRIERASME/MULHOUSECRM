@@ -16,7 +16,9 @@ let tauxHoraire;
  let salaireDeBase;
  let impot;
 let netaPayer;
-
+var Montableau_associa={}
+//tableau_associa.civilite=" ",
+//
 
 // nom = prompt( " Saisie votre Nom");
 //  document.write("<p> votre nom est: " + nom );
@@ -35,8 +37,8 @@ let netaPayer;
 
 
 // exercices avec if(condition)
-let homme = 0;
-let femme = 0;
+ compteurhomme = 0;
+ compteurfemme = 0;
 
 do  {
     
@@ -52,8 +54,8 @@ do  {
     document.write("<P>votre taux horaire est" + tauxHoraire);
     exit=prompt("voulez vous continuer?");
 
-    if (civilite=="MR"){
-        homme = homme + 1;   //------ homme++;
+    if (civilite=="Mr"){
+        compteurhomme = homme + 1;   //------ homme++;
         salaireDeBase= joursPrestes * tauxHoraire;
         impot = salaireDeBase * 0.2;
         netaPayer=salaireDeBase-impot;
@@ -61,7 +63,7 @@ do  {
         document.write("<p> votre net à payer  est" + netaPayer+"€")
         document.write("<p> impot est de " + impot+"€");
     }else{
-        femme = femme + 1;
+        compteurfemme = femme + 1;
         document.write("<p>vous êtes une femme");
         salaireDeBase= joursPrestes * tauxHoraire;
         impot = salaireDeBase * 0.1;

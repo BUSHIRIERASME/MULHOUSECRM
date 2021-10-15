@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\.."
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"src",
+			"maisonvirtuellejava"
+		],
+		"liveServer.settings.multiRootWorkspaceName": "MULHOUSECRM"
+	}
+}

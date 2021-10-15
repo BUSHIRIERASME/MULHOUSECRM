@@ -34,7 +34,7 @@ buttonValid.classList.add("buttonValidClass");
 buttonValid.textContent="Ajouter";
 main.appendChild(buttonValid);
 //création du 2éme boîte pour le transfert
-input2Box = document.createElement("ul");
+input2Box = document.createElement("input2");
 input2Box.classList.add("input2BoxClass");
 main.appendChild(input2Box);
 
@@ -70,7 +70,7 @@ function eraseLIst(){
 
 function transfertLIst(){
     console.log("test transfert")
-    input2Box.innerHTML = ;
+    input2Box.innerHTML = "";
 }
 footer=document.getElementsByTagName("footer")[0];
 

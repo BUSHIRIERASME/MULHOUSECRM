@@ -1,19 +1,19 @@
-let MonTableau =[0,10,21,32,45,51,68,73,84,98];
-let reponse=prompt("Taper un nombre");
-MonTableau.length;
+// let MonTableau =[0,10,21,32,45,51,68,73,84,98];
+// let reponse=prompt("Taper un nombre");
+// MonTableau.length;
 
-for(i=0; i<MonTableau.length;i++)
-{
-if (  reponse==MonTableau[i])
-{
-// document.write("la reponse est bonne bravo");
-}
-else
-{ 
+// for(i=0; i<MonTableau.length;i++)
+// {
+// if (  reponse==MonTableau[i])
+// {
+// // document.write("la reponse est bonne bravo");
+// }
+// else
+// { 
 // document.write("le nombre est erroné");
-}
+//}
 //  document.write(MonTableau[i]+" ");
-}
+//}
 
 // MonTableau[0]
 
@@ -36,3 +36,13 @@ else
 // var myArray = ['Rafael', 'Mathilde', 'Ahmed', 'Jérôme', 'Guillaume'];
 // myArray[1] = 'Paul';
 // alert(myArray[1,4]); // Affiche : « Paul »
+
+//EXERCICE TABLEAU
+
+let tableau = [2,10,14,22,35];
+
+alert(tableau);
+
+let minimum = Math.min.apply(Math,tableau);
+
+alert (minimum);
