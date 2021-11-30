@@ -1,28 +1,38 @@
 ﻿using System;
 
-namespace Projet1
+namespace Algo_Exercice_1_3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int nb1;
-            int nb2;
-            string answerForRedo;
-            double result;
-            bool redo;
-            do
-            {
-                Console.WriteLine("enter the first numberfor your average ");
-                nb1 = Int32.Parse(Console.ReadLine());
-                Console.WriteLine("enter the second numberfor your average ");
-                nb2 = Int32.Parse(Console.ReadLine());
-                result = (nb1 + nb2) / 2d;
-                Console.WriteLine($"the average of the number is result");
-                Console.WriteLine("do you want anothercalcul");
-                answerForRedo = Console.ReadLine().ToLower();
-           } while (redo);
+            //Déclaration des variables
+           
+            int ray;
+            int angle;
+            double area;
+
+            // Lecture du rayon 
+            Console.WriteLine("Put ray");
             
+            // conversion d'une chaine en numerique
+            ray = int.Parse(Console.ReadLine());
+
+            // Lecture de l'angle
+            Console.WriteLine("Put area");
+
+            // conversion d'une chaine en numérique
+           angle = int.Parse(Console.ReadLine());
+
+            // Calcul de l'aire
+            area = Math.PI * ray sqr2* angle/360;
+
+            // Affichage de l'angle
+            Console.WriteLine("AREA VALUE " + area);
+
+                
+
+                
         }
     }
 }
