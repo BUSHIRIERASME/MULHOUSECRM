@@ -31,10 +31,10 @@ function ajouterUneSeconde() {
   } else if (
     heure < 0 ||
     heure > 23 ||
-    minute < 0 ||
+    minute < 0|| 
     minute > 59 ||
     seconde < 00 ||
-    seconde > 59
+    seconde > 59||
   ) {
     console.log("Entrez des valeurs possibles");
   } else {

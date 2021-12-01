@@ -5,6 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "MULHOUSECRM_47169076"
+        },
+        {
+            "type": "java",
+            "name": "Launch Bee",
+            "request": "launch",
+            "mainClass": "Animal.Bee",
+            "projectName": "MULHOUSECRM_47169076"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "Animal.App",
+            "projectName": "MULHOUSECRM_47169076"
+        },
+        {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
