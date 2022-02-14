@@ -10,3 +10,5 @@ select * from provide;
 select * from propose;
 select * from book;
 select * from transit;
+
+SELECT  trip_code ,trip_title,trip_available,trip_start FROM Ttrips
