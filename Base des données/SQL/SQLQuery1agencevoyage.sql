@@ -3,7 +3,7 @@
 DROP DATABASE    master
 CREATE DATABASE db_agrence_voyage
 
-USE db_agrence_voyage
+USE db_aencedes_voyages
 
 -- creation des tables entités
 
@@ -19,7 +19,7 @@ INSERT INTO countries(  country_name  )
 					  (  'Turquie'    );
 
 
-CREATE TABLE countries(
+CREATE TABLE trip(
  trip_code INT PRIMARY KEY IDENTITY (1000,2),
  trip_title VARCHAR(128) not null,
  trip_available INT not null,
@@ -69,7 +69,8 @@ CREATE TABLE themes(
 	theme_name VARCHAR(32) not null,
 	theme_description VARCHAR not null);
 	
- INSERT INTO  themes
+  
+  INSERT INTO  themes
 	      ( theme_name , theme_description)
   VALUES  (     'excursion',        ' marche'  ),
 		  (    'archeologie',        'visite'  ),
@@ -80,25 +81,25 @@ CREATE TABLE themes(
 CREATE TABLE clients(
 client_id  INT PRIMARY KEY  IDENTITY (5000,2),
 client_name VARCHAR(32) not null,
-client_firstname VARCHAR not null,
-client_email VARCHAR not null, 
+client_firstname VARCHAR(128) not null,
+client_email VARCHAR(128) not null, 
 client_phone INT not null,
 client_added DATE not null,
-client_password VARCHAR	not null
+client_password VARCHAR(128)not null
 );
 
  INSERT INTO clients
             (  client_name, client_firstname, client_email, client_phone, client_added , client_password)
- VALUES     (   'Robert'   ,        ' Michel','12@hotmail.fr','012345678' ,'12/02/2021' ,        'wqse '    ),
-	        (   'Andre'    ,       'Guegunos','13@hotmail.fr','012344567', '24/05/2021' ,        'erttyh'   ),
-	        (   ' Ruben'   ,    'gourgruchon','14@hotmail?fr','012346586', '04/03/2020' ,     'qsdfghjk'    ) ,
-			(    ' Neftali' ,   ' duidi'       , '15@jhgfkhb' , '02154874', '29/07/2019' ,      ' oiuytr'   );
-			
+ VALUES     (   'Robert'   ,        ' Michel','12@hotmail.fr',012345678 ,12/02/2021 ,        'wqse '    ),
+	        (   'Andre'    ,       'Guegunos','13@hotmail.fr',012344567, 24/05/2021 ,        'erttyh'   ),
+	        (   ' Ruben'   ,    'gourgruchon','14@hotmail?fr',012346586, 04/03/2020 ,     'qsdfghjk'    ),
+			(    ' Neftali' ,   ' duidi'       , '15@jhgfkhb' , 02154874, 29/07/2019 ,      ' oiuytr'   );
+	--drop table clients
  
 CREATE TABLE sales_people(
 com_code  INT PRIMARY KEY  IDENTITY (6000,2),
-com_name VARCHAR not null,
-com_password VARCHAR not null);   	
+com_name VARCHAR(128 )not null,
+com_password VARCHAR(128) not null);   	
 
  INSERT INTO sales_people
            (  com_name  , com_password)
@@ -106,7 +107,7 @@ com_password VARCHAR not null);
            ( ' Sophie' , 'lkjhgf' ),
 		   ( ' Paul'   ,  'lkjhuy');
 
-	
+
 -- creation des tables relations
 
  
@@ -167,4 +168,17 @@ VALUES (      5001 ,       1000 ,   ' 15'       ,   '2 '    ),
 
 ALTER TABLE book
 ADD FOREIGN KEY (client_id ) REFERENCES clients (client_id)
-GO
+
+ALTER TABLE book
+ADD FOREIGN KEY (trip_code) REFERENCES trips (trip_code)
+
+ALTER TABLE propose
+ADD FOREIGN KEY (trip_code) REFERENCES trips(tip_code)
+
+ALTER TABLE propose
+ADD FOREIGN KEY (theme_code) REFERENCES themes( theme_code)
+
+-- creation des vues --
+CREATE VIEW COUNTRIES
+AS 
+SELECT * FROM  countries
