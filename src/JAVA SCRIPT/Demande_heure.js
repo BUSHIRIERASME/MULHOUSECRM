@@ -2,7 +2,7 @@ var heures;
 var minutes;
 var secondes;
 let test;
-heures=parseInt(prompt("Entrer l'heure"));
+heures=parseInt(prompt("Entrer l'heure"));ùù
 if(heures>24 && heures<0)
     {
         document.write(heures + " heures érronées");

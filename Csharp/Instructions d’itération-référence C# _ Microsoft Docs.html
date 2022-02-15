@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-dark mathjax-complete" lang="fr-fr" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Instructions d’itération-référence C#">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements">
+			<meta property="og:description" content="Découvrez les instructions d’itération C# qui exécutent le code à plusieurs reprises : for, foreach, do et while.">
+		<meta property="og:image" content="https://docs.microsoft.com/dotnet/media/logo_csharp.png">
+		<meta property="og:image:alt" content="Instructions d’itération-référence C# | Microsoft Docs">
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="@docsmsft">
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="apiPlatform" content="dotnet">
+<meta name="author" content="BillWagner">
+<meta name="bilingual_type" content="hover over">
+<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json">
+<meta name="depot_name" content="VS.core-docs">
+<meta name="description" content="Découvrez les instructions d’itération C# qui exécutent le code à plusieurs reprises : for, foreach, do et while.">
+<meta name="document_id" content="23685290-d092-48ee-f7d9-e2c2bdc86a18">
+<meta name="document_version_independent_id" content="8b6cb66c-8bef-fed0-1677-acee6bd3e052">
+<meta name="gitcommit" content="https://github.com/dotnet/docs.fr-fr/blob/aaa68908cae1c6fa772ee755f3230820dcf39fb0/docs/csharp/language-reference/statements/iteration-statements.md">
+<meta name="locale" content="fr-fr">
+<meta name="ms.author" content="wiwagn">
+<meta name="ms.contentlocale" content="fr-FR">
+<meta name="ms.date" content="05/24/2021">
+<meta name="ms.devlang" content="csharp">
+<meta name="ms.lasthandoff" content="09/25/2021">
+<meta name="ms.locfileid" content="128929177">
+<meta name="ms.openlocfilehash" content="5df8fb840037485341aabee92e10cde6f855435c">
+<meta name="ms.prod" content="dotnet-csharp">
+<meta name="ms.sourcegitcommit" content="4b766efb8e47bbca2dbee596c26bd04880f036ce">
+<meta name="ms.technology" content="csharp-language-reference">
+<meta name="ms.topic" content="reference">
+<meta name="ms.translationtype" content="MT">
+<meta name="original_content_git_url" content="https://github.com/dotnet/docs.fr-fr/blob/live/docs/csharp/language-reference/statements/iteration-statements.md">
+<meta name="recommendations" content="false">
+<meta name="schema" content="Conceptual">
+<meta name="show_latex" content="true">
+<meta name="site_name" content="Docs">
+<meta name="uhfHeaderId" content="MSDocsHeader-DotNet">
+<meta name="updated_at" content="2021-09-28 03:28 AM">
+<meta name="page_type" content="conceptual">
+<meta name="interactive_type" content="csharp">
+<meta name="toc_rel" content="../../toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/fr-fr/VS.core-docs/{branchName}{pdfName}">
+<meta name="search.mshattr.devlang" content="csharp">
+<meta name="word_count" content="1447">
+
+
+	<meta name="scope" content=".NET">
+<link href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements" rel="canonical">
+	<title>Instructions d’itération-référence C# | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./Instructions d’itération-référence C# _ Microsoft Docs_files/acda1c6.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'fr-fr',
+			contentDir: 'ltr',
+			userLocale: 'fr-fr',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			contentGitUrl: 'https://github.com/dotnet/docs.fr-fr/blob/live/docs/csharp/language-reference/statements/iteration-statements.md',
+			extendBreadcrumb: false,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "BillWagner", url: "https://github.com/BillWagner" },
+						{ name: "olprod", url: "https://github.com/olprod" }
+],
+			mathjax: {
+			},
+		},
+		functions:{}
+	};
+	</script>
+	<script src="./Instructions d’itération-référence C# _ Microsoft Docs_files/wcp-consent.js.télécharger"></script>
+	<script src="./Instructions d’itération-référence C# _ Microsoft Docs_files/ms.jsll-3.min.js.télécharger"></script>
+
+	<script src="./Instructions d’itération-référence C# _ Microsoft Docs_files/5cce29c0.deprecation.js.télécharger"></script>
+		<script src="./Instructions d’itération-référence C# _ Microsoft Docs_files/388b4243.index-docs.js.télécharger"></script><style></style>
+<style id="ms-consent-banner-main-styles">.w8hcgFksdo30C8w-bygqu{color:#000}.ydkKdaztSS0AeHWIeIHsQ a{color:#0067B8}.erL690_8JwUW-R4bJRcfl{background-color:#EBEBEB;border:none;color:#000}.erL690_8JwUW-R4bJRcfl:enabled:hover{color:#000;background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}.erL690_8JwUW-R4bJRcfl:enabled:focus{background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}.erL690_8JwUW-R4bJRcfl:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2);border:none}._1zNQOqxpBFSokeCLGi_hGr{border:none;background-color:#0067B8;color:#fff}._1zNQOqxpBFSokeCLGi_hGr:enabled:hover{color:#fff;background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}._1zNQOqxpBFSokeCLGi_hGr:enabled:focus{background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}._1zNQOqxpBFSokeCLGi_hGr:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,120,215,0.2);border:none}._23tra1HsiiP6cT-Cka-ycB{position:relative;display:flex;z-index:9999;width:100%;background-color:#F2F2F2;justify-content:space-between;text-align:left}div[dir="rtl"]._23tra1HsiiP6cT-Cka-ycB{text-align:right}._1Upc2NjY8AlDn177YoVj0y{margin:0;padding-left:5%;padding-top:8px;padding-bottom:8px}div[dir="rtl"] ._1Upc2NjY8AlDn177YoVj0y{margin:0;padding:8px 5% 8px 0;float:none}._23tra1HsiiP6cT-Cka-ycB svg{fill:none;max-width:none;max-height:none}._1V_hlU-7jdtPiooHMu89BB{display:table-cell;padding:12px;width:24px;height:24px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:24px;line-height:0}.f6QKJD7fhSbnJLarTL-W-{display:table-cell;vertical-align:middle;padding:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:16px}.f6QKJD7fhSbnJLarTL-W- a{text-decoration:underline}._2j0fmugLb1FgYz6KPuB91w{display:inline-block;margin-left:5%;margin-right:5%;min-width:40%;min-width:calc((150px + 3 * 4px) * 2 + 150px);min-width:-webkit-fit-content;min-width:-moz-fit-content;min-width:fit-content;align-self:center;position:relative}._1XuCi2WhiqeWRUVp3pnFG3{margin:4px;padding:5px;min-width:150px;min-height:36px;vertical-align:top;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._1XuCi2WhiqeWRUVp3pnFG3:focus{box-sizing:border-box}._1XuCi2WhiqeWRUVp3pnFG3:disabled{cursor:not-allowed}._2bvsb3ubApyZ0UGoQA9O9T{display:block;position:fixed;z-index:10000;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,0.6);overflow:auto;text-align:left}div[dir="rtl"]._2bvsb3ubApyZ0UGoQA9O9T{text-align:right}div[dir="rtl"] ._2bvsb3ubApyZ0UGoQA9O9T{left:auto;right:0}.AFsJE948muYyzCMktdzuk{position:relative;top:8%;margin-bottom:40px;margin-left:auto;margin-right:auto;box-sizing:border-box;width:640px;background-color:#fff;border:1px solid #0067B8}._3kWyBRbW_dgnMiEyx06Fu4{float:right;z-index:1;margin:2px;padding:12px;border:none;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:13px;display:flex;align-items:center;text-align:center;color:#666;background-color:#fff}div[dir="rtl"] ._3kWyBRbW_dgnMiEyx06Fu4{margin:2px;padding:12px;float:left}.uCYvKvHXrhjNgflv1VqdD{position:static;margin-top:36px;margin-left:36px;margin-right:36px}._17pX1m9O_W--iZbDt3Ta5r{margin-top:0;margin-bottom:12px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:20px;line-height:24px;text-transform:none}._1kBkHQ1V1wu3kl-YcLgUr6{height:446px;overflow:auto}._20_nXDf6uFs9Q6wxRXG-I-{margin-top:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._20_nXDf6uFs9Q6wxRXG-I- a{text-decoration:underline}dl._2a0NH_GDQEQe5Ynfo7suVH{margin-top:36px;margin-bottom:0;padding:0;list-style:none;text-transform:none}dt._3j_LCPv7fyXv3A8FIXVwZ4{margin-top:20px;float:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;list-style:none}.k-vxTGFbdq1aOZB2HHpjh{margin:0;padding:0;border:none}._2Bucyy75c_ogoU1g-liB5R{margin:0;padding:0;border-bottom:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;text-transform:none}._63gwfzV8dclrsl2cfd90r{display:inline-block;margin-top:0;margin-bottom:13px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._1l8wM_4mRYGz3Iu7l3BZR7{display:block}._2UE03QS02aZGkslegN_F-i{display:inline-block;position:relative;left:5px;margin-bottom:13px;margin-right:34px;padding:3px}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{margin:0 0 13px 34px;padding:3px;float:none}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{left:auto;right:5px}._23tra1HsiiP6cT-Cka-ycB *::before,._2bvsb3ubApyZ0UGoQA9O9T *::before,._23tra1HsiiP6cT-Cka-ycB *::after,._2bvsb3ubApyZ0UGoQA9O9T *::after{box-sizing:inherit}._1HSFn0HzGo6w4ADApV8-c4{outline:2px solid rgba(0,0,0,0.8)}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2{display:inline-block;position:relative;margin-top:0;margin-left:0;margin-right:0;height:0;width:0;border-radius:0;cursor:pointer;outline:none;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{display:block;position:absolute;top:5px;left:3px;height:19px;width:19px;content:"";border-radius:50%;border:1px solid #000;background-color:#fff}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{left:auto;right:3px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:rgba(0,0,0,0.8)}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label{cursor:not-allowed}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label::before{border:1px solid rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2)}._3RJzeL3l9Rl_lAQEm6VwdX{display:block;position:static;float:right;margin-top:0;margin-bottom:0;margin-left:19px;margin-right:0;padding-top:0;padding-bottom:0;padding-left:8px;padding-right:0;width:80%;width:calc(100% - 19px);font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-transform:none;cursor:pointer;box-sizing:border-box}div[dir="rtl"] ._3RJzeL3l9Rl_lAQEm6VwdX{margin:0 19px 0 0;padding:0 8px 0 0;float:left}.nohp3sIG12ZBhzcMnPala{margin-top:20px;margin-bottom:48px}._2uhaEsmeotZ3P-M0AXo2kF{padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._2uhaEsmeotZ3P-M0AXo2kF:focus{box-sizing:border-box}._2uhaEsmeotZ3P-M0AXo2kF:disabled{cursor:not-allowed}._3tOu1FJ59c_xz_PmI1lKV5{float:right;padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._3tOu1FJ59c_xz_PmI1lKV5:focus{box-sizing:border-box}._3tOu1FJ59c_xz_PmI1lKV5:disabled{cursor:not-allowed}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0;padding:0;float:left}@media only screen and (max-width: 768px){._2j0fmugLb1FgYz6KPuB91w,._1Upc2NjY8AlDn177YoVj0y{padding-top:8px;padding-bottom:12px;padding-left:3.75%;padding-right:3.75%;margin:0;width:92.5%}._23tra1HsiiP6cT-Cka-ycB{display:block}._1XuCi2WhiqeWRUVp3pnFG3{margin-bottom:8px;margin-left:0;margin-right:0;width:100%}._2bvsb3ubApyZ0UGoQA9O9T{overflow:hidden}.AFsJE948muYyzCMktdzuk{top:1.8%;width:93.33%;height:96.4%;overflow:hidden}.uCYvKvHXrhjNgflv1VqdD{margin-top:24px;margin-left:24px;margin-right:24px;height:100%}._1kBkHQ1V1wu3kl-YcLgUr6{height:62%;height:calc(100% - 188px);min-height:50%}._2uhaEsmeotZ3P-M0AXo2kF{width:100%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:12px;margin-left:0;width:100%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 12px 0;padding:0;float:none}}@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px){.AFsJE948muYyzCMktdzuk{overflow:auto}}@media only screen and (max-height: 260px), only screen and (max-width: 340px){._1XuCi2WhiqeWRUVp3pnFG3{min-width:0}._3kWyBRbW_dgnMiEyx06Fu4{padding:3%}.uCYvKvHXrhjNgflv1VqdD{margin-top:3%;margin-left:3%;margin-right:3%}._17pX1m9O_W--iZbDt3Ta5r{margin-bottom:3%}._1kBkHQ1V1wu3kl-YcLgUr6{height:calc(79% - 64px)}.nohp3sIG12ZBhzcMnPala{margin-top:5%;margin-bottom:10%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:3%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 3% 0;padding:0;float:none}}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">._23tra1HsiiP6cT-Cka-ycB {
+            background-color: #242424 !important;
+        }.w8hcgFksdo30C8w-bygqu {
+            color: #E3E3E3 !important;
+        }.ydkKdaztSS0AeHWIeIHsQ a {
+            color: #4DB2FF !important;
+        }._2bvsb3ubApyZ0UGoQA9O9T {
+            background-color: rgba(23, 23, 23, 0.6) !important;
+        }.AFsJE948muYyzCMktdzuk {
+            background-color: #171717 !important;
+            border: 1px solid #4DB2FF !important;
+        }._3kWyBRbW_dgnMiEyx06Fu4 {
+            color: #E3E3E3 !important;
+            background-color: #171717 !important;
+        }._1zNQOqxpBFSokeCLGi_hGr {
+            border: 1px solid #4DB2FF !important;
+            background-color: #4DB2FF !important;
+            color: black !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:hover {
+            color: black !important;
+            background-color: #0091FF !important;
+            box-shadow: none !important;
+            border: 1px solid rgba(0, 0, 0, 0) !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:focus {
+            background-color: #0091FF !important;
+            box-shadow: none !important;
+            border: 2px solid #4DB2FF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:disabled {
+            opacity: 0.5 !important;
+            color: black !important;
+            background-color: #4DB2FF !important;
+            border: 1px solid rgba(255, 255, 255, 0) !important;
+        }.erL690_8JwUW-R4bJRcfl {
+            border: 1px solid #C7C7C7 !important;
+            background-color: #171717 !important;
+            color: #E3E3E3 !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:hover {
+            color: #E3E3E3 !important;
+            background-color: #2E2E2E !important;
+            box-shadow: none !important;
+            border: 1px solid #C7C7C7 !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:focus {
+            background-color: #2E2E2E !important;
+            box-shadow: none !important;
+            border: 2px solid #C7C7C7 !important;
+        }.erL690_8JwUW-R4bJRcfl:disabled {
+            opacity: 0.5 !important;
+            color: #E3E3E3 !important;
+            background-color: #2E2E2E !important;
+            border: 1px solid #242424 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label::before {
+            border: 1px solid #E3E3E3 !important;
+            background-color: #171717 !important;
+        }._1HSFn0HzGo6w4ADApV8-c4 {
+            outline: 2px solid rgba(227, 227, 227, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked + label::after {
+            background-color: #E3E3E3 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::before {
+            border: 1px solid #4DB2FF !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::after {
+            background-color: rgba(227, 227, 227, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::before {
+            border: 1px solid #4DB2FF !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::after {
+            background-color: #E3E3E3 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled + label::before {
+            border: 1px solid rgba(227, 227, 227, 0.2) !important;
+            background-color: rgba(227, 227, 227, 0.2) !important;
+        }</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body lang="fr-fr" dir="ltr"><div id="MathJax_Message" style="display: none;"></div>
+	<div class="header-holder has-default-focus">
+		<a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Passer au contenu principal</a>
+
+		<div id="cookie-consent-holder"><div id="wcpConsentBannerCtrl" class="_23tra1HsiiP6cT-Cka-ycB" dir="ltr" role="alert">
+        <div class="_1Upc2NjY8AlDn177YoVj0y">
+            <span class="_1V_hlU-7jdtPiooHMu89BB w8hcgFksdo30C8w-bygqu">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 44 44" width="24px" height="24px" fill="none" stroke="currentColor">
+          <circle cx="22" cy="22" r="20" stroke-width="2"></circle>
+          <line x1="22" x2="22" y1="18" y2="33" stroke-width="3"></line>
+          <line x1="22" x2="22" y1="12" y2="15" stroke-width="3"></line>
+        </svg>
+        </span> <!--  used for icon  -->
+            <p class="f6QKJD7fhSbnJLarTL-W- ydkKdaztSS0AeHWIeIHsQ w8hcgFksdo30C8w-bygqu">
+                Nous utilisons des cookies pour améliorer votre expérience sur nos sites Web et pour la publicité. <a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=521839">Déclaration de confidentialité</a>
+            </p>
+        </div>
+
+        <div class="_2j0fmugLb1FgYz6KPuB91w">
+            <button type="button" class="_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl">Tout accepter</button>
+            <button type="button" class="_1XuCi2WhiqeWRUVp3pnFG3 erL690_8JwUW-R4bJRcfl">Gérer les cookies</button>
+        </div>
+        </div></div><div id="banner-holder" class="has-default-focus has-overflow-hidden"><!----><section data-dismissable="disappearing" class="alert is-banner border-bottom padding-inline-none" id="515525 pre-banner" data-bi-name="515525 pre-event">
+		<div class="uhf-container display-flex align-items-center font-size-sm">
+			<span class="flex-grow-1">
+				<span class="font-weight-semibold"><!---->Q&amp;A d’après session de la conférence .NET et VS2022<!----></span>:
+				<span class="margin-right-xs"><!---->Rejoignez des experts .NET et Visual Studio pour obtenir des réponses à vos questions relatives à la conférence .NET et à VS2022 en direct.<!----></span>
+				<a class="font-weight-semibold" data-bi-name="CTA" id="515525 pre-banner-banner-anchor" href="https://docs.microsoft.com/fr-fr/events/learntv/dotnet-vs2022-dec-2021"><span><!---->En savoir plus<!----></span><span class="icon" aria-hidden="true"><span class="docon docon-chevron-right-light"></span></span></a>
+			</span>
+			<button type="button" class="delete delete-lg margin-left-xs" data-dismiss="" data-bi-name="close">
+				<span class="visually-hidden"><!---->Ignorer l’alerte<!----></span>
+			</button>
+		</div>
+	</section><!----></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;" hidden="">
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">Ce navigateur n’est plus pris en charge.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Effectuez une mise à niveau vers Microsoft Edge pour tirer parti des dernières fonctionnalités, des mises à jour de sécurité et du support technique.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881" style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Télécharger Microsoft Edge					</a>
+					<a href="https://docs.microsoft.com/en-US/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+Plus d’informations					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----> <div class="nav-bar"><!---->  <div class="nav-bar-brand">
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
+				<svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
+					<g data-name="MS-symbol">
+						<clippath>
+							<path transform="matrix(1 0 0 -1 0 216)" d="M0 216h482V0H0z"></path>
+						</clippath>
+						<g clip-path="url(#a)">
+							<path class="has-fill-current-color has-text-subtle" d="M394.942 104.59h-10.858v25.003h-7.38V104.59h-5.182v-5.965h5.182v-4.308c0-3.254 1.06-5.92 3.178-7.998 2.12-2.079 4.835-3.118 8.15-3.118.882 0 1.666.045 2.35.135a9.37 9.37 0 011.806.407v6.296c-.24-.14-.663-.31-1.265-.512-.603-.2-1.296-.3-2.078-.3-1.528 0-2.702.476-3.526 1.43-.824.954-1.235 2.365-1.235 4.232v3.736h10.858v-6.959l7.321-2.229v9.188h7.381v5.965h-7.38v14.49c0 1.91.345 3.254 1.038 4.037.693.783 1.782 1.175 3.27 1.175.42 0 .927-.1 1.52-.3a7.178 7.178 0 001.552-.724v6.025c-.463.261-1.23.502-2.305.723a15.742 15.742 0 01-3.178.331c-3.073 0-5.378-.817-6.914-2.455-1.537-1.637-2.305-4.102-2.305-7.396zm-48.407 9.73c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.45-2.545-6.04-2.545-2.67 0-4.745.888-6.22 2.666-1.477 1.777-2.215 4.313-2.215 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.892-2.993 6.91-4.489 12.05-4.489 4.841 0 8.621 1.441 11.343 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.447 9.018-4.338 11.99-2.892 2.973-6.829 4.458-11.81 4.458-4.8 0-8.61-1.41-11.432-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-16.417-7.802c0 1.045.331 1.863.994 2.456.662.592 2.128 1.34 4.398 2.243 2.912 1.166 4.956 2.476 6.131 3.932 1.175 1.456 1.762 3.22 1.762 5.287 0 2.912-1.12 5.252-3.359 7.02-2.24 1.767-5.267 2.65-9.083 2.65-1.285 0-2.706-.155-4.263-.467-1.556-.31-2.877-.707-3.96-1.19v-7.169a17.945 17.945 0 004.277 2.198c1.526.543 2.911.814 4.157.814 1.647 0 2.862-.23 3.645-.693.784-.46 1.175-1.235 1.175-2.319 0-1.005-.406-1.853-1.22-2.546-.813-.693-2.355-1.492-4.624-2.395-2.69-1.125-4.599-2.39-5.724-3.796-1.125-1.406-1.687-3.193-1.687-5.362 0-2.792 1.11-5.086 3.33-6.884 2.217-1.797 5.095-2.696 8.63-2.696 1.084 0 2.3.12 3.645.361 1.346.242 2.47.553 3.374.934v6.93c-.964-.644-2.089-1.195-3.374-1.658-1.286-.462-2.56-.693-3.826-.693-1.386 0-2.465.271-3.238.813-.774.543-1.16 1.286-1.16 2.23m-35.066 7.562c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.449-2.545-6.039-2.545-2.672 0-4.745.888-6.222 2.666-1.476 1.777-2.214 4.313-2.214 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.893-2.993 6.91-4.489 12.051-4.489 4.84 0 8.621 1.441 11.342 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.446 9.018-4.338 11.99-2.892 2.973-6.828 4.458-11.809 4.458-4.8 0-8.61-1.41-11.433-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-3.136-16.448c.582 0 1.105.041 1.567.121.462.08.853.18 1.175.301v7.38c-.382-.28-.939-.546-1.672-.798-.733-.25-1.622-.376-2.666-.376-1.788 0-3.299.753-4.534 2.26-1.235 1.505-1.853 3.825-1.853 6.958v15.635h-7.29V98.624h7.29v4.88h.12c.663-1.687 1.667-3.007 3.013-3.96 1.346-.954 2.962-1.432 4.85-1.432m-27.956 26.18c1.084 0 2.28-.25 3.585-.754a15.06 15.06 0 003.615-1.988v6.778c-1.165.663-2.485 1.165-3.962 1.506-1.475.342-3.098.512-4.865.512-4.559 0-8.265-1.44-11.116-4.323-2.852-2.88-4.278-6.562-4.278-11.04 0-4.98 1.456-9.083 4.37-12.307 2.91-3.224 7.037-4.835 12.38-4.835 1.366 0 2.746.176 4.143.527 1.395.352 2.504.758 3.328 1.22v6.99c-1.125-.824-2.274-1.462-3.45-1.914a9.966 9.966 0 00-3.599-.678c-2.872 0-5.192.934-6.959 2.802-1.768 1.868-2.652 4.388-2.652 7.562 0 3.132.85 5.573 2.546 7.32 1.697 1.748 4.002 2.621 6.914 2.621m-22.112 5.302h-7.29V98.624h7.29zm-8.044-39.916c0-1.205.437-2.214 1.311-3.028.874-.813 1.913-1.22 3.118-1.22 1.285 0 2.35.417 3.193 1.25.844.834 1.266 1.833 1.266 2.998 0 1.185-.432 2.18-1.296 2.982-.864.804-1.918 1.205-3.163 1.205-1.246 0-2.295-.406-3.148-1.219-.854-.815-1.28-1.803-1.28-2.968m-6.274-3.284v43.2h-7.5v-33.86h-.12l-13.408 33.86h-4.97l-13.738-33.86h-.09v33.86h-6.929v-43.2h10.755l12.412 32.024h.18l13.105-32.024z"></path>
+							<path d="M106.214 106.214H71.996V71.996h34.218z" fill="#f25022"></path>
+							<path d="M143.993 106.214h-34.218V71.996h34.218z" fill="#7fba00"></path>
+							<path d="M106.214 143.993H71.996v-34.218h34.218z" fill="#00a4ef"></path>
+							<path d="M143.993 143.993h-34.218v-34.218h34.218z" fill="#ffb900"></path>
+						</g>
+					</g>
+				</svg>
+			</div>
+		</a>
+	</div> 
+				
+		<div class="nav-bar-item is-hidden-tablet">
+			<div class="nav-bar-menu">
+				<button class="nav-bar-button is-title" title="Navigation globale" aria-expanded="false">
+					<span class="nav-bar-menu-title"><!---->Documentation<!----></span>
+					<div class="nav-bar-burger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="nav-bar-burger-label"><!---->Navigation globale<!----></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	
+				
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/fr-fr/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+	
+				<!----> <li class="nav-bar-item">
+				<a class=" nav-bar-button has-hover-underline is-active" href="https://docs.microsoft.com/fr-fr/documentation">
+					<span><!---->Documentation<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/learn/">
+					<span><!---->Learn<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/answers/products/">
+					<span><!---->Q&amp;A<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item">
+				<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/samples/browse/">
+					<span><!---->Exemples de code<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item" hidden="">
+				<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/shows/">
+					<span><!---->Éléments décrits<!----></span>
+				</a>
+		  </li><!----> <li class="nav-bar-item" hidden="">
+				<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/fr-fr/events/">
+					<span><!---->Événements<!----></span>
+				</a>
+		  </li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-116">
+			<span><!---->Plus<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-116" aria-label="Plus">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button is-active" href="https://docs.microsoft.com/fr-fr/documentation"><!---->Documentation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/fr-fr/learn/"><!---->Learn<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/fr-fr/answers/products/"><!---->Q&amp;A<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/fr-fr/samples/browse/"><!---->Exemples de code<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/fr-fr/shows/"><!---->Éléments décrits<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/fr-fr/events/"><!---->Événements<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+				<span class="nav-bar-spacer"></span>
+				
+		<div class="nav-bar-search " id="ax-117" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form" aria-label="Rechercher" aria-expanded="false" action="https://docs.microsoft.com/fr-fr/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-small" type="search" name="terms" aria-expanded="false" aria-owns="ax-118-listbox" aria-activedescendant="" aria-label="Rechercher" placeholder="Rechercher">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-118-listbox" aria-label="site-search-input-suggestions" hidden="">
+				
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value=".NET">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search" hidden="">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form-desktop" aria-label="Rechercher" aria-expanded="false" action="https://docs.microsoft.com/fr-fr/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-119" class="autocomplete-input input control has-icons-left  is-small" type="search" name="terms" aria-expanded="false" aria-owns="ax-120-listbox" aria-activedescendant="" aria-label="Rechercher" placeholder="Rechercher">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-120-listbox" aria-label="ax-119-suggestions" hidden="">
+				
+				
+			</ul><!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value=".NET">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search ">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="Rechercher" aria-expanded="false" aria-controls="ax-117">
+					
+		<span class="is-visually-hidden-mobile"><!---->Rechercher<!----></span>
+		<span class="icon margin-left-xxs" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+				
+		<div class="nav-bar-profile">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#"> Se connecter </a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button-reset" aria-controls="user-menu" aria-expanded="false" aria-label="Votre compte">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium is-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box justify-content-flex-start has-body-background" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium is-rounded" aria-labelledby="displayName" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<h2 class="title font-size-lg">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</h2>
+						<p class="subtitle font-size-sm margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul class="padding-top-xs padding-bottom-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" href="https://docs.microsoft.com/fr-fr/users/me/activity/"><!---->Profil<!----></a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" href="https://docs.microsoft.com/fr-fr/users/me/settings/"><!---->Paramètres<!----></a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#"><!---->Se déconnecter<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+			 <!----></div> <div class="nav-bar border-top is-hidden-mobile"><!----> 
+		<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/dotnet/">
+			<span>
+				.NET
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="Site">
+			<ul class="nav-bar-nav-list">
+				
+				<!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-121">
+			<span><!---->Langages<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-121" aria-label="Langages">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/csharp/"><!---->C#<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/fsharp/"><!---->F#<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/visual-basic/"><!---->Visual Basic<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-122">
+			<span><!---->Charges de travail<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-122" aria-label="Charges de travail">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/aspnet/core/"><!---->Web<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/"><!---->Mobile<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/azure/"><!---->Cloud<!----></a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-123">
+			<span><!---->Bureau<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-123" aria-label="Bureau">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/desktop/wpf/?view=netdesktop-6.0"><!---->Windows Presentation Foundation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/desktop/winforms/?view=netdesktop-6.0"><!---->Windows Forms<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/windows/uwp/"><!---->Applications Windows universelles<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/mac"><!---->Xamarin pour macOS<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-124">
+			<span><!---->Machine Learning et données<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-124" aria-label="Machine Learning et données">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/machine-learning/"><!---->ML.NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/spark/"><!---->.NET pour Apache Spark<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/ef/"><!---->Entity Framework<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-125">
+			<span><!---->API<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-125" aria-label="API">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=net-6.0"><!---->.NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=netframework-4.8&amp;preserve-view=true"><!---->.NET Framework<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=aspnetcore-6.0"><!---->ASP.NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=ml-dotnet&amp;preserve-view=true"><!---->ML.NET<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-126">
+			<span><!---->Ressources<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-126" aria-label="Ressources">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet"><!---->Qu’est-ce que .NET&nbsp;?<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides"><!---->Guides d’architecture .NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn"><!---->Documents de formation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/download"><!---->Téléchargements<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/community"><!---->Communauté<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/support"><!---->Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://devblogs.microsoft.com/dotnet/"><!---->Blog<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-127">
+			<span><!---->Plus<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-127" aria-label="Plus">
+			<!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-128">
+			<span><!---->Langages<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-128" aria-label="Langages">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/csharp/"><!---->C#<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/fsharp/"><!---->F#<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/visual-basic/"><!---->Visual Basic<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-129">
+			<span><!---->Charges de travail<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-129" aria-label="Charges de travail">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/aspnet/core/"><!---->Web<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/"><!---->Mobile<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/azure/"><!---->Cloud<!----></a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-130">
+			<span><!---->Bureau<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-130" aria-label="Bureau">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/desktop/wpf/?view=netdesktop-6.0"><!---->Windows Presentation Foundation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/desktop/winforms/?view=netdesktop-6.0"><!---->Windows Forms<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/windows/uwp/"><!---->Applications Windows universelles<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/xamarin/mac"><!---->Xamarin pour macOS<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-131">
+			<span><!---->Machine Learning et données<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-131" aria-label="Machine Learning et données">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/machine-learning/"><!---->ML.NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/spark/"><!---->.NET pour Apache Spark<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/ef/"><!---->Entity Framework<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-132">
+			<span><!---->API<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-132" aria-label="API">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=net-6.0"><!---->.NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=netframework-4.8&amp;preserve-view=true"><!---->.NET Framework<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=aspnetcore-6.0"><!---->ASP.NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://docs.microsoft.com/fr-fr/dotnet/api/?view=ml-dotnet&amp;preserve-view=true"><!---->ML.NET<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-133">
+			<span><!---->Ressources<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-133" aria-label="Ressources">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet"><!---->Qu’est-ce que .NET&nbsp;?<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides"><!---->Guides d’architecture .NET<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn"><!---->Documents de formation<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/download"><!---->Téléchargements<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/community"><!---->Communauté<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/support"><!---->Support<!----></a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://devblogs.microsoft.com/dotnet/"><!---->Blog<!----></a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		
+		<ol class="nav-bar-list">
+			 
+		<li class="nav-bar-item ">
+			<a class="button button-sm button-primary button-filled" href="https://dotnet.microsoft.com/download">
+				Télécharger .NET
+			</a>
+		</li>
+	
+		</ol>
+	 
+	 <!----></div> <!----></header>		</div>
+
+						<div class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+					<nav class="breadcrumb-holder has-padding-none has-padding-left-medium-tablet has-padding-right-medium-tablet has-padding-left-none-uhf-tablet has-padding-left-none-uhf-tablet has-padding-none-desktop flex-grow-1" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Chemin de navigation">
+						<ul id="page-breadcrumbs" class="breadcrumbs-deprecated"><!----><!---->
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				
+							<a itemprop="item" href="https://docs.microsoft.com/fr-fr/">
+								<span itemprop="name"><!---->Docs<!----></span>
+							</a>
+					  
+				<meta itemprop="position" content="1">
+			</li>
+		<!---->
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				
+							<a itemprop="item" href="https://docs.microsoft.com/fr-fr/dotnet/">
+								<span itemprop="name"><!---->.NET<!----></span>
+							</a>
+					  
+				<meta itemprop="position" content="2">
+			</li>
+		<!---->
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				
+							<a itemprop="item" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/">
+								<span itemprop="name"><!---->Guide C#<!----></span>
+							</a>
+					  
+				<meta itemprop="position" content="3">
+			</li>
+		<!---->
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				
+							<a itemprop="item" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/">
+								<span itemprop="name"><!---->Informations de référence sur le langage<!----></span>
+							</a>
+					  
+				<meta itemprop="position" content="4">
+			</li>
+		<!----><!----></ul>
+					</nav>
+				<div class="content-header-controls">
+					<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">Contenu</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Quitter le mode focus</span>
+					</button>
+				</div>
+				<div class="has-padding-none-tablet padding-xs font-size-sm display-flex justify-content-space-between flex-grow-1 page-action-holder">
+					<ul class="is-hidden-mobile action-list justify-content-flex-start has-flex-justify-content-end-tablet display-flex flex-wrap-wrap flex-grow-1 is-unstyled">
+						<li>
+							<a id="lang-link" class="button button button-clear button-sm" title="Lire en anglais" data-bi-name="language-toggle" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+								<span id="lang-link-icon" class="icon docon docon-locale-globe" aria-hidden="true"></span>
+								<span id="lang-link-text" class="is-visually-hidden-touch is-hidden-portrait" title="Lire en anglais">Lire en anglais</span>
+							</a>
+						</li>
+						<li>
+							<button type="button" class="collection button button-clear button-sm has-inner-focus" data-list-type="collection" data-bi-name="collection" title="Ajouter Instructions d’itération-référence C# | Microsoft Docs à une collection" aria-pressed="false">
+								<span class="icon" aria-hidden="true">
+									<span class="docon docon-circle-addition has-text-primary"></span>
+								</span>
+								<span class="collection-status is-visually-hidden-touch is-hidden-portrait">Enregistrer</span>
+							</button>
+						</li>
+								<li id="contenteditbtn" hidden="">
+									<a href="https://github.com/dotnet/docs.fr-fr/blob/live/docs/csharp/language-reference/statements/iteration-statements.md" class=" button button-clear button-sm has-inner-focus" title="Modifier ce document" data-bi-name="edit">
+									<span class="icon" aria-hidden="true">
+										<span class="docon docon-edit-outline"></span>
+									</span>
+									<span class="is-visually-hidden-touch is-hidden-portrait">Modifier</span>
+								</a>
+							</li>
+						<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button button-clear button-sm button-block justify-content-flex-start has-inner-focus" aria-controls="sharing-menu" aria-expanded="false" title="Partager ce document" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Partager</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button button-clear button-sm button-block justify-content-flex-start has-inner-focus share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fdotnet%2Fcsharp%2Flanguage-reference%2Fstatements%2Fiteration-statements%3FWT.mc_id%3Dtwitter&amp;text=Instructions%20d%E2%80%99it%C3%A9ration-r%C3%A9f%C3%A9rence%20C%23%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fdotnet%2Fcsharp%2Flanguage-reference%2Fstatements%2Fiteration-statements%3FWT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button button-clear button-sm button-block justify-content-flex-start has-inner-focus share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fdotnet%2Fcsharp%2Flanguage-reference%2Fstatements%2Fiteration-statements%3FWT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button button-clear button-sm button-block justify-content-flex-start has-inner-focus share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fdotnet%2Fcsharp%2Flanguage-reference%2Fstatements%2Fiteration-statements%3FWT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button button-clear button-sm button-block justify-content-flex-start has-inner-focus share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Instructions%20d%E2%80%99it%C3%A9ration-r%C3%A9f%C3%A9rence%20C%23%20%7C%20Microsoft%20Docs&amp;body=Instructions%20d%E2%80%99it%C3%A9ration-r%C3%A9f%C3%A9rence%20C%23%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Ffr-fr%2Fdotnet%2Fcsharp%2Flanguage-reference%2Fstatements%2Fiteration-statements%3FWT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Courrier</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>						</li>
+					</ul>
+					<button type="button" class="border contents-button  button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="Contenu" data-bi-name="contents-expand">
+						<span class="icon">
+							<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+						</span>
+						<span class="contents-expand-title">Table des matières</span>
+					</button>
+					<div class="is-invisible"></div>
+					<div class="is-hidden-tablet level-item is-flexible level-right">
+						<button type="button" class="page-actions-button  button button-clear button-sm is-hidden-tablet has-inner-focus border is-full-height  has-margin-left-small" aria-label="Actions sur la page" data-bi-name="pageactions">
+							<span class="icon">
+								<span class="docon docon-more-vertical" aria-hidden="true"></span>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"><!----> <section data-dismissable="disappearing" class="is-info alert is-banner">
+			<div class="uhf-container">
+				<button data-dismiss="" type="button" class="delete position-absolute top-0 right-0 margin-xxs delete-lg">
+					<span class="visually-hidden"><!---->Ignorer l’alerte<!----></span>
+				</button>
+				<div class="columns">
+					<div class="column is-12">
+						<div class="level justify-content-flex-start">
+							<div class="level-left flex-shrink-1">
+								<div class="level-item flex-shrink-1">
+									<p class="has-text-white-static disclaimer-title has-margin-top-extra-small margin-right-xs has-line-height-reset">
+										<span class="icon">
+											<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+										</span>
+										<span><!---->Certaines parties de cette rubrique sont traduites automatiquement.<!----></span>
+									</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!----></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="position-fixed display-flex flex-direction-column" role="navigation" aria-label="Principal" data-bi-name="left toc" style="width: 271.656px; top: 24px; bottom: 24px;"><form action="javascript:" role="search" aria-label="Rechercher" class="has-margin-bottom-small"><label class="visually-hidden" for="ax-134">Rechercher</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!----> <div class="control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-134" class="autocomplete-input input control has-icons-left is-full-width is-small" type="text" aria-expanded="false" aria-owns="ax-135-listbox" aria-activedescendant="" placeholder="Filtrer par titre">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-135-listbox" aria-label="ax-134-suggestions" hidden="">
+				
+				
+			</ul><!----></div></form><ul class="tree is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="Table des matières" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="11" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/">Documentation C#</a></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Prise en main</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fondamentaux</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Nouveautés de C#</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutoriels</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts C#</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" id="title-7-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Articles de procédure C#</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" id="title-8-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Kit SDK .NET Compiler Platform (API Roslyn)</span></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Guide de programmation&nbsp;C#</span></li><li class="tree-item is-expanded" aria-setsize="11" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" id="title-10-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Informations de référence sur le langage</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="13" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/">Vue d'ensemble</a></li><li role="none"><a aria-setsize="13" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/configure-language-version">Configurer la version de langage</a></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" id="title-10-1_3-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Types</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" id="title-10-1_4-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Mots clés</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" id="title-10-1_5-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Opérateurs et expressions</span></li><li class="tree-item is-expanded" aria-setsize="13" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" id="title-10-1_6-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Instructions</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements" aria-current="page">Instructions d’itération</a></li><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/selection-statements">Instructions de sélection</a></li></ul></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" id="title-10-1_7-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Caractères spéciaux</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" id="title-10-1_8-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Attributs lus par le compilateur</span></li><li role="none"><a aria-setsize="13" aria-level="2" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/unsafe-code">Pointeurs et code unsafe</a></li><li role="none"><a aria-setsize="13" aria-level="2" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/preprocessor-directives">Directives de préprocesseur</a></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="11" role="treeitem" tabindex="-1" id="title-10-1_11-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Options du compilateur</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="12" role="treeitem" tabindex="-1" id="title-10-1_12-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Commentaires sur la documentation XML</span></li><li role="none"><a aria-setsize="13" aria-level="2" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/compiler-messages/">Messages du compilateur</a></li></ul></li><li class="tree-item" aria-setsize="11" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" id="title-11-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Spécifications</span></li></ul><div class="margin-top-xxs border-top border-bottom flex-shrink-0"><!---->
+			<button class="button button-clear button-sm is-full-width display-block padding-left-none padding-right-none border-none is-text-left" data-bi-name="downloadPdf" title="Télécharger le PDF">
+				<span class="icon font-size-xs has-text-subtle">
+					<span aria-hidden="true" class="docon docon-dictionary-download"></span>
+				</span>
+				<span>
+					Télécharger le PDF
+					<span class="tag is-text is-small is-rounded margin-left-xxs">
+						Mise hors service
+					</span>
+				</span>
+			</button>
+		<!----></div></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" class="content " data-bi-name="content" lang="fr-fr" dir="ltr">
+
+
+
+							<h1 id="iteration-statements-c-reference">Instructions d’itération (référence C#)</h1>
+
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="fr-fr" dir="ltr">
+													<li>
+Article													</li>
+													<li>
+														<time class="" data-article-date="" aria-label="Date de révision de l’article" datetime="2021-09-28T03:28:00.000Z" data-article-date-source="git">28/09/2021</time>
+													</li>
+															<li class="readingTime">3 minutes de lecture</li>
+														<li class="contributors-holder">
+															<ul class="facepile has-margin-left-none is-small" data-bi-name="contributors">
+																				<li class="facepile-item">
+																					<a href="https://github.com/BillWagner" title="BillWagner" aria-label="BillWagnerProfil GitHub" data-src="https://github.com/BillWagner.png?size=32" data-contributor-name="BillWagner" class="facepile-item-coin">
+																						<img class="facepile-item-coin-image durable-image" aria-hidden="true" src="./Instructions d’itération-référence C# _ Microsoft Docs_files/BillWagner.png" role="presentation" onerror="this.className=&#39;facepile-item-coin-image durable-image has-error&#39;;">
+																						<span class="facepile-item-coin-text durable-image-fallback facepile-item-teal" aria-hidden="true">B</span>
+																					</a>
+																				</li>
+																				<li class="facepile-item">
+																					<a href="https://github.com/olprod" title="olprod" aria-label="olprodProfil GitHub" data-src="https://github.com/olprod.png?size=32" data-contributor-name="olprod" class="facepile-item-coin">
+																						<img class="facepile-item-coin-image durable-image" aria-hidden="true" src="./Instructions d’itération-référence C# _ Microsoft Docs_files/olprod.png" role="presentation" onerror="this.className=&#39;facepile-item-coin-image durable-image has-error&#39;;">
+																						<span class="facepile-item-coin-text durable-image-fallback facepile-item-red" aria-hidden="true">o</span>
+																					</a>
+																				</li>
+															</ul>
+														</li>
+										</ul>
+											<div class="dropdown" data-hide-on-archived="">
+												<button class="dropdown-trigger link-button font-size-sm" aria-controls="options" aria-expanded="false" title="Cette page est-elle utile ?">
+Cette page est-elle utile&nbsp;?												</button>
+												<div class="dropdown-menu border-radius" id="options" role="menu">
+
+
+<div class="padding-xs" data-bi-name="rating" data-binary-rating-container="">
+    <div class="binary-rating" data-binary-rating-hide-on-submit="">
+		<form class="feedback-verbatim-form" data-feedback-verbatim-form="" id="main-page-rating-container">
+        	<div class="binary-rating-buttons">
+				<h3 id="binary-rating-heading" class="font-weight-semibold margin-top-none margin-bottom-xs font-size-h5 has-caret">Évaluez votre expérience</h3>
+				<div class="buttons">
+					<button class="thumb-rating like margin-right-xxs button button-clear button-sm" data-binary-rating-response="rating-yes" title="Yes" type="button" data-bi-name="rating-yes" data-bi-sat="1">
+						<span aria-hidden="true" class="icon docon docon-like"></span>
+						<span>Yes</span>
+					</button>
+					<button class="thumb-rating dislike button button-clear button-sm" data-binary-rating-response="rating-no" title="No" data-bi-name="rating-no" type="button" data-bi-sat="0">
+						<span aria-hidden="true" class="icon docon docon-dislike"></span>
+						<span>No</span>
+					</button>
+				</div>
+			</div>
+			<div id="binary-verbatim-container" class="font-size-xs margin-top-xs">
+				<div class="verbatim-textarea">
+					<label for="binary-rating-textarea" class="visually-hidden">
+D'autres commentaires&nbsp;?					</label>
+					<textarea id="binary-rating-textarea" data-binary-rating-text="" rows="4" maxlength="999" placeholder="D&#39;autres commentaires ?" class="textarea has-inner-focus"></textarea>
+				</div>
+				<p class="has-line-height-reset has-text-wrap">Les commentaires seront envoyés à Microsoft&nbsp;: en appuyant sur le bouton envoyer, vos commentaires seront utilisés pour améliorer les produits et services Microsoft. <a href="https://privacy.microsoft.com/en-us/privacystatement">Politique de confidentialité.</a></p>
+				<div class="buttons buttons-right margin-top-xs has-margin-right-extra-small">
+					<button class="submit-rating button button-primary button-filled button-sm" data-bi-name="rating-verbatim" data-binary-rating-submit="" type="submit" disabled="">Envoyer</button>
+				</div>
+			</div>
+        </form>
+    </div>
+    <p data-binary-rating-onsubmit-message="main-page-rating-container" tabindex="-1" class="margin-none inner-focus" hidden="">
+Merci.    </p>
+</div>
+												</div>
+											</div>
+										</div>
+
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Plan de l&#39;article">
+											<h3>Dans cet article</h3>
+										<ol><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-for-statement">Instruction for</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement">Instruction foreach</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-do-statement">Instruction do</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-while-statement">Instruction while</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#c-language-specification">spécification du langage&nbsp;C#</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#see-also">Voir aussi</a></li></ol></nav>
+
+
+
+							<!-- <content> -->
+								<p>Les instructions suivantes exécutent à plusieurs reprises une instruction ou un bloc d’instructions&nbsp;:</p>
+<ul>
+<li>L' <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-for-statement" data-linktype="self-bookmark"> <code>for</code> instruction</a>: exécute son corps alors qu’une expression booléenne spécifiée prend la valeur <code>true</code> .</li>
+<li>L' <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement" data-linktype="self-bookmark"> <code>foreach</code> instruction</a>: énumère les éléments d’une collection et exécute son corps pour chaque élément de la collection.</li>
+<li>L' <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-do-statement" data-linktype="self-bookmark"> <code>do</code> instruction</a>: exécute de manière conditionnelle son corps une ou plusieurs fois.</li>
+<li>L' <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-while-statement" data-linktype="self-bookmark"> <code>while</code> instruction</a>: exécute de manière conditionnelle son corps zéro, une ou plusieurs fois.</li>
+</ul>
+<p>À tout moment dans le corps d’une instruction d’itération, vous pouvez quitter la boucle à l’aide de l’instruction <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywords/break" data-linktype="relative-path">break</a> ou passer à l’itération suivante de la boucle à l’aide de l’instruction <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywords/continue" data-linktype="relative-path">continue</a> .</p>
+<h2 id="the-for-statement" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-for-statement" aria-labelledby="the-for-statement"></a>Instruction <code>for</code></h2>
+<p>L’instruction <code>for</code> exécute une instruction ou un bloc d’instructions tant qu’une expression booléenne donne la valeur <code>true</code>. L’exemple suivant illustre l' <code>for</code> instruction qui exécute son corps alors qu’un compteur entier est inférieur à trois&nbsp;:</p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button>
+			<button class="action action-interactive" data-bi-name="code-header-try-it-csharp">
+				<span class="docon docon-play" role="presentation"></span>
+				<span>Exécuter</span>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-interactive="csharp" data-interactive-mode="try-dotnet-method" data-author-content="for (int i = 0; i &lt; 3; i++)
+{
+    Console.Write(i);
+}
+// Output:
+// 012
+"><span><span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+{
+    Console.Write(i);
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// 012</span>
+</span></code></pre>
+<p>L’exemple précédent montre les éléments de l' <code>for</code> instruction&nbsp;:</p>
+<ul>
+<li><p>La section de l' <em>initialiseur</em> est exécutée une seule fois, avant d’entrer dans la boucle. En général, vous déclarez et initialisez une variable de boucle locale dans cette section. La variable déclarée n’est pas accessible depuis l’extérieur de l' <code>for</code> instruction.</p>
+<p>La section d' <em>initialiseur</em> de l’exemple précédent déclare et Initialise une variable de compteur d’entiers&nbsp;:</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="int i = 0
+"><span><span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>
+</span></code></pre>
+</li>
+<li><p>Section de <em>condition</em> qui détermine si la prochaine itération de la boucle doit être exécutée. Si elle prend la valeur <code>true</code> ou n’est pas présente, l’itération suivante est exécutée&nbsp;; sinon, la boucle est quittée. La section <em>condition</em> doit être une expression booléenne.</p>
+<p>La section <em>condition</em> dans l’exemple précédent vérifie si une valeur de compteur est inférieure à trois&nbsp;:</p>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="i &lt; 3
+"><span>i &lt; <span class="hljs-number">3</span>
+</span></code></pre>
+</li>
+<li><p>La section <em>iterator</em> qui définit ce qui se produit après chaque exécution du corps de la boucle.</p>
+<p>La section <em>iterator</em> de l’exemple précédent incrémente le compteur&nbsp;:</p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="i++
+"><span>i++
+</span></code></pre>
+</li>
+<li><p>Corps de la boucle, qui doit être une instruction ou un bloc d’instructions.</p>
+</li>
+</ul>
+<p>La section Iterator peut contenir zéro, une ou plusieurs des expressions d’instruction suivantes, séparées par des virgules&nbsp;:</p>
+<ul>
+<li>Expression d’<a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/arithmetic-operators#increment-operator-" data-linktype="relative-path">incrémentation</a> préfixée ou suffixée, telle que <code>++i</code> ou <code>i++</code></li>
+<li>Expression de <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/arithmetic-operators#decrement-operator---" data-linktype="relative-path">décrémentation</a> préfixée ou suffixée, telle que <code>--i</code> ou <code>i--</code></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/assignment-operator" data-linktype="relative-path">affectation</a></li>
+<li>Appel d’une méthode</li>
+<li>Expression <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/await" data-linktype="relative-path">await</a></li>
+<li>Création d’un objet à l’aide de l’opérateur <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/new-operator" data-linktype="relative-path">new</a></li>
+</ul>
+<p>Si vous ne déclarez pas de variable de boucle dans la section de l’initialiseur, vous pouvez également utiliser zéro, une ou plusieurs des expressions de la liste précédente dans la section de l’initialiseur. L’exemple suivant illustre plusieurs utilisations moins courantes de l’initialiseur et des sections d’itérateur&nbsp;: l’assignation d’une valeur à une variable externe dans la section d’initialiseur, l’appel d’une méthode à la fois dans les sections de l’initialiseur et de l’itérateur, et la modification des valeurs de deux variables dans la section Iterator&nbsp;:</p>
+<div class="codeHeader" id="code-try-4" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button>
+			<button class="action action-interactive" data-bi-name="code-header-try-it-csharp">
+				<span class="docon docon-play" role="presentation"></span>
+				<span>Exécuter</span>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-interactive="csharp" data-interactive-mode="try-dotnet-method" data-author-content="int i;
+int j = 3;
+for (i = 0, Console.WriteLine($&quot;Start: i={i}, j={j}&quot;); i &lt; j; i++, j--, Console.WriteLine($&quot;Step: i={i}, j={j}&quot;))
+{
+    //...
+}
+// Output:
+// Start: i=0, j=3
+// Step: i=1, j=2
+// Step: i=2, j=1
+"><span><span class="hljs-built_in">int</span> i;
+<span class="hljs-built_in">int</span> j = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, Console.WriteLine(<span class="hljs-string">$"Start: i=<span class="hljs-subst">{i}</span>, j=<span class="hljs-subst">{j}</span>"</span>); i &lt; j; i++, j--, Console.WriteLine(<span class="hljs-string">$"Step: i=<span class="hljs-subst">{i}</span>, j=<span class="hljs-subst">{j}</span>"</span>))
+{
+    <span class="hljs-comment">//...</span>
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// Start: i=0, j=3</span>
+<span class="hljs-comment">// Step: i=1, j=2</span>
+<span class="hljs-comment">// Step: i=2, j=1</span>
+</span></code></pre>
+<p>Toutes les sections de l' <code>for</code> instruction sont facultatives. Par exemple, le code suivant définit la boucle infinie <code>for</code> :</p>
+<div class="codeHeader" id="code-try-5" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="for ( ; ; )
+{
+    //...
+}
+"><span><span class="hljs-keyword">for</span> ( ; ; )
+{
+    <span class="hljs-comment">//...</span>
+}
+</span></code></pre>
+<h2 id="the-foreach-statement" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement" aria-labelledby="the-foreach-statement"></a>Instruction <code>foreach</code></h2>
+<p>L' <code>foreach</code> instruction exécute une instruction ou un bloc d’instructions pour chaque élément d’une instance du type qui implémente l' <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.collections.ienumerable" data-linktype="absolute-path">System.Collections.IEnumerable</a> <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.collections.generic.ienumerable-1" data-linktype="absolute-path">System.Collections.Generic.IEnumerable&lt;T&gt;</a> interface ou, comme le montre l’exemple suivant&nbsp;:</p>
+<div class="codeHeader" id="code-try-6" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button>
+			<button class="action action-interactive" data-bi-name="code-header-try-it-csharp">
+				<span class="docon docon-play" role="presentation"></span>
+				<span>Exécuter</span>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-interactive="csharp" data-interactive-mode="try-dotnet-method" data-author-content="var fibNumbers = new List&lt;int&gt; { 0, 1, 1, 2, 3, 5, 8, 13 };
+foreach (int element in fibNumbers)
+{
+    Console.Write($&quot;{element} &quot;);
+}
+// Output:
+// 0 1 1 2 3 5 8 13
+"><span><span class="hljs-keyword">var</span> fibNumbers = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>&gt; { <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">13</span> };
+<span class="hljs-keyword">foreach</span> (<span class="hljs-built_in">int</span> element <span class="hljs-keyword">in</span> fibNumbers)
+{
+    Console.Write(<span class="hljs-string">$"<span class="hljs-subst">{element}</span> "</span>);
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// 0 1 1 2 3 5 8 13</span>
+</span></code></pre>
+<p>L' <code>foreach</code> instruction n’est pas limitée à ces types. Vous pouvez l’utiliser avec une instance de n’importe quel type répondant aux conditions suivantes&nbsp;:</p>
+<ul>
+<li>Un type a la méthode sans paramètre publique <code>GetEnumerator</code> . À compter de C# 9,0, la <code>GetEnumerator</code> méthode peut être la <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/extension-methods" data-linktype="relative-path">méthode d’extension</a>d’un type.</li>
+<li>Le type de retour de la <code>GetEnumerator</code> méthode a la <code>Current</code> propriété publique et la méthode sans paramètre public <code>MoveNext</code> dont le type de retour est <code>bool</code> .</li>
+</ul>
+<p>L’exemple suivant utilise l' <code>foreach</code> instruction avec une instance du <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.span-1" data-linktype="absolute-path">System.Span&lt;T&gt;</a> type, qui n’implémente aucune interface&nbsp;:</p>
+<div class="codeHeader" id="code-try-7" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="Span&lt;int&gt; numbers = new int[] { 3, 14, 15, 92, 6 };
+foreach (int number in numbers)
+{
+    Console.Write($&quot;{number} &quot;);
+}
+// Output:
+// 3 14 15 92 6
+"><span>Span&lt;<span class="hljs-built_in">int</span>&gt; numbers = <span class="hljs-keyword">new</span> <span class="hljs-built_in">int</span>[] { <span class="hljs-number">3</span>, <span class="hljs-number">14</span>, <span class="hljs-number">15</span>, <span class="hljs-number">92</span>, <span class="hljs-number">6</span> };
+<span class="hljs-keyword">foreach</span> (<span class="hljs-built_in">int</span> number <span class="hljs-keyword">in</span> numbers)
+{
+    Console.Write(<span class="hljs-string">$"<span class="hljs-subst">{number}</span> "</span>);
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// 3 14 15 92 6</span>
+</span></code></pre>
+<p>À compter de C# 7,3, si la propriété de l’énumérateur <code>Current</code> retourne une <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywords/ref#reference-return-values" data-linktype="relative-path">valeur de retour de référence</a> ( <code>ref T</code> où <code>T</code> est le type d’un élément de collection), vous pouvez déclarer une variable d’itération avec le <code>ref</code> <code>ref readonly</code> modificateur ou, comme le montre l’exemple suivant&nbsp;:</p>
+<div class="codeHeader" id="code-try-8" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="Span&lt;int&gt; storage = stackalloc int[10];
+int num = 0;
+foreach (ref int item in storage)
+{
+    item = num++;
+}
+foreach (ref readonly var item in storage)
+{
+    Console.Write($&quot;{item} &quot;);
+}
+// Output:
+// 0 1 2 3 4 5 6 7 8 9
+"><span>Span&lt;<span class="hljs-built_in">int</span>&gt; storage = <span class="hljs-keyword">stackalloc</span> <span class="hljs-built_in">int</span>[<span class="hljs-number">10</span>];
+<span class="hljs-built_in">int</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">ref</span> <span class="hljs-built_in">int</span> item <span class="hljs-keyword">in</span> storage)
+{
+    item = num++;
+}
+<span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">ref</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">var</span> item <span class="hljs-keyword">in</span> storage)
+{
+    Console.Write(<span class="hljs-string">$"<span class="hljs-subst">{item}</span> "</span>);
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// 0 1 2 3 4 5 6 7 8 9</span>
+</span></code></pre>
+<p>Si l’instruction <code>foreach</code> est appliquée à <code>null</code>, une <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.nullreferenceexception" data-linktype="absolute-path">NullReferenceException</a> est levée. Si la collection source de l' <code>foreach</code> instruction est vide, le corps de l' <code>foreach</code> instruction n’est pas exécuté et ignoré.</p>
+<h3 id="await-foreach" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#await-foreach" aria-labelledby="await-foreach"></a>await foreach</h3>
+<p>À compter de C# 8,0, vous pouvez utiliser l' <code>await foreach</code> instruction pour consommer un flux de données asynchrone, autrement dit, le type de collection qui implémente l' <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.collections.generic.iasyncenumerable-1" data-linktype="absolute-path">IAsyncEnumerable&lt;T&gt;</a> interface. Chaque itération de la boucle peut être interrompue pendant que l’élément suivant est récupéré de manière asynchrone. L’exemple suivant montre comment utiliser l' <code>await foreach</code> instruction&nbsp;:</p>
+<div class="codeHeader" id="code-try-9" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="await foreach (var item in GenerateSequenceAsync())
+{
+    Console.WriteLine(item);
+}
+"><span><span class="hljs-keyword">await</span> <span class="hljs-keyword">foreach</span> (<span class="hljs-function"><span class="hljs-keyword">var</span> item <span class="hljs-keyword">in</span> <span class="hljs-title">GenerateSequenceAsync</span>(<span class="hljs-params"></span>))</span>
+{
+    Console.WriteLine(item);
+}
+</span></code></pre>
+<p>Vous pouvez également utiliser l' <code>await foreach</code> instruction avec une instance de n’importe quel type répondant aux conditions suivantes&nbsp;:</p>
+<ul>
+<li>Un type a la méthode sans paramètre publique <code>GetAsyncEnumerator</code> . Cette méthode peut être la méthode d' <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/extension-methods" data-linktype="relative-path">extension</a>d’un type.</li>
+<li>Le type de retour de la <code>GetAsyncEnumerator</code> méthode a la <code>Current</code> propriété publique et la méthode sans paramètre public <code>MoveNextAsync</code> dont le type de retour est <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.threading.tasks.task-1" data-linktype="absolute-path"><code>Task&lt;bool&gt;</code></a> , <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.threading.tasks.valuetask-1" data-linktype="absolute-path"><code>ValueTask&lt;bool&gt;</code></a> ou tout autre type pouvant être attendu dont la <code>GetResult</code> méthode await retourne une <code>bool</code> valeur.</li>
+</ul>
+<p>Par défaut, les éléments de flux sont traités dans le contexte capturé. Si vous souhaitez désactiver la capture du contexte, utilisez la <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.threading.tasks.taskasyncenumerableextensions.configureawait" data-linktype="absolute-path">TaskAsyncEnumerableExtensions.ConfigureAwait</a> méthode d’extension. Pour plus d’informations sur les contextes de synchronisation et la capture du contexte actuel, consultez <a href="https://docs.microsoft.com/fr-fr/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern" data-linktype="relative-path">utilisation du modèle asynchrone basé sur des tâches</a>. Pour plus d’informations sur les flux asynchrones, consultez la section <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/whats-new/csharp-8#asynchronous-streams" data-linktype="relative-path">Streams asynchrones</a> de l’article <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/whats-new/csharp-8" data-linktype="relative-path">nouveautés de C# 8,0</a> .</p>
+<h3 id="type-of-an-iteration-variable" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#type-of-an-iteration-variable" aria-labelledby="type-of-an-iteration-variable"></a>Type d’une variable d’itération</h3>
+<p>Vous pouvez utiliser le <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywords/var" data-linktype="relative-path"> <code>var</code> mot clé</a> pour permettre au compilateur de déduire le type d’une variable d’itération dans l' <code>foreach</code> instruction, comme le montre le code suivant&nbsp;:</p>
+<div class="codeHeader" id="code-try-10" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="foreach (var item in collection) { }
+"><span><span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> item <span class="hljs-keyword">in</span> collection) { }
+</span></code></pre>
+<p>Vous pouvez également spécifier explicitement le type d’une variable d’itération, comme le montre le code suivant&nbsp;:</p>
+<div class="codeHeader" id="code-try-11" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="IEnumerable&lt;T&gt; collection = new T[5];
+foreach (V item in collection) { }
+"><span>IEnumerable&lt;T&gt; collection = <span class="hljs-keyword">new</span> T[<span class="hljs-number">5</span>];
+<span class="hljs-keyword">foreach</span> (V item <span class="hljs-keyword">in</span> collection) { }
+</span></code></pre>
+<p>Dans le formulaire précédent, le type <code>T</code> d’un élément de collection doit être implicitement ou explicitement convertible en type <code>V</code> d’une variable d’itération. Si une conversion explicite de <code>T</code> en <code>V</code> échoue au moment de l’exécution, l' <code>foreach</code> instruction lève une exception <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.invalidcastexception" data-linktype="absolute-path">InvalidCastException</a> . Par exemple, si <code>T</code> est un type de classe non scellé, <code>V</code> peut être n’importe quel type d’interface, même celui qui <code>T</code> n’est pas implémenté. Au moment de l’exécution, le type d’un élément de collection peut être celui qui dérive de <code>T</code> et implémente réellement <code>V</code> . Si ce n’est pas le cas, une <a href="https://docs.microsoft.com/fr-fr/dotnet/api/system.invalidcastexception" data-linktype="absolute-path">InvalidCastException</a> exception est levée.</p>
+<h2 id="the-do-statement" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-do-statement" aria-labelledby="the-do-statement"></a>Instruction <code>do</code></h2>
+<p>L’instruction <code>do</code> exécute une instruction ou un bloc d’instructions tant qu’une expression booléenne donne la valeur <code>true</code>. Dans la mesure où cette expression est évaluée après chaque exécution de la boucle, une boucle <code>do</code> s’exécute une ou plusieurs fois. Cela diffère d’une boucle <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-while-statement" data-linktype="self-bookmark">while</a> , qui s’exécute zéro, une ou plusieurs fois.</p>
+<p>L’exemple suivant illustre l’utilisation de l' <code>do</code> instruction&nbsp;:</p>
+<div class="codeHeader" id="code-try-12" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button>
+			<button class="action action-interactive" data-bi-name="code-header-try-it-csharp">
+				<span class="docon docon-play" role="presentation"></span>
+				<span>Exécuter</span>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-interactive="csharp" data-interactive-mode="try-dotnet-method" data-author-content="int n = 0;
+do
+{
+    Console.Write(n);
+    n++;
+} while (n &lt; 5);
+// Output:
+// 01234
+"><span><span class="hljs-built_in">int</span> n = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span>
+{
+    Console.Write(n);
+    n++;
+} <span class="hljs-keyword">while</span> (n &lt; <span class="hljs-number">5</span>);
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// 01234</span>
+</span></code></pre>
+<h2 id="the-while-statement" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-while-statement" aria-labelledby="the-while-statement"></a>Instruction <code>while</code></h2>
+<p>L’instruction <code>while</code> exécute une instruction ou un bloc d’instructions tant qu’une expression booléenne donne la valeur <code>true</code>. Dans la mesure où cette expression est évaluée avant chaque exécution de la boucle, une boucle <code>while</code> s’exécute plusieurs fois ou pas du tout. Cela diffère d’une boucle <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-do-statement" data-linktype="self-bookmark">do</a> , qui exécute une ou plusieurs fois.</p>
+<p>L’exemple suivant illustre l’utilisation de l' <code>while</code> instruction&nbsp;:</p>
+<div class="codeHeader" id="code-try-13" data-bi-name="code-header"><span class="language">C#</span><button type="button" class="action position-relative" data-bi-name="copy" aria-label="Copier le code">
+				<span class="icon margin-right-xxs">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copier</span>
+				<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon font-size-lg">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button>
+			<button class="action action-interactive" data-bi-name="code-header-try-it-csharp">
+				<span class="docon docon-play" role="presentation"></span>
+				<span>Exécuter</span>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-interactive="csharp" data-interactive-mode="try-dotnet-method" data-author-content="int n = 0;
+while (n &lt; 5)
+{
+    Console.Write(n);
+    n++;
+}
+// Output:
+// 01234
+"><span><span class="hljs-built_in">int</span> n = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (n &lt; <span class="hljs-number">5</span>)
+{
+    Console.Write(n);
+    n++;
+}
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// 01234</span>
+</span></code></pre>
+<h2 id="c-language-specification" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#c-language-specification" aria-labelledby="c-language-specification"></a>spécification du langage&nbsp;C#</h2>
+<p>Pour plus d’informations, consultez les sections suivantes de la <a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/language-specification/introduction" data-linktype="relative-path">spécification du langage C#</a>&nbsp;:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/language-specification/statements#the-for-statement" data-linktype="relative-path"><code>for</code>Instruction</a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement" data-linktype="relative-path"><code>foreach</code>Instruction</a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/language-specification/statements#the-do-statement" data-linktype="relative-path"><code>do</code>Instruction</a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/language-specification/statements#the-while-statement" data-linktype="relative-path"><code>while</code>Instruction</a></li>
+</ul>
+<p>Pour plus d’informations sur les fonctionnalités ajoutées dans C# 8,0 et versions ultérieures, consultez les notes de proposition de fonctionnalités suivantes&nbsp;:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/proposals/csharp-8.0/async-streams" data-linktype="relative-path">Flux asynchrones (C# 8,0)</a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/proposals/csharp-9.0/extension-getenumerator" data-linktype="relative-path"><code>GetEnumerator</code>Prise en charge des extensions pour les <code>foreach</code> boucles (C# 9,0)</a></li>
+</ul>
+<h2 id="see-also" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#see-also" aria-labelledby="see-also"></a>Voir aussi</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/" data-linktype="relative-path">Informations de référence sur C#</a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/arrays/using-foreach-with-arrays" data-linktype="relative-path">Utilisation de foreach avec des tableaux</a></li>
+<li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/iterators" data-linktype="relative-path">Itérateurs</a></li>
+</ul>
+
+							<!-- </content> -->
+
+						</main>
+
+						<!-- fallback rating section for reference only, remove after a week or so -->
+						<!-- end page rating section -->
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations"></section>
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="border-top is-visible-interactive has-default-focus has-margin-top-large ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://docs.microsoft.com/fr-fr/locale?target=https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements" data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">Français</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Thème" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Thème</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Clair					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark has-margin-right-small">
+						<span class="border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Sombre					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Contraste élevé					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder"><button data-bi-name="manageCookies">Gérer les cookies</button></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/previous-versions/" data-bi-name="archivelink">Version précédente de Docs</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/teamblog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/contribute" data-bi-name="contributorGuide">Collaboration</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Confidentialité &amp; cookies</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/legal/termsofuse" data-bi-name="termsofuse">Conditions d'utilisation</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?linkid=2121428" data-bi-name="conformanceDisclosure ">Accessibilité</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marques</a></li>
+		<li>© Microsoft 2021</li>
+	</ul>
+</footer>
+						</div>
+					</div>
+
+						<div class="font-size-sm right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary" aria-label="Actions sur la page">
+
+							<div id="affixed-right-container" class="doc-outline is-vertically-scrollable" style="top: 24px; bottom: 24px; position: fixed;">
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Plan de l&#39;article">
+									<h3>Dans cet article</h3>
+								<ol><li class=""><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-for-statement">Instruction for</a></li><li class="selected"><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement">Instruction foreach</a></li><li class=""><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-do-statement">Instruction do</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#the-while-statement">Instruction while</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#c-language-specification">spécification du langage&nbsp;C#</a></li><li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements#see-also">Voir aussi</a></li></ol></nav>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive has-margin-top-large ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height has-padding-right-extra-large-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://docs.microsoft.com/fr-fr/locale?target=https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/statements/iteration-statements" data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">Français</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Thème" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Thème</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Clair					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark has-margin-right-small">
+						<span class="border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Sombre					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Contraste élevé					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder"><button data-bi-name="manageCookies">Gérer les cookies</button></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/previous-versions/" data-bi-name="archivelink">Version précédente de Docs</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/teamblog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/contribute" data-bi-name="contributorGuide">Collaboration</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Confidentialité &amp; cookies</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/fr-fr/legal/termsofuse" data-bi-name="termsofuse">Conditions d'utilisation</a></li>
+				<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?linkid=2121428" data-bi-name="conformanceDisclosure ">Accessibilité</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marques</a></li>
+		<li>© Microsoft 2021</li>
+	</ul>
+</footer>
+	</section>
+
+		<script src="./Instructions d’itération-référence C# _ Microsoft Docs_files/MathJax.js.télécharger" integrity="sha384-RLsAi7wiVvnmHrRjlVvUjU45C0bfsIBg6Gsxue6azjJi+lA5q5uK+XbGzO3yn5g1" crossorigin="anonymous"></script>
+	<div id="action-panel" role="region" aria-label="Volet des actions" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>

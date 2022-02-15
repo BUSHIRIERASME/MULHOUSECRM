@@ -2,3 +2,7 @@ header{
     background-color:"red";
     
 }
+h1{
+     color: rgb(54, 47, 79);
+     -ms-text-combine-horizontal: all;
+}

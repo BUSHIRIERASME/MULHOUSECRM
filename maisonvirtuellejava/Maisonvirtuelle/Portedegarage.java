@@ -37,9 +37,9 @@ public class Portedegarage
     public boolean verouiller()
     {
     
-        if (deverouiller==true)
+        if (deverouiller == true)
         {
-            deverouiller=false;
+            deverouiller = false;
             return true;
         }
         else
