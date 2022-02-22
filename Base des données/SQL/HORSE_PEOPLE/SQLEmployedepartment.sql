@@ -13,9 +13,8 @@
 
  USE  employedepartement
 
- DROP TABLE EMPLOYE
 
- DROP TABLE DEPARTEMENT
+
 
 CREATE TABLE EMPLOYE(
    EMPNO INT primary key ,
@@ -26,8 +25,8 @@ CREATE TABLE EMPLOYE(
    SAL DECIMAL NOT NUll,
    COMM DECIMAL,
    DEPTNO INT NOT  NULL,
-   CONSTRAINT FK_EMPLOYE_MANAGER FOREIGN KEY (MGR) REFERENCES EMPLOYE (EMPNO),
-   CONSTRAINT FK_EMPLOYE_DEPARTEMENT FOREIGN KEY (DEPTNO) REFERENCES  DEPARTEMENT (DEPTNO),
+   /*CONSTRAINT FK_EMPLOYE_MANAGER FOREIGN KEY (MGR) REFERENCES EMPLOYE (EMPNO),
+   CONSTRAINT FK_EMPLOYE_DEPARTEMENT FOREIGN KEY (DEPTNO) REFERENCES  DEPARTEMENT (DEPTNO),*/
    );
 
 
@@ -42,13 +41,16 @@ CREATE TABLE DEPARTEMENT(
                      VALUES  (     10       ,'ACCOUNTING'   ,  'NEW YORK'   ),
 					         (     20       , 'RESEARCH'    ,  'DALLAS '    ),
 							 (     30       , 'SALES'       , 'CHICAGO'     ),
-							 (     40       , 'OPERATIONS'  , ' BOSTON'     );
+							 (     40       , 'OPERATIONS'  , ' BOSTON'     );*/
 
     
     
    
                     
-    
+select  loc from departement 
+select dname from departement
+select deptno from departement
+select * from DEPARTEMENT
 
-
+select * from employe
 
