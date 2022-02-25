@@ -154,16 +154,21 @@ select ename , empno, sal
 
 2)  select ename,job,sal
     from employe
-	where job = 'manager'	
+	where job = 'manager'and sal > 2800	
 	
 	
-	
-	 SELECT MGR 
-	 FROM EMPLOYE
-	 WHERE DEPTNO IN 10 and 20
-	 GROUP BY mgr
+3)  select mgr,ename 
+	from employe
+	where deptno <> 30 
 
-	      select * 
-	       from  employe 
-		   where deptno IN (10,30)  
-		   order by ename 
+4)  select ename sal 
+    from employe 
+    where sal IN 1200 and 1400
+	
+	
+1) select ename, deptno
+   from employe 
+   where job = 'manager' and deptno = 20 
+	
+	
+	
