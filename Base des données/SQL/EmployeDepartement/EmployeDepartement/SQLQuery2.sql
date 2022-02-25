@@ -88,3 +88,67 @@ INSERT INTO  EMPLOYE(  EMPNO  , ENAME    ,   JOB      ,  MGR    ,  HIREDATE     
 	11)    select ename,sal,comm
 	       from employe 
 		   where job = 'salesman'   	
+
+-- deuxieme
+
+        1) select *
+		   from employe 
+		   where job = 'manager'  and  deptno  in(20 , 30)
+
+
+	  2)   select ename, job , hiredate 
+		   from employe 
+		   where job <> 'manager' and TO_CHAR(hiredate,'yy')='81'
+
+	   Select ename, job, hiredate 
+	   from employe
+	    where job <> 'MANAGER' and HIREDATE between  '01/01/81' and '31/12/81'
+
+	3) select ename 
+	   from employe 
+	   where comm != null
+
+       select ename
+	   from employe
+	    where ename like '%M%' and ename like '%A%'
+
+	4) select ename, deptno, job, HIREDATE
+	   from employe
+	   order by  deptno , order by  job desc
+
+	5) select ename  
+	   from employe 
+	   where loc ='DALLAS'
+
+	 6) select ename , hiredate, job
+	    from employe 
+		where 
+
+
+       select ename, deptno, job, hiredate 
+	   from employe 
+	   order by deptno, job, hiredate DESC
+
+	7) select ename 
+	   from employe
+	   where job != 'managesr'
+
+	 select  ename, empno 
+	 from employe x
+	 where NOT EXISTS (select mgr from employe where X.empno = mgr)
+
+	8) select ename, hiredate 
+	from employe 
+	where 
+
+	  select e1.ename, e1.hiredate
+	   from employe e1, employe bl 
+	   where bl.name='black' and e1.hiredate<bl.hiredate	
+	   
+	 9)  	 select * 
+	         from employe 
+			 where hiredate =(select hiredate from employe where ename='FORD')
+
+		 select e1.* 
+		 from employe e1, employe e2 
+		 where e1.hiredate=e2.hiredate and e2.ename='FORD'
