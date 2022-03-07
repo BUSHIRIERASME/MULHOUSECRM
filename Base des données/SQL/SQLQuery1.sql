@@ -140,6 +140,19 @@ select ename , empno, sal
      (7934       MILLER   CLERK    7782     23-JAN-82    1300      null   10)  
 	  );   
 	 19b) ALTER TABLE   
+
+
+
+
+
+	 20) --creation de vues
+
+	    create view tous_les_employes
+        as
+		select ename, job,dname,nameprojet,
+		from tous_les_empoyes
+		where e.ename=p.projet
+
 	 
 	 
 	 
@@ -150,7 +163,9 @@ select ename , empno, sal
 
 1)	select ename,job,empno,sal,deptno
 	from employe
-	where deptno = 10
+	where deptno = 10 
+
+1a)
 
 2)  select ename,job,sal
     from employe
