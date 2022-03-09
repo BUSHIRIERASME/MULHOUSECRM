@@ -1,6 +1,6 @@
 
 CREATE DATABASE AVIONPILOTEVOL
-
+DROP DATABASE AVIONPILOTEVOL
 USE  AVIONPILOTEVOL
 
  CREATE TABLE AVION(
@@ -16,13 +16,14 @@ CREATE TABLE PILOTE(
 				  ADRPIL VARCHAR (50)NOT NULL);
 
 CREATE TABLE VOL(
-                 NOVOL INT,
+                 NOVOL VARCHAR(10) primary key,
+				 PIL INT,
 				 AV INT, 
 				 VD VARCHAR (50),
 				 VA VARCHAR (50),
 				 HD TIME,
-				 HA TIME);
-
+				 HA TIME,CONSTRAINT FK_PILOTE FOREIGN KEY (PIL)REFERENCES PILOTE (NUPIL));
+				 
 
 
 INSERT INTO AVION ( NOAV    ,     VMARQ  ,   AVTYPE   ,   CAP  ,     LOC     )
@@ -48,33 +49,37 @@ INSERT INTO PILOTE ( NUPIL ,  PILNOM   ,  ADRPIL  )
 				   (   8   , 'HERVE'   , 'Bastia' ),
 				   (   9   ,' LUC '     , 'Paris' );
 
-INSERT INTO  VOL   (    AV    ,  NOVOL   , NUPIL  ,    VD        ,      VA       ,    HD        ,     HA       )
-          VALUES   ( 'IT100'  ,     100  ,    1   ,    ' NICE'   ,   ' PARIS'    ,           7   ,     9       ),
-		           ( 'IT101'  ,     100  ,    2   ,     'PARIS'  ,   ' TOULOUSE' ,           11  ,    12       ),
-				   ( 'IT102'  ,     101  ,    1   ,    ' PARIS'  ,   ' NICE '    ,           12  ,    14       ),
-				   (' IT103'  ,     105  ,    3   ,  'GRENOBLE'  ,  ' TOULOUSE'  ,            9  ,    11       ),
-				   (' IT104'  ,     105  ,    3   , ' TOULOUSE'  ,  'GRENOBLE'   ,            17 ,    19       ),
-				   ( 'IT105'  ,     107  ,    7   ,  ' LYON '    ,  ' PARIS'     ,            6  ,     7       ),
-				   ( 'IT106'  ,     109  ,    8   ,  'BASTIA'    ,  ' PARIS'     ,           10  ,    13       ),
-				   ( 'IT107'  ,     106  ,    9   ,   'PARIS'    ,   ' BRIVE'    ,            7  ,     8       ),
-				   ( 'IT108'  ,     106  ,    9   ,   ' BRIVE'   , ' PARIS'      ,           19  ,     20      ),
-				   ( 'IT109'  ,     107  ,    7   ,  ' PARIS'    , ' LYON'       ,           18  ,     19      ),
-				   ( 'IT110'  ,     102  ,    2   , ' TOULOUSE'  , ' PARIS'      ,           15  ,     16      ),
-				   ( 'IT111'  ,     101  ,    4   ,   ' NICE'    ,  ' NANTES'    ,           17  ,     19      ),
-				   ( 'IT112'  ,     103  ,    5   , ' PARIS'     ,    ' NICE'    ,           11  ,     13      ),
-				   ( 'IT113'  ,     104  ,    6   , ' NICE '     , 'PARIS'       ,           13  ,     15      );
+INSERT INTO  VOL   (    NOVOL ,		AV   ,		 PIL  ,    VD        ,      VA       ,    HD        ,     HA       )
+          VALUES   ( 'IT100'  ,     100  ,    1   ,    ' NICE'   ,   ' PARIS'    ,   ' 07:00:00'   ,     '09:00:00'       ),
+		           ( 'IT101'  ,     100  ,    2   ,     'PARIS'  ,   ' TOULOUSE' ,     '11:00:00'  ,    '12:00:00'       ),
+				   ( 'IT102'  ,     101  ,    1   ,    ' PARIS'  ,   ' NICE '    ,     '12:00:00'  ,    '14:00:00'       ),
+				   (' IT103'  ,     105  ,    3   ,  'GRENOBLE'  ,  ' TOULOUSE'  ,     '09:00:00'  ,    '11:00:00'       ),
+				   (' IT104'  ,     105  ,    3   , ' TOULOUSE'  ,  'GRENOBLE'   ,      '17:00:00' ,    '19:00:00'       ),
+				   ( 'IT105'  ,     107  ,    7   ,  ' LYON '    ,  ' PARIS'     ,      '06:00:00' ,     '07:00:00'      ),
+				   ( 'IT106'  ,     109  ,    8   ,  'BASTIA'    ,  ' PARIS'     ,     '10:00:00'  ,    '13:00:00'       ),
+				   ( 'IT107'  ,     106  ,    9   ,   'PARIS'    ,   ' BRIVE'    ,     '07:00:00'  ,     '08:00:00'       ),
+				   ( 'IT108'  ,     106  ,    9   ,   ' BRIVE'   , ' PARIS'      ,      '19:00:00'  ,     '20:00:00'      ),
+				   ( 'IT109'  ,     107  ,    7   ,  ' PARIS'    , ' LYON'       ,      '18:00:00'  ,     '19:00:00'      ),
+				   ( 'IT110'  ,     102  ,    2   , ' TOULOUSE'  , ' PARIS'      ,      '15:00:00'  ,     '16:00:00'      ),
+				   ( 'IT111'  ,     101  ,    4   ,   ' NICE'    ,  ' NANTES'    ,      '17:00:00'  ,     '19:00:00'      ),
+				   ( 'IT112'  ,     103  ,    5   , ' PARIS'     ,    ' NICE'    ,       '11:00:00'  ,     '13:00:00'      ),
+				   ( 'IT113'  ,     104  ,    6   , ' NICE '     , 'PARIS'       ,       '13:00:00'  ,     '15:00:00'      );
 				   
-
-
-
+DROP TABLE PILOTE 
+DROP TABLE VOL
+CR
 SELECT *FROM AVION
 SELECT *FROM PILOTE
 SELECT * FROM VOL
 
 --1 Quels sont les vols au départ de Paris entre 12h et 14h ?
-1) select  NOVOL
+1) select NOVOL,AV,,HD , HA
    from VOL
-   where VD = 'PARIS' AND HD IN (12,14)
+  where VD='PARIS' --AND  HD ='12'-- AND HA ='14'
+
+  SELECT AV , va ,HD , HA
+  FROM VOL
+  WHERE HD=12 AND HA=14
 -- Quels sont les pilotes dont le nom commence par "S" ?
 2) SELECT PILNOM
    FROM PILOTE
