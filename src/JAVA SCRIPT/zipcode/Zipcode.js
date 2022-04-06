@@ -7,6 +7,7 @@ fetch("https://arfp.github.io/tp/web/frontend/zipcodes/zipcodes.json")
 .then((données) => {
     data = données;
     console.log(data);
+
     // console.log('Nom de la commune de la ligne 5 : ' + données[4].nomCommune);
 
     const datalistElement = document.getElementById('datalist_code_postaux');
@@ -47,4 +48,4 @@ function afficherResultatRecherche(event){
             divResultat.appendChild(paragraph);
         }
     });
-
+}
