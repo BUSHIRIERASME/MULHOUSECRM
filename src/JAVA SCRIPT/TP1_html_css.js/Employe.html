@@ -5,12 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des employés</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="employees.js" defer></script>
+    <link rel="stylesheet" href="./employe.css">
+    <script src="employe.js" defer></script>
+    <style>
+       
+    </style>
 </head>
 <body>
+    <!-- <form action="#"> -->
     <H2><strong>liste des employés</strong></H2>
-    <label for ="EID"></label>
+    <!-- <label for ="EID"><strong>Identifiant Employé</strong></label>
+    <input list="datalist" id="EID"/>
+    <datalist id="EID" for="EID"><br>
+        <br>
+        <option value="EID">EID</option><br>
+    </datalist> -->
+    <table>
+        <thead>
+
+        </thead>
+        <tbody id="resultat">
+
+        </tbody>
+    </table>
+    <button for="valid" id="btn-validation">VALID</button>
+    <button for="delete" id="btn-suppression">DELETE</button>
+    <!-- </form> -->
+
+    <!--
     <table class="t1">
            <tr>
                <td><th>EID </th> </td>
@@ -27,7 +49,7 @@
             <td><th>t.nixon@email.com</th></td>
             <td><th>26733.33 </th></td>
             <td><th>1959</th></td>
-            <td><th><button>Duplicate</button><th><button>Delete</button></th></td>
+            <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
             </tr>
             <tr>
                 <td><th>2 </th> </td>
@@ -35,36 +57,94 @@
                 <td><th>g.winters@email.com</th></td>
                 <td><th>14229.17 </th></td>
                 <td><th>1957</th></td>
-                <td><th><button>Duplicate</button><th><button>Delete</button></th></td>
-                </tr>
-                <tr>
+                <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red" >Delete</button></th></td>
+            </tr>
+            <tr>
                     <td><th>3 </th> </td>
                     <td><th>Ashton Cox </th></td>
                     <td><th>a.ashton@email.com</th></td>
                     <td><th>7166.66 </th></td>
                     <td><th>1954</th></td>
-                    <td><th><button>Duplicate</button><th><button>Delete</button></th></td>
-                    </tr>
-                    <tr>
+                    <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr>
+            <tr>
                         <td><th>4 </th> </td>
                         <td><th>Cedric Kelly </th></td>
                         <td><th>c.kelly@email.com</th></td>
-                        <td><th>36088.33</th></td>
+                        <td><th>36088.33€</th></td>
                         <td><th>1998</th></td>
-                        <td><th><button>Duplicate</button><th><button>Delete</button></th></td>
-                        </tr> 
-                        
-    </table>
-    <!--
-    <form action "#">
+                        <td><th><button for="valid"style="background-color:blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+             </tr> 
+             <tr>
+                        <td><th>5 </th> </td>
+                        <td><th>Airi Satou </th></td>
+                        <td><th>a;satou@email.com</th></td>
+                        <td><th>13558.33€</th></td>
+                        <td><th>1987</th></td>
+                        <td><th><button for="valid" style="background-color:blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr> 
+             <tr>
+                        <td><th>6 </th> </td>
+                        <td><th>Brielle Williamson </th></td>
+                        <td><th>b.williamson@email.com</th></td>
+                        <td><th>31000.00€</th></td>
+                        <td><th>1959</th></td>
+                        <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr> 
+             <tr>
+                        <td><th>7 </th> </td>
+                        <td><th>Harrod Chandler </th></td>
+                        <td><th>h.chandler@email.com</th></td>
+                        <td><th>11458.33€</th></td>
+                        <td><th>1998</th></td>
+                        <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr> 
+             <tr>
+                        <td><th>8 </th> </td>
+                        <td><th>Rhona Davidson </th></td>
+                        <td><th>r.davidson@email.com</th></td>
+                        <td><th>27325.00€</th></td>
+                        <td><th>1965</th></td>
+                        <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr>
+            <tr>
+                        <td><th>9 </th> </td>
+                        <td><th>Colleen Hurst</th></td>
+                        <td><th>c.hurst@email.com</th></td>
+                        <td><th>17125.00€</th></td>
+                        <td><th>1998</th></td>
+                        <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr> 
+            <tr>
+                        <td><th>10 </th> </td>
+                        <td><th>Sonya frost </th></td>
+                        <td><th>s.frost@email.com</th></td>
+                        <td><th>8633.33€</th></td>
+                        <td><th>1997</th></td>
+                        <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+            </tr>
+             <tr>
+                        <td><th>11 </th> </td>
+                        <td><th>Erasme Bushiri </th></td>
+                        <td><th>e.bushiri@email.com</th></td>
+                        <td><th>36088.33</th></td>
+                        <td><th>1965</th></td>
+                        <td><th><button for="valid" style="background-color: blue">Duplicate</button><th><button for="valid" style="background-color:red">Delete</button></th></td>
+             </tr>   
+        </table>
+  <br>
+  <br>
+ 
+  <br>
       <h3><strong> Liste des employés</strong></h3>
       <label for="id"> <strong>ID</strong></label>
       <input list="datalist" id="id"/>
       <datalist id="datalist" for="id">
           <option value="id"> Identifiant employé</option>
       </datalist>
-      <button for="valid" id="btn_validation">Valider</button>
+      <button for="valid" id="btn_validation" style="background-color:green">Valider</button>
+      <button for="Delete" id="btn-supprimer" style="background-color:red">DELETE</button>
       <div id="resultat_recherché"></div>
-    </form> -->
+    -->
 </body>
 </html>
