@@ -18,7 +18,8 @@ for (let i=0 ; i< data.length ; i ++)
     dataEmployeeName.textContent = data[i].employee_name;
     row.appendChild(dataEmployeeName);
     tbodyElement.appendChild(row);
-    // optionElement.textContent = data[i].employee_name;
+    // optionElement.textContent = data[i].e
+    mployee_name;
     // optionElement.textContent.setAttribute('value',data[i].identifiant)
     // datalistElement.appendChild(optionElement);
 }
