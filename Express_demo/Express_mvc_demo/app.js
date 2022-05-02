@@ -9,7 +9,7 @@ app.use((req,res,next)=>{
     console.log('${method} ${path}');
     next()
 })
-
+/*
 app.get('/',(requete,response) => {
     response.send('Accueil'); 
 })
@@ -23,9 +23,14 @@ app.get('/about', (req,res)=>{
 
 app.get('/hello/:name ?',(req,res) => {
   let name = req.params.name ?? 'toto'
+  console.log(req.params);
   res.send('Bonjour${name}') 
 })
-
+*/
+app.use('/public',express.static(__dirname + '/public'))
+const router = require('./routers/index')// on recupere le route exporter dans index.js
+// le router est un midleware
+app.use('/',router)// tout le route vont demarrer à partir de ce racine 
 app.listen (80,() => {
     console.log("sevreur esrt prêt (http://localhost)")
 });
