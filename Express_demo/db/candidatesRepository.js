@@ -6,6 +6,7 @@ return new Promise((resolve,reject) =>{
            console.error('Erreur SQL:' + err)
            reject(err)
         } else{
+            console.log(rows)
            resolve(rows)
        }
     })

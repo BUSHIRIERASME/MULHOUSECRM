@@ -12,6 +12,7 @@ try{
     res.json(result)
 }catch(err)
 {
-  console.error(err)  
+  console.error(err)
+  res.end()  
 }
 }
