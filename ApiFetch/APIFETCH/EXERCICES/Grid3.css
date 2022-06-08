@@ -1,0 +1,34 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 80vh;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(3,1fr);
+    grid-template-areas: 
+    "Logo logo nav nav"
+    "content  content feature feature ";
+}
+.logo{
+    grid-area: Logo;
+    background-color: red;
+}
+.navigation{
+    grid-area: Navigation;
+    background-color: rgb(38, 17, 228);
+}
+.fontent{
+    grid-area: Content;
+    background-color: rgb(236, 225, 16);
+}
+.feature{
+    grid-area:Feature; 
+    background-color: rgb(20, 224, 54);
+}
+.footer{
+    grid-area: footer;
+    background-color:black;
+}

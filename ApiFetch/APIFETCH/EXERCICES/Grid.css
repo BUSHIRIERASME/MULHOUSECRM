@@ -1,0 +1,25 @@
+
+
+
+body{
+    margin: 20;
+    padding: 20;
+}
+.grid > div {
+    background-color: rgb(38, 0, 255);
+    border-color: solid 1px  #9999;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1,30% 50%);
+    grid-row:  1fr 1fr 1fr ;
+    grid-column-gap: 20px;
+    grid-auto-columns: 4fr;
+    
+}
+.child{
+    grid-template-columns: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    border: solid 1px #ff0! important;
+}
