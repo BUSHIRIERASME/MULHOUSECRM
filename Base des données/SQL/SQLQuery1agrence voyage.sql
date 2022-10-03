@@ -3,7 +3,7 @@
 DROP DATABASE    master
 CREATE DATABASE db_agrence_voyage
 
-USE db_agrence_voyage
+USE agrence_voyage
 
 -- creation des tables entités
 

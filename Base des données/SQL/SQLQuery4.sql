@@ -16,7 +16,7 @@ values( 001    , 2500    ,       15,         180),
 	  ( 004    , 4500    ,       25,        1200),
 	  ( 005    , 6000    ,       40,         550);
 
-CREATE TABLE pilote(
+/*CREATE TABLE pilote(
 code_pilo INT PRIMARY KEY
          
 

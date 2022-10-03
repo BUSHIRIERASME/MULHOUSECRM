@@ -1,0 +1,32 @@
+table{
+    border-collapse: collapse
+  }
+  
+  td,th{
+    border: 2px solid black;
+    padding: 20px;
+  }
+  .button1 {
+    background-color: #1f19c9;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .button2 {
+    background-color: #e31a38;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
