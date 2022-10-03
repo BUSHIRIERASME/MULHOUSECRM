@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 80vh;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(3,1fr);
+    grid-template-areas: 
+    "Logo logo nav nav"
+    "content  content feature feature ";
+}
+.item{
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
