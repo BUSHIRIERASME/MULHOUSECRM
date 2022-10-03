@@ -1,0 +1,29 @@
+.container{
+    border:solid 2px red;
+    display:flex;
+  }
+  
+  .item{
+    font-size:2em;
+    margin:5px;
+    padding:5px;
+    border:solid 2px black;
+    text-align:center;
+  }
+  
+  .header{
+    background-color: #9900FF;
+  }
+  
+  .menuLeft{
+    background-color: #00FFFF;
+  }
+  
+  .content{
+   background-color:#DDDDDD;
+  }
+  
+  .footer{
+   background-color:#FF00FF;
+  }
+
