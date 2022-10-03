@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0057)http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Conception d'une base de données</title>
+  
+  
+  <link rel="stylesheet" type="text/css" media="screen" href="./Conception d&#39;une base de données_files/article1.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./Conception d&#39;une base de données_files/code1.css">
+  <script src="./Conception d&#39;une base de données_files/fonctions-kit.js.télécharger" type="text/javascript"></script>
+  
+<style type="text/css">
+
+body {
+	background-color : #DDEEFF;
+	background: #DDEEFF;
+	font: normal;
+    font-family: Verdana;
+    font-weight: normal;    
+    margin: 0
+}
+
+img {
+    border:0
+}
+form {
+    margin : 0
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font-weight: normal;
+}
+td.iongl {
+	width : 1px;
+}
+td.bgongl {
+	background-image : url(./images/kitint.gif);
+	text-align : center;
+}
+td.bgmarron{
+    background-image : url(./images/kitMarronInt.gif);
+    background-repeat: repeat-x;  
+    text-align : center;
+
+}
+td.bgjaune{
+    background-image : url(./images/kitJauneInt.gif);
+    background-repeat: repeat-x;
+    text-align : center;
+}
+td.bgvert{
+    background-image : url(./images/kitVertInt.gif);
+    background-repeat: repeat-x;  
+    text-align : center;
+}
+
+.ntdrub:link {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+	color : #000000;
+	font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;
+    font-weight : bold;
+	font-size : 8pt;
+	text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td.trbleu {
+	background-color:#6389D8;
+	text-align : center;
+    margin: 0 ;
+	border: 0;
+	padding-top : 3px;
+	padding-bottom : 3px;
+	height : 34px;
+}
+td.fondart {
+    background-color:#FFFFFF;
+    
+}
+
+table.tbnoir{
+	background-color:#000000;
+}
+.titrepied {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size : 10pt;
+	font: normal;
+	font-weight: normal
+}
+
+</style>
+  
+  
+</head>
+<body>
+<table width="100%" cellspacing="4">
+	<tbody><tr>
+	<td align="center">
+		<table width="100%" cellspacing="0" cellpadding="0">
+			 				   				
+				<tbody><tr valign="top">
+					<td valign="top" class="fondart">
+						<table cellspacing="1" width="100%" class="tbnoir">
+							<tbody><tr>
+								<td class="fondart">
+									<div style="text-align:center;">
+									<table class="cadrearticle" width="90%" cellpadding="10" cellspacing="0">
+										<tbody><tr>
+											<td align="center" style="text-align:left">
+
+		<br>
+		<h1>SQL</h1>
+		<h1>1. Conception d'une base de données</h1>
+		<p class="dateArticle"></p><div class="synopsis">
+    <div class="paragraph">
+      Ce support de cours regroupe les notions concernant la modélisation conceptuelle de système d'information par schéma entités-associations (via l'étude des dépendances fonctionnelles), la traduction en schéma relationnel et la démarche inverse (rétro-conception). Il présente également les extensions majeures du modèle conceptuel de données.</div>
+    </div>
+
+    <br>
+    <a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L1">1. Introduction</a>
+    <br>
+    <a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2">2. Modèle conceptuel de données (MCD)</a>
+    <br>
+    <a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1">2-1. Schéma entités-associations</a>
+    <br>
+    <a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1-1">2-1-1. Entités et associations</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1-2">2-1-2. Attributs et identifiants</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1-3">2-1-3. Cardinalités</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1-4">2-1-4. Associations plurielles</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1-5">2-1-5. Association réflexive</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-1-6">2-1-6. Associations non binaires</a>
+    <br>
+    <a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-2">2-2. Règles de normalisation</a>
+    <br>
+    <a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-2-1">2-2-1. Les bonnes pratiques dans un schéma entités-associations</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-2-2">2-2-2. Les formes normales</a>
+    <br>
+    <a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3">2-3. Dépendances fonctionnelles</a>
+    <br>
+    <a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3-1">2-3-1. Définitions et propriétés</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3-2">2-3-2. Graphe de couverture minimale</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3-3">2-3-3. Traduction vers un schéma entités-associations</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3-4">2-3-4. Gestion des dates et du caractère historique</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3-5">2-3-5. Dépendances plurielles et réflexives</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-3-6">2-3-6. Associations sans attributs</a>
+    <br>
+    <a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L2-4">2-4. Méthodologie de base</a>
+    <br>
+    <a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3">3. Modèle logique de données (MLD)</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3-1">3-1. Systèmes logiques</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3-2">3-2. Modèle logique relationnel</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3-2-1">3-2-1. Tables, lignes et colonnes</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3-2-2">3-2-2. Clés primaires et clés étrangères</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3-2-3">3-2-3. Schéma relationnel</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L3-3">3-3. Traduction d'un MCD en un MLDR</a>
+    <br><a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L4">4. Modèle physique de données (MPD)</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L4-1">4-1. Distinction entre MLD et MPD</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L4-2">4-2. Optimisations</a>
+    <br><a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L5">5. Rétro-conception</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L5-1">5-1. Traduction inverse</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L5-2">5-2. Cas particuliers</a>
+    <br><a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6">6. Compléments</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-1">6-1. Agrégation</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-1-1">6-1-1. Association de type 1&nbsp;:&nbsp;n</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-1-2">6-1-2. Association de type n&nbsp;:&nbsp;m</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-1-3">6-1-3. Tables de codification ou tables de référence</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-2">6-2. Identifiant relatif ou lien identifiant</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-2-1">6-2-1. Résolution d'un problème sur le schéma relationnel</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-2-2">6-2-2. Modèle conceptuel correspondant</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-2-3">6-2-3. Discussion autour de la numérotation des exemplaires</a>
+    <br><a class="summaryIndent1" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-3">6-3. Héritage</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-3-1">6-3-1. Sous-entité</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-3-2">6-3-2. Utilisation de l'héritage pour séparer les informations complémentaires</a>
+    <br><a class="summaryIndent2" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L6-3-3">6-3-3. Spécialisation des associations</a>
+    <br><a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L7">7. Conclusion</a>
+    <br><a class="summaryIndent0" href="http://perso.univ-lemans.fr/~cpiau/BD/SQL_PAGES/SQL0.html#L8">8. Références</a>
+    <br><br>
+
+    <br><h1 class="TitreSection0" id="L1">1. Introduction</h1>
+      
+      <div class="paragraph">Quand nous construisons directement les tables d'une base de données dans un logiciel de gestion des bases de données (Oracle, SQL Server, DB2, Access, MySQL, PostGre, ...), nous sommes exposés à deux types de problème : </div><br>
+      
+			<ul style="list-style-type: disc;">
+				<li>Nous ne savons pas toujours dans quelle table placer certaines colonnes (par exemple, l'adresse de livraison se met dans la table des clients ou dans la table des commandes ?) ;</li>
+				<li>Nous avons du mal à prévoir les tables de jonction intermédiaires, par exemple, la table des interprétations qui est indispensable entre les tables des films et la table des acteurs).</li>
+			</ul>
+	  
+	  
+	  <div class="paragraph">Il est donc nécessaire de recourir à une étape préliminaire de conception.</div><br>
+      <div class="paragraph">Les techniques présentées ici font partie de la méthodologie Merise (Méthode d'Étude et de Réalisation Informatique pour les Systèmes d'Entreprise) élaborée en France en 1978 [Tardieu  <i>et al.</i>], qui permet notamment de concevoir un système d'information d'une façon standardisée et méthodique.</div><br>
+      <div class="paragraph">Le but de ce support de cours est d'introduire le schéma entités-associations section «&nbsp;Modèle conceptuel de données (MCD)&nbsp;»), le schéma relationnel (sections «&nbsp;Modèle logique de données (MLD)&nbsp;»&nbsp; et «&nbsp;Modèle physique de données (MPD)&nbsp;») et d'expliquer la traduction entre les deux (sections «&nbsp;Traduction d'un MCD en un MLDR&nbsp;» et «&nbsp;Rétro-conception&nbsp;»). La construction du schéma entités-associations peut se faire en étudiant les dépendances fonctionnelles (section «&nbsp;Dépendances fonctionnelles&nbsp;») et en tenant compte d'un certain nombre d'extensions conceptuelles incontournables (section «&nbsp;Compléments&nbsp;»). </div><br>
+      <div class="paragraph">Ne seront  pas abordés ici : les contraintes, les traitements, le langage relationnel et la gestion de projet.  La modélisation objet ne fait pas non plus partie des outils exposés dans ce document.</div><br>
+    
+    <br><h1 class="TitreSection0" id="L2">2. Modèle conceptuel de données (MCD)</h1>
+      
+      <div class="paragraph">Avant de réfléchir au schéma relationnel d'une application, il est bon de modéliser la problématique à traiter d'un point de vue conceptuel et indépendamment du logiciel utilisé.</div><br>
+      <br><h2 class="TitreSection1" id="L2-1">2-1. Schéma entités-associations</h2>
+        
+        <div class="paragraph">La modélisation conceptuelle que nous proposons dans ce document pour un univers dont on veut stocker les données, conduit à l'élaboration d'un type de schéma très répandu, le schéma entités-associations.</div><br>
+        <br><h3 class="TitreSection2" id="L2-1-1">2-1-1. Entités et associations</h3>
+          
+          <div class="paragraph">Une <span style="text-decoration: underline;">entité</span> est une population d'individus homogènes. Par exemple, les produits ou les articles vendus par une entreprise peuvent être regroupés dans une même entité articles (figure&nbsp;1), car d'un article à l'autre, les informations ne changent pas de nature (à chaque fois, il s'agit de la désignation, du prix unitaire, etc.).</div><br>
+     
+     
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig1.jpg" alt="Figure 1 - Entités"><div class="legimage">Figure 1 - Entités</div></div>
+     
+          
+          
+       
+			
+		
+          <div class="paragraph">Par contre, les articles et les clients ne peuvent pas être regroupés : leurs informations ne sont pas homogènes (un article ne possède pas d'adresse et un client ne possède pas de prix unitaire). Il faut donc leur réserver deux entités distinctes : l'entité articles et l'entité clients.</div><br>
+          <div class="paragraph">Une <span style="text-decoration: underline;">association</span> est une liaison qui a une signification précise entre plusieurs entités. Dans notre exemple, l'association commander est une liaison évidente entre les entités articles et clients, tandis que l'association livrer établit le lien sémantique entre les entités articles et fournisseurs.</div><br>
+
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig2.jpg" alt="Figure 2 - Associations"><div class="legimage">Figure&nbsp;2&nbsp;- Associations</div></div>
+
+
+          <div class="paragraph">Remarquons que dans ce schéma, les entités clients et fournisseurs ne sont pas liées directement, mais indirectement, via l'entité articles, ce qui est assez naturel.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-1-2">2-1-2. Attributs et identifiants</h3>
+          
+          <div class="paragraph">Un <span style="text-decoration: underline;">attribut</span> est une propriété d'une entité ou d'une association.</div><br>
+          <div class="paragraph">Toujours dans notre exemple (figure&nbsp;3), le prix unitaire est un attribut de l'entité articles, le nom de famille est un attribut de l'entité clients, la quantité commandée est un attribut de l'association commander et la date de livraison est un attribut de l'association livrer.</div><br>
+
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig3.jpg" alt="Figure 3 - Attributs"><div class="legimage">Figure&nbsp;3&nbsp;- Attributs</div></div>
+
+
+          <div class="paragraph">Une entité et ses attributs ne doivent traiter que d'un seul sujet afin d'assurer une certaine cohérence au modèle. Dans notre exemple, il est donc préférable de ne pas mettre les informations relatives aux fournisseurs dans l'entité des articles mais plutôt dans une entité fournisseurs séparées (et liée à l'entité articles via l'association livrer).</div><br>
+          <div class="paragraph">Ensuite, chaque individu d'une entité doit être identifiable de manière unique. C'est pourquoi toutes les entités doivent posséder un attribut <span style="text-decoration: underline;">sans doublon</span><span style="text-decoration: underline;"> </span>(c'est-à-dire ne prenant pas deux fois la même valeur). Il s'agit de l'<span style="text-decoration: underline;">identifiant</span> que l'on souligne sur le schéma, par convention. Le numéro de client constitue un identifiant classique pour l'entité clients (figure&nbsp;4).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig4.jpg" alt="Figure 4 - Identifiants"><div class="legimage">Figure&nbsp;4&nbsp;- Identifiants</div></div>
+
+
+
+
+					<div class="titreliste">Remarques :</div><ul style="list-style-type: disc;">
+						<li>une entité possède au moins un attribut (son identifiant) ;</li>
+						<li>au contraire, une association peut être dépourvue d'attribut.</li>
+					</ul>
+
+
+        
+        <br><h3 class="TitreSection2" id="L2-1-3">2-1-3. Cardinalités</h3>
+          
+          <div class="paragraph">La <span style="text-decoration: underline;">cardinalité</span> d'un lien entre une entité et une association précise le minimum et le maximum de fois</div><br>
+          <div class="paragraph">qu'un individu de l'entité peut être concerné par l'association.</div><br>
+          <div class="paragraph">Exemple : un client a au moins commandé un article et peut commander n articles (n étant indéterminé), tandis qu'un article peut avoir été commandé entre 0 et n fois (même si ce n'est pas le même n que précédemment). On obtient alors le schéma entités-associations complet (figure&nbsp;5).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig5.jpg" alt="Figure 5 - Cardinalités"><div class="legimage">Figure&nbsp;5&nbsp;- Cardinalités</div></div>
+
+
+          <div class="paragraph">Une cardinalité minimale de 1 doit se justifier par le fait que les individus de l'entité en question ont besoin de l'association pour exister (un client n'existe pas avant d'avoir commandé quoique ce soit, donc la cardinalité minimale de l'entité clients dans l'association commander est 1). Dans tous les autres cas, la cardinalité minimale vaut 0 (c'est le cas pour une liste préétablie d'articles par exemple).</div><br>
+          <div class="paragraph">Ceci dit, la discussion autour d'une cardinalité minimale 0 ou 1 n'est vraiment intéressante que lorsque la cardinalité maximale est 1. Nous verrons en effet lors de la traduction vers un schéma relationnel (section «&nbsp;Traduction d'un MCD en un MLDR&nbsp;»), que lorsque la cardinalité maximale est n, nous ne pouvons pas faire la différence entre une cardinalité minimale de 0 et une cardinalité minimale de 1.</div><br>
+          <div class="paragraph">Notons que sur notre exemple, un article peut être commandé par plusieurs clients. Cela provient du fait que tous les crayons rouges ne sont pas numérotés individuellement, mais portent un numéro d'article <span style="text-decoration: underline;">collectif</span>. En toute rigueur, notre entité articles aurait du s'appeler types d'article. Ainsi, un crayon rouge peut être commandé par plusieurs clients, ce n'est simplement pas le même crayon à chaque fois. Il s'agit d'un choix de modélisation, le lecteur peut très légitimement faire le choix inverse qui consiste à numéroter individuellement chaque crayon rouge.</div><br>
+          <div class="paragraph">La seule difficulté pour établir correctement les cardinalités est de se poser les questions dans le bon sens. Autour de l'association commander, par exemple :</div><br>
+ 
+					<ul style="list-style-type: disc;">
+						<li>côté clients, la question est « un client peut commander combien d'articles ? » et la réponse est « entre 1 et plusieurs » ;</li>
+						<li>côté articles, la question est « un article peut être commandé par combien de client ? » et cette fois-ci, la réponse est « entre 0 et plusieurs ».</li>
+					</ul>
+ 
+		  
+		  
+        <br><h3 class="TitreSection2" id="L2-1-4">2-1-4. Associations plurielles</h3>
+          
+          <div class="paragraph">Deux mêmes entités peuvent être plusieurs fois en association (c'est le cas sur la figure&nbsp;6).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig6.jpg" alt="Figure 6 - Associations plurielles"><div class="legimage">Figure&nbsp;6&nbsp;- Associations plurielles</div></div>
+
+
+          <div class="paragraph">Dans cet exemple issu d'une agence immobilière, une personne peut être propriétaire, résider principalement ou résider secondairement dans un logement géré par l'agence. Les logements qui ne sont pas gérés par l'agence ne figurent pas dans l'entité des logements, ce qui explique certaines cardinalités 0 du schéma. Nous supposons également qu'un logement n'est détenu que par une seule personne et que ce propriétaire figure obligatoirement dans l'entité des personnes.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-1-5">2-1-5. Association réflexive</h3>
+          
+          <div class="paragraph">Il est permis à une association d'être branchée plusieurs fois à la même entité, comme par exemple l'association binaire <span style="text-decoration: underline;">réflexive</span> de la figure&nbsp;7.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig7.jpg" alt="Figure 7 - Association reflexive"><div class="legimage">Figure&nbsp;7&nbsp;- Association reflexive</div></div>
+
+
+          <div class="paragraph">Dans cet exemple, tout employé est dirigé par un autre employé (sauf le directeur général) et un employé peut diriger plusieurs autres employés, ce qui explique les cardinalités sur le schéma.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-1-6">2-1-6. Associations non binaires</h3>
+          
+          <div class="paragraph">Lorsqu'autour d'une entité, toutes les associations ont pour cardinalités maximales 1 au centre et n à l'extérieur, cette entité est candidate pour être remplacée par une association branchée à toutes les entités voisines avec des cardinalités identiques 0,n.</div><br>
+          <div class="paragraph">La deuxième condition qu'il faut impérativement satisfaire est la règle de normalisation des attributs des associations (section suivante). Cette règle conduit parfois à l'apparition d'associations qui établissent un lien sémantique entre 3 entités ou plus.</div><br>
+          <div class="paragraph">Sur l'exemple de la figure&nbsp;8 issu d'un cinéma, l'entité projections est uniquement entourée d'associations dont les cardinalités maximales sont 1 côté projections et n de l'autre côté. De plus, la donnée d'un créneau, d'un film et d'une salle suffit à déterminer une projection unique. On peut donc la remplacer par une association projeter branchée aux trois entités salles, créneaux horaires et films. On parle alors d'association <span style="text-decoration: underline;">ternaire</span>.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig8.jpg" alt="Figure 8 - Entité remplaçable par une association ternaire"><div class="legimage">Figure&nbsp;8&nbsp;- Entité remplaçable par une association ternaire</div></div>
+
+
+          <div class="paragraph">La difficulté de concevoir une association ternaire (ou plus) directement est d'établir les bonnes cardinalités. Il est donc conseillé d'en passer par un schéma entités-associations dans lequel on ne trouve que des associations binaires, puis de repérer les entités remplaçables par des associations, comme sur la figure&nbsp;8 à gauche.</div><br>
+          <div class="paragraph">Cette règle de conduite permet d'éviter d'introduire une association ternaire abusive, par exemple entre les avions, les pilotes et les vols (figure&nbsp;9), car le concepteur peut s'apercevoir que l'une des cardinalités maximales ne convient pas.</div><br>
+		  
+		  			<div class="image"><img src="./Conception d&#39;une base de données_files/fig9.jpg" alt="Figure 9 - Contre-exemple : l&#39;entité départs n&#39;est pas remplaçable par une association ternaire"><div class="legimage">Figure&nbsp;9&nbsp;- Contre-exemple : l'entité départs n'est pas remplaçable par une association ternaire</div></div>
+		  
+	      <div class="paragraph">Par ailleurs, une association peut être branchée à plus de trois entités, comme sur la figure&nbsp;10. Là-encore, le conseil pour être sûr de la légitimité de cette association 4-aire, est de vérifier les cardinalités sur un schéma intermédiaire faisant apparaître à la place, une entité occupations et quatre associations binaires.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig10.jpg" alt="Figure 10 - Exemple d&#39;entité quaternaire ou 4-aire"><div class="legimage">Figure&nbsp;10&nbsp;- Exemple d'entité quaternaire ou 4-aire</div></div>
+
+
+        
+      
+      <br><h2 class="TitreSection1" id="L2-2">2-2. Règles de normalisation</h2>
+        
+        <div class="paragraph">Un bon schéma entités-associations doit répondre à 9 règles de normalisation, que le concepteur doit connaître par coeur.</div><br>
+        <br><h3 class="TitreSection2" id="L2-2-1">2-2-1. Les bonnes pratiques dans un schéma entités-associations</h3>
+          
+          <div class="paragraph">
+            <b>Normalisation des entités</b> (importante) : toutes les entités qui sont remplaçables par une association doivent être remplacées (comme sur la figure&nbsp;8).</div><br>
+          <div class="paragraph">
+            <b>Normalisation des noms</b> : le nom d'une entité, d'une association ou d'un attribut doit être unique.</div><br>
+
+					<div class="titreliste">Conseils :</div><ul style="list-style-type: disc;">
+						<li>pour les entités, utiliser un nom commun au pluriel (par exemple : clients) ;</li>
+						<li>pour les associations, utiliser un verbe à l'infinitif (par exemple : effectuer, concerner) éventuellement à la forme passive (être commandé) et accompagné d'un adverbe (avoir lieu dans, pendant, à) ;</li>
+						<li>pour les attributs, utiliser un nom commun singulier (par exemple : nom, numéro, libellé, description), éventuellement accompagné du nom de l'entité ou de l'association dans laquelle il se trouve (par exemple : nom de client, numéro d'article).</li>
+					</ul>
+		  
+		  
+		  <div class="paragraph">Remarque : lorsqu'il reste plusieurs fois le même nom, c'est parfois symptomatique d'une modélisation qui n'est pas terminée (figure&nbsp;11(a)) ou le signe d'une redondance (figure&nbsp;11(b)).</div><br>
+          <div class="paragraph">
+            <br>(a) Deux entités homogènes peuvent être fusionnées</div><br>
+          <div class="paragraph">
+            <br>(b) Si deux attributs contiennent les mêmes informations, alors la redondance induit non seulement un gaspillage d'espace mais également un grand risque d'incohérence : ici, les adresses risquent de ne pas être les mêmes et dans ces conditions, où faut-il livrer&nbsp;?</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig11.jpg" alt="Figure 11 - Contre-exemples de la normalisation des noms"><div class="legimage">Figure&nbsp;11&nbsp;- Contre-exemples de la normalisation des noms</div></div>
+
+
+          <div class="paragraph">
+            <b>Normalisation des identifiants</b> : chaque entité doit posséder un identifiant.</div><br>
+
+
+					<div class="titreliste">Conseils :</div><ul style="list-style-type: disc;">
+						<li>éviter les identifiants composés de plusieurs attributs (comme par exemple un identifiant formé par les attributs nom et prénom), car d'une part c'est mauvais pour les performances et d'autres part, l'unicité supposée par une telle démarche finit tôt ou tard par être démentie ;</li>
+						<li>préférer un identifiant court pour rendre la recherche la plus rapide possible (éviter notamment les chaînes de caractères comme un numéro de plaque d'immatriculation, un numéro de sécurité sociale ou un code postal ) ;</li>
+						<li>éviter également les identifiants susceptibles de changer au cours du temps (comme les plaques d'immatriculation ou les numéros de sécurité sociale provisoires).</li>
+					</ul>
+
+		  
+		  <div class="paragraph">Conclusion : <span style="text-decoration: underline;">l'identifiant</span> sur un schéma entités-associations (et donc la future clé primaire dans le schéma relationnel) <span style="text-decoration: underline;">doit être un entier</span>, de préférence <span style="text-decoration: underline;">incrémenté automatiquement</span>.</div><br>
+          <div class="paragraph">
+            <b>Normalisation des attributs</b> (importante) : remplacer les attributs en plusieurs exemplaires en une association supplémentaire de cardinalités maximales n et ne pas ajouter d'attribut calculable à partir d'autres attributs.</div><br>
+          <div class="paragraph">En effet, d'une part, les attributs en plusieurs exemplaires posent des problèmes d'évolutivité du modèle (sur la figure&nbsp;12(a) à gauche, comment faire si un employé a deux adresses secondaires ?) et d'autre part, les attributs calculables induisent un risque d'incohérence entre les valeurs des attributs de base et celles des attributs calculés, comme sur la figure&nbsp;12(b).</div><br>
+          
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig11a.jpg" alt=""></div>
+          
+          
+		  <div class="paragraph">
+            <br>(a) Attributs en plusieurs exemplaires remplacés par une association supplémentaire</div><br>
+          <div class="paragraph">
+            <br>(b) Attribut calculable qu'il faut retirer du schéma</div><br>
+ 
+ 
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig12.jpg" alt="Figure 12 - Contre-exemples de la normalisation des attributs"><div class="legimage">Figure&nbsp;12&nbsp;- Contre-exemples de la normalisation des attributs</div></div>
+ 
+ 
+ 
+          <div class="paragraph">D'autres d'attributs calculables classiques sont à éviter, comme l'âge (qui est calculable à partir de la date de naissance) ou encore le département (calculable à partir d'une sous-chaîne du code postal).</div><br>
+          <div class="paragraph">
+            <b>Normalisation des attributs des associations</b> (importante) : les attributs d'une association doivent dépendre directement des identifiants de <span style="text-decoration: underline;">toutes</span> les entités en association.</div><br>
+          <div class="paragraph">Par exemple, sur la figure&nbsp;5 la quantité commandée dépend à la fois du numéro de client et du numéro d'article, par contre la date de commande non. Il faut donc faire une entité commandes à part, idem pour les livraisons (figure&nbsp;13).</div><br>
+
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig13.jpg" alt="Figure 13 - Normalisation des attributs des associations"><div class="legimage">Figure&nbsp;13&nbsp;- Normalisation des attributs des associations</div></div>
+
+          <div class="paragraph">L'inconvénient de cette règle de normalisation est qu'elle est difficile à appliquer pour les associations qui ne possèdent pas d'attribut. Pour vérifier malgré tout qu'une association sans attribut est bien normalisée, on peut donner temporairement à cette association un attribut imaginaire (mais pertinent) qui permet de vérifier la règle.</div><br>
+          <div class="paragraph">Par exemple, entre les entités livres et auteurs de la figure&nbsp;16, l'association écrire ne possède pas d'attribut. Imaginons que nous ajoutions un attribut pourcentage qui contient le pourcentage du livre écrit par chaque auteur (du même livre). Comme cet attribut pourcentage dépend à la fois du numéro de livre et du numéro d'auteur, l'association écrire est bien normalisée.</div><br>
+          <div class="paragraph">Autre conséquence de la normalisation des attributs des associations : une entité avec une cardinalité de 1,1 ou 0,1 aspire les attributs de l'association (figure&nbsp;14).</div><br>
+
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig14.jpg" alt="Figure 14 - Cardinalité 1,1 et attributs d&#39;une association"><div class="legimage">Figure&nbsp;14&nbsp;- Cardinalité 1,1 et attributs d'une association</div></div>
+
+
+          <div class="paragraph">
+            <b>Normal</b>
+            <b>isation des associations</b> (importante) : il faut éliminer les associations fantômes (figure&nbsp;15(a)), redondantes (figure&nbsp;15(b)) ou en plusieurs exemplaires (figure&nbsp;15(c)).</div><br>
+          <div class="paragraph">
+          
+          			<img src="./Conception d&#39;une base de données_files/fig15a.jpg" alt="">
+          
+            <br>(a) les cardinalités sont toutes 1,1 donc c'est une association fantôme</div><br>
+          <div class="paragraph">
+          
+          			<img src="./Conception d&#39;une base de données_files/fig15b.jpg" alt="">
+          
+            <br>(b) si un client ne peut pas régler la facture d'un autre client, alors l'association payer est inutile et doit être supprimée (dans le cas contraire, l'association payer doit être maintenue)</div><br>
+          <div class="paragraph">
+          
+          			<img src="./Conception d&#39;une base de données_files/fig15c.jpg" alt="">
+          
+            <br>(c) une association suffit pour remplacer les 4 associations participer en tant que ...</div><br>
+
+					<div class="image"><div class="legimage">Figure&nbsp;15&nbsp;- Contre-exemples de la normalisation des associations</div></div>
+
+
+
+          <div class="paragraph">En ce qui concerne les associations redondantes, cela signifie que s'il existe deux chemins pour se rendre d'une entité à une autre, alors ils doivent avoir deux significations ou deux durées de vie différentes. Sinon, il faut supprimer le chemin le plus court, car il est déductible à partir de l'autre chemin. Dans notre exemple de la figure&nbsp;15(b), si on supprime l'association payer, on peut retrouver le client qui a payé le règlement en passant par la facture qui correspond.</div><br>
+          <div class="paragraph">Remarque : une autre solution pour le problème de la figure&nbsp;15(b) consiste à retirer l'entité règlements et d'ajouter une association régler avec les mêmes attributs (sauf l'identifiant) entre les entités clients et factures.</div><br>
+          <div class="paragraph">
+            <b>Normalisation des cardinalités</b> : une cardinalité minimale est toujours 0 ou 1 (et pas 2, 3 ou n) et une cardinalité maximale est toujours 1 ou n (et pas 2, 3, ...).</div><br>
+          <div class="paragraph">Cela signifie que si une cardinalité maximale est connue et vaut 2, 3 ou plus (comme sur la figure&nbsp;15(c) à droite, ou pour un nombre limité d'emprunts dans une bibliothèque), alors nous considérons quand même qu'elle est indéterminée et vaut n. Cela se justifie par le fait que même si nous connaissons n au moment de la conception, il se peut que cette valeur évolue au cours du temps. Il vaut donc mieux considérer n comme une inconnue dès le départ.</div><br>
+          <div class="paragraph">Cela signifie également qu'on ne modélise pas les cardinalités minimales qui valent plus de 1 car ce genre de valeur est aussi amené à évoluer. Par ailleurs, avec une cardinalité maximale de 'association n'aurait aucune signification.</div><br>
+          <div class="paragraph">Dans un SGBD relationnel, nous pourrions assurer les cardinalités valant 2, 3 ou plus, via l'utilisation de déclencheurs. Mais cette notion n'est pas abordée dans ce document qui se contente, au contraire, de décrire ce qu'il est possible de faire sans utiliser de déclencheur.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-2-2">2-2-2. Les formes normales</h3>
+          
+          <div class="paragraph">À ces 6 règles de normalisation, il convient d'ajouter les 3 premières formes normales traditionnellement énoncées pour les schémas relationnels, mais qui trouvent tout aussi bien leur place en ce qui concerne les schémas entités-associations.</div><br>
+          <div class="paragraph">
+            <b>Première forme normale</b> : à un instant donné dans une entité, pour un individu, un attribut ne peut prendre qu'une valeur et non pas, un ensemble ou une liste de valeurs.</div><br>
+          <div class="paragraph">Si un attribut prend plusieurs valeurs, alors ces valeurs doivent faire l'objet d'une entité supplémentaire, en association avec la première (figure&nbsp;16).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig16.jpg" alt="Figure 16 - Application de la première forme normale : il peut y avoir plusieurs auteurs pour un livre donné"><div class="legimage">Figure&nbsp;16&nbsp;- Application de la première forme normale : il peut y avoir plusieurs auteurs pour un livre donné</div></div>
+
+
+          <div class="paragraph">
+            <b>Deuxième forme normale</b> : l'identifiant peut être composé de plusieurs attributs mais les autres attributs de l'entité doivent dépendre de l'identifiant en entier (et non pas une partie de cet identifiant).</div><br>
+          <div class="paragraph">Cette deuxième forme normales peut être oubliée si on suit le conseil de n'utiliser que des identifiants non composés et de type entier. En vérité, elle a été vidée de sa substance par la règle de normalisation des attributs des associations (paragraphe «&nbsp;<b>Normalisation des attributs des associations</b>&nbsp;»).</div><br>
+          <div class="paragraph">Considérons malgré tout le contre-exemple suivant : dans une entité clients dont l'identifiant est composé des attributs nom et prénom, la date de fête d'un client ne dépend pas de son identifiant en entier mais seulement de prénom. Elle ne doit pas figurer dans l'entité clients, il faut donc faire une entité calendrier à part, en association avec l'entité clients.</div><br>
+          <div class="paragraph">
+            <b>Troisième forme normale de Boyce-Codd</b> (importante) : tous les attributs d'une entité doivent dépendre <span style="text-decoration: underline;">directement</span> de son identifiant et d'aucun autre attribut. Si ce n'est pas le cas, il faut placer l'attribut pathologique dans une entité séparée, mais en association avec la première.</div><br>
+          <div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tbody><tr>
+							<th class="colonne_entete" style="text-align:center;">numéro avion</th>
+							<th class="colonne_entete" style="text-align:center;">constructeur</th>
+							<th class="colonne_entete" style="text-align:center;">modèle</th>
+							<th class="colonne_entete" style="text-align:center;">capacité</th>
+							<th class="colonne_entete" style="text-align:center;">propriétaire</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">1</td>
+							<td class="colonne" style="text-align:center;">Airbus</td>
+							<td class="colonne" style="text-align:center;">A380</td>
+							<td class="colonne" style="text-align:center;">180</td>
+							<td class="colonne" style="text-align:center;">Air France</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">2</td>
+							<td class="colonne" style="text-align:center;">Boeing</td>
+							<td class="colonne" style="text-align:center;">B747</td>
+							<td class="colonne" style="text-align:center;">314</td>
+							<td class="colonne" style="text-align:center;">British Airways</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">3</td>
+							<td class="colonne" style="text-align:center;">Airbus</td>
+							<td class="colonne" style="text-align:center;">A380</td>
+							<td class="colonne" style="text-align:center;">180</td>
+							<td class="colonne" style="text-align:center;">KLM</td>
+						</tr>
+					</tbody></table></div>
+          <div class="paragraph">Tableau&nbsp;17&nbsp;- Il y a redondance (et donc risque d'incohérence) dans les colonnes constructeur et capacité</div><br>
+          <div class="paragraph">Par exemple, l'entité avions (figure&nbsp;18 à gauche) dont les valeurs sont données dans le tableau&nbsp;17, n'est pas en troisième forme normale de Boyce-Codd, car la capacité et le constructeur d'un avion ne dépendent pas du numéro d'avion mais de son modèle. La solution améliorée est donnée figure&nbsp;18 à droite. </div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig18.jpg" alt="Figure 18 - Application de la troisième forme normale de Boyce-Codd"><div class="legimage">Figure&nbsp;18&nbsp;- Application de la troisième forme normale de Boyce-Codd</div></div>
+
+
+          <div class="paragraph">En toute rigueur, la colonne constructeur ne doit pas être maintenue dans l'entité modèles d'avion, mais doit être placée dans une entité séparée constructeurs (en association avec modèles d'avion), afin d'éviter la redondance du nom d'un constructeur pour tous ses modèles.</div><br>
+        
+      
+      <br><h2 class="TitreSection1" id="L2-3">2-3. Dépendances fonctionnelles</h2>
+        
+        <div class="paragraph">Pour établir efficacement un modèle entités-associations bien normalisé, on peut étudier au préalable les dépendances fonctionnelles entre les attributs puis, les organiser en graphe de couverture minimale. Cette technique est traditionnellement employée pour normaliser des schémas relationnels, mais elle s'applique très bien en amont, au niveau des modèles conceptuels.</div><br>
+        <br><h3 class="TitreSection2" id="L2-3-1">2-3-1. Définitions et propriétés</h3>
+          
+          <div class="paragraph">Un attribut Y <span style="text-decoration: underline;">dépend fonctionnellement</span> d'un attribut X si et seulement si une valeur de X induit une <span style="text-decoration: underline;">unique</span> valeur de Y. On note une dépendance fonctionnelle par une flèche simple : X  ?  Y.</div><br>
+          <div class="paragraph">Par exemple, si X est le numéro de client et Y le nom de client, alors on a bien X  ?  Y. Par contre, on a pas Y  ?  X, car plusieurs clients de numéros différents peuvent porter le même nom.</div><br>
+          <div class="paragraph">
+            <span style="text-decoration: underline;">Transitivité</span> : si X  ?  Y et Y  ?  Z alors X  ?  Z.</div><br>
+          <div class="paragraph">Par exemple, on a numéro de commande ? numéro de client  ? nom de client, donc on a aussi numéro de commande  ? nom de client. </div><br>
+          <div class="paragraph">Mais la dépendance fonctionnelle numéro de commande  ? nom de client est dite <span style="text-decoration: underline;">transitive</span>, car il faut passer par le numéro de client pour l'obtenir. Au contraire, la dépendance fonctionnelle numéro de client  ? nom de client est <span style="text-decoration: underline;">directe</span>. Seules les dépendances fonctionnelles directes nous intéressent. D'autres exemples sont donnés dans le tableau&nbsp;19.</div><br>
+          <div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="60%">
+						<tbody><tr>
+							<th class="colonne_entete" style="text-align:center;">dépendance fonctionnelle</th>
+							<th class="colonne_entete" style="text-align:center;">directe  ?</th>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">numéro de livraison  ? date de livraison</td>
+							<td class="colonne" style="text-align:center;">oui</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">numéro de livraison  ? numéro du fournisseur</td>
+							<td class="colonne" style="text-align:center;">oui</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">numéro du fournisseur  ? nom du fournisseur</td>
+							<td class="colonne" style="text-align:center;">oui</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">numéro de livraison  ? nom du fournisseur</td>
+							<td class="colonne" style="text-align:center;">non</td>
+						</tr>
+					</tbody></table></div>
+          <div class="paragraph">Tableau&nbsp;19&nbsp;- Exemples de dépendances fonctionnelles</div><br>
+          <div class="paragraph">Un attribut Y peut avoir une dépendance fonctionnelle qui repose sur la conjonction de plusieurs attributs, auquel cas la dépendance est dite <span style="text-decoration: underline;">non élémentaire</span>. Les dépendances fonctionnelles non élémentaires sont notées par une flèche unique mais comportant plusieurs points d'entrée (regroupés autour d'un cercle).</div><br>
+          <div class="paragraph">Par exemple, la quantité commandée (d'un article dans une commande) dépend de deux attributs : le numéro de commande et le numéro d'article (figure&nbsp;20). Notons que cette dépendance  numéro de commande + numéro d'article  ? quantité est à la fois non élémentaire et directe.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig20.jpg" alt="Figure 20 - Dépendance fonctionnelle non élémentaire, mais directe"><div class="legimage">Figure&nbsp;20&nbsp;- Dépendance fonctionnelle non élémentaire, mais directe</div></div>
+
+
+        
+        <br><h3 class="TitreSection2" id="L2-3-2">2-3-2. Graphe de couverture minimale</h3>
+          
+          <div class="paragraph">En représentant tous les attributs et toutes les dépendances fonctionnelles <span style="text-decoration: underline;">directes</span> entre eux, nous obtenons un réseau appelé <span style="text-decoration: underline;">graphe de couverture minimale</span>. Dans notre exemple sur les clients, les commandes et les articles, ce graphe est donné sur la figure&nbsp;21.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig21.jpg" alt="Figure 21 - Graphe de couverture minimale"><div class="legimage">Figure&nbsp;21&nbsp;- Graphe de couverture minimale</div></div>
+
+
+          <div class="paragraph">La technique de traduction en un schéma entités-associations qui suit, suppose qu'aucun attribut n'a été oublié sur le graphe de couverture minimal et notamment, aucun identifiant. D'ailleurs <span style="text-decoration: underline;">toutes les dépendances fonctionnelles du graphe doivent partir d'un identifiant</span>. Si ce n'est pas le cas, c'est qu'un identifiant a été omis.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-3-3">2-3-3. Traduction vers un schéma entités-associations</h3>
+          
+          <div class="paragraph">À partir du graphe de couverture minimale (figure&nbsp;21), le schéma entités-associations normalisé correspondant apparaît naturellement (figure&nbsp;22), en suivant quelques étapes simples.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig22.jpg" alt="Figure 22 - Identification des entités et des associations sur un graphe de couverture minimale"><div class="legimage">Figure&nbsp;22&nbsp;- Identification des entités et des associations sur un graphe de couverture minimale</div></div>
+
+
+          <div class="paragraph">
+            <b>Étape 1</b> : il faut repérer et souligner les identifiants.</div><br>
+          <div class="paragraph">
+            <b>Étape 2</b> : puis tous les attributs non identifiant qui dépendent directement d'un identifiant et d'un seul, forment une entité (avec l'identifiant, bien sûr).</div><br>
+          <div class="paragraph">
+            <b>Étape 3</b> : ensuite, les dépendances élémentaires entre les identifiants forment des associations binaires dont les cardinalités maximales sont 1 au départ de la dépendance fonctionnelle et n à l'arrivée.</div><br>
+          <div class="paragraph">
+            <b>Étape 4</b> : sauf si entre deux identifiants se trouvent deux dépendances élémentaires <span style="text-decoration: underline;">réflexives</span>, auquel cas l'association binaire a deux cardinalités maximales valant 1.</div><br>
+          <div class="paragraph">
+            <b>Étape 5</b> : enfin, les attributs (non identifiants) qui dépendent de plusieurs identifiants sont les attributs d'une association supplémentaire dont les cardinalités maximales sont toutes n.</div><br>
+          <div class="paragraph">La traduction du graphe de couverture minimale de la figure&nbsp;22 en un schéma entités-associations normalisé est donnée sur la figure&nbsp;23.</div><br>
+          
+		  			<div class="image"><img src="./Conception d&#39;une base de données_files/fig23.jpg" alt="Figure 23 - Schéma entités-associations normalisé obtenu à partir du graphe de couverture minimale"><div class="legimage">Figure&nbsp;23&nbsp;- Schéma entités-associations normalisé obtenu à partir du graphe de couverture minimale</div></div>
+
+		  <div class="paragraph">Dans ce genre de traduction, il faut donner un nom aux entités et aux associations, car ce n'est pas le cas sur le graphe de couverture minimale et il reste les cardinalités minimales à établir.</div><br>
+          <div class="paragraph">Remarquons également qu'en réalité, il faut déjà connaître les entités en présence pour établir correctement le graphe de couverture minimale, ne serait-ce que pour y faire figurer leurs identifiants. Donc finalement, cette technique n'est une aide pour établir les associations entre les entités et pour normaliser les entités et leurs associations (jusqu'en troisième forme normale de Boyce-Codd). </div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-3-4">2-3-4. Gestion des dates et du caractère historique</h3>
+          
+          <div class="paragraph">Dans une bibliothèque, on peut vouloir stocker les emprunts en cours (figure&nbsp;24) et/ou les emprunts historiques (figure&nbsp;25).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig24.jpg" alt="Figure 24 - Sans historisation des emprunts, pas de problème"><div class="legimage">Figure&nbsp;24&nbsp;- Sans historisation des emprunts, pas de problème</div></div>
+
+
+          <div class="paragraph">Pour les emprunts en cours, la date de retour prévu est un attribut de l'entité livres car un livre ne peut faire l'objet que d'un seul emprunt en cours. Dans ce cas, l'établissement du graphe de couverture minimal ne pose aucun problème.</div><br>
+          <div class="paragraph">Par contre, un livre peut faire l'objet de plusieurs emprunts historiques et dans ces conditions, la date d'emprunt est déterminante pour connaître la date de retour prévue (figure&nbsp;25 en haut à gauche). Or une date n'est pas un identifiant et une dépendance fonctionnelle ne peut partir que d'un ou plusieurs identifiant(s). C'est le signe qu'il manque un identifiant : le numéro d'emprunt (figure&nbsp;25 en haut à droite).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig25.jpg" alt="Figure 25 - Même pour une entité historisée, il vaut mieux éviter que la date n&#39;entre dans l&#39;identifiant"><div class="legimage">Figure&nbsp;25&nbsp;- Même pour une entité historisée, il vaut mieux éviter que la date n'entre dans l'identifiant</div></div>
+
+
+          <div class="paragraph">Notons que l'entité emprunts historiques supplémentaire qui apparaît après traduction (figure&nbsp;25 en bas) ne peut pas être transformée en une association comme on pourrait le croire au simple examen des cardinalités qui l'entourent. En effet, les attributs de l'association qui en résulterait ne vérifieraient pas la normalisation des attributs des associations. Notamment, la date de retour effectif ne dépend pas du numéro de livre et du numéro de membre, mais du numéro de livre et de la date d'emprunt.</div><br>
+          <div class="paragraph">La normalisation des entités ne s'applique donc pas aux entités qui ont un caractère historique. À moins que les dates ne soient regroupées dans une entité séparée, ce qui n'est pas conseillé tant qu'aucune information liée aux dates (comme le caractère férié, par exemple) n'est nécessaire.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-3-5">2-3-5. Dépendances plurielles et réflexives</h3>
+          
+          <div class="paragraph">Une ou plusieurs dépendances fonctionnelles peuvent partir ou arriver plusieurs fois du même attribut. Pour clarifier la signification de chaque dépendance fonctionnelle, on peut ajouter un commentaire sur la flèche (figure&nbsp;26). Ce commentaire sert ensuite à donner un nom aux associations correspondantes.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig26.jpg" alt="Figure 26 - Dépendances fonctionnelles commentées"><div class="legimage">Figure&nbsp;26&nbsp;- Dépendances fonctionnelles commentées</div></div>
+
+
+          <div class="paragraph">Les dépendances fonctionnelles plurielles entre les médecins et les remplacements (figure&nbsp;26(a)) deviennent, après traduction, des associations plurielles entre les entités médecins et remplacements. Notons que l'entité remplacements ainsi générée, a aussi un caractère historique.</div><br>
+          <div class="paragraph">Les fonctionnelles réflexives (X  ?  X), quoique toujours vraies, ne présentent aucun intérêt, à moins qu'elles aient une signification particulière. Un exemple de dépendance réflexive licite sur un graphe de couverture minimale est la dépendance fonctionnelle personne  ? personne, lorsqu'elle signifie « diriger », « être en couple avec » ou « être le père ou la mère de » (figure&nbsp;26(b)).</div><br>
+          <div class="paragraph">Dans le même ordre d'idée, il est inutile de faire figurer sur le graphe de couverture minimal des dépendances fonctionnelles non élémentaires vraies, mais idiotes, comme par exemple numéro de commande + numéro d'article  ? numéro de commande.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L2-3-6">2-3-6. Associations sans attributs</h3>
+          
+          <div class="paragraph">La lacune majeure de cette méthode reste tout de même le fait que les associations dont toutes les cardinalités maximales sont n mais qui sont <span style="text-decoration: underline;">sans attribut</span> ne figurent pas sur le graphe de couverture minimale. Il faut alors, soit leur inventer temporairement un attribut (comme pour la normalisation des attributs des associations), soit introduire une notation spéciale (par exemple, une dépendance non élémentaire qui ne débouche sur aucun attribut).</div><br>
+          <div class="paragraph">Pour illustrer ce défaut, prenons l'exemple des films et des acteurs (figure&nbsp;27).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig27.jpg" alt="Figure 27 - Utilisation d&#39;une dépendance non élémentaire et sans enfant sur un graphe de couverture minimal"><div class="legimage">Figure&nbsp;27&nbsp;- Utilisation d'une dépendance non élémentaire et sans enfant sur un graphe de couverture minimal</div></div>
+
+
+          <div class="paragraph">Il n'y a pas d'attribut qui dépende à la fois du numéro de film et du numéro d'acteur (à moins d'imaginer le temps d'apparition à l'écran). Et pourtant, les deux entités films et acteurs sont en association. Grâce à la dépendance non élémentaire et sans enfant, on peut rendre compte de cette situation sur le graphe de couverture minimale et faire ainsi apparaître l'association sur le schéma entités-associations qui en est traduit.</div><br>
+        
+      
+      <br><h2 class="TitreSection1" id="L2-4">2-4. Méthodologie de base</h2>
+        
+        <div class="paragraph">Face à une situation bien définie (soit à travers un énoncé précis, soit à travers une collection de formulaires ou d'états que le nouveau système d'information est censé remplacer), nous pouvons procéder sans établir le graphe de couverture minimale :</div><br>
+        
+				<ul style="list-style-type: disc;">
+					<li>identifier les entités en présence ;</li>
+					<li>lister leurs attributs ;</li>
+					<li>ajouter les identifiants (numéro arbitraire et auto-incrémenté) ;</li>
+					<li>établir les associations binaires entre les entités ;</li>
+					<li>lister leurs attributs ;</li>
+					<li>calculer les cardinalités ;</li>
+					<li>vérifier les règles de normalisation et en particulier, la normalisation des entités (c'est à ce stade qu'apparaissent les associations non binaires), des associations et de leurs attributs ainsi que la troisième forme normale de Boyce-Codd ;</li>
+					<li>effectuer les corrections nécessaires.</li>
+				</ul>
+        
+        
+        <div class="paragraph">Mais, il est parfois plus intuitif d'en passer par l'étude des dépendances fonctionnelles directes :</div><br>
+
+
+				<ul style="list-style-type: disc;">
+					<li>identifier les entités en présence et leur donner un identifiant (numéro arbitraire et auto-incrémenté) ;</li>
+					<li>ajouter l'ensemble des attributs et leur dépendances fonctionnelles directes avec les identifiants (en commençant par les dépendances élémentaires) ;</li>
+					<li>traduire le graphe de couverture minimale obtenu en un schéma entités-associations ;</li>
+					<li>ajuster les cardinalités minimales ;</li>
+					<li>à ce stade, la majorité des règles de normalisation devraient être vérifiées, il reste tout de même la normalisation des noms,  la présence d'attributs en plusieurs exemplaires et d'associations redondantes ou en plusieurs exemplaires, à corriger.</li>
+				</ul>
+
+		
+		<div class="paragraph">Il faut garder également à l'esprit que le modèle doit être <span style="text-decoration: underline;">exhaustif</span><span style="text-decoration: underline;"> </span>(c'est-à-dire contenir toutes les informations nécessaires) et éviter toute <span style="text-decoration: underline;">redondance</span> qui, on ne le dira jamais assez, constitue une perte d'espace, une démultiplication du travail de maintenance et un risque d'incohérence.</div><br>
+        <div class="paragraph">Il faut par ailleurs veiller à éliminer les <span style="text-decoration: underline;">synonymes</span><span style="text-decoration: underline;"> </span>(plusieurs signifiants pour un signifié, exemple : nom, patronyme, appellation) et les <span style="text-decoration: underline;">polysèmes</span> (plusieurs signifiés pour un signifiant, exemples : qualité, statut).</div><br>
+        <div class="paragraph">Il va de soi que cette méthodologie ne doit pas être suivie pas-à-pas une bonne fois pour toute. Au contraire, il faut itérer plusieurs fois les étapes successives, pour espérer converger vers une modélisation pertinente de la situation.</div><br>
+      
+    
+    <br><h1 class="TitreSection0" id="L3">3. Modèle logique de données (MLD)</h1>
+      
+      <div class="paragraph">Maintenant que le MCD est établi, on peut le traduire en différents systèmes logiques et notamment les bases de données relationnelles qui proposent une vision plus concrète pour modéliser la situation.</div><br>
+      <br><h2 class="TitreSection1" id="L3-1">3-1. Systèmes logiques</h2>
+        
+        <div class="paragraph">Avant l'apparition des systèmes de gestion de base de données (SGBD ou DBMS pour Data Base Management System), les données étaient stockées dans des fichiers binaires et gérées par des programmes exécutables (développés en Basic, Cobol ou Dbase, par exemple). [Gabay] propose à ce sujet une traduction d'un MPD vers un MLD fichier. Mais la maintenance des programmes (en cas de modification de la structure des données, notamment) était très problématique.</div><br>
+        <div class="paragraph">Sont alors apparus les SGBD <span style="text-decoration: underline;">hiérarchiques</span> dans lesquels les données sont organisées en arbre (IMS-DL1 d'IBM, par exemple), puis les SGBD <span style="text-decoration: underline;">réseaux</span> dans lesquels les données sont organisées selon un graphe plus général (IDS2 de Bull, par exemple). [Matheron], [Nanci  <i>et al.</i>]et [Gabay] décrivent la traduction d'un MPD vers un MLD Codasyl (base de données réseaux). Ces deux types de SGBD sont dit <span style="text-decoration: underline;">navigationnels</span> car on peut retrouver l'information à condition d'en connaître le chemin d'accès.</div><br>
+        <div class="paragraph">Aujourd'hui, ils sont largement remplacés par les SGBD relationnels (SGBDR) avec lesquels l'information peut être obtenue par une requête formulée dans un langage quasiment naturel (la langage SQL pour Structured Query Langage). Parmi les SGBDR les plus répandus nous trouvons Oracle, SQL Server et DB2. Nous nous contentons ici d'exposer le modèle logique de données relationnel (MLDR).</div><br>
+        <div class="paragraph">Plus récemment, sont apparus le modèle logique <span style="text-decoration: underline;">orienté objet</span> et même des SGBD orientés objets. Pourtant, les SGBD relationnels restent extrêmement majoritaires, tandis que l'approche orienté objet est parfaitement adaptée au développement d'applications clientes dynamiques et liées aux données du système d'information.</div><br>
+      
+      <br><h2 class="TitreSection1" id="L3-2">3-2. Modèle logique relationnel</h2>
+        
+        <div class="paragraph">Concentrons-nous désormais sur le MLDR.</div><br>
+        <br><h3 class="TitreSection2" id="L3-2-1">3-2-1. Tables, lignes et colonnes</h3>
+          
+          <div class="paragraph">Lorsque des données ont la même structure (comme par exemple, les renseignements relatifs aux clients), on peut les organiser en <span style="text-decoration: underline;">table</span><span style="text-decoration: underline;"> </span>dans laquelle les colonnes décrivent les champs en commun et les lignes contiennent les valeurs de ces champs pour chaque enregistrement (tableau&nbsp;28).</div><br>
+          <div style="text-align:center;"><table class="tableau" cellspacing="0" border="1" style="text-align: left;margin:0px auto;" width="80%">
+						<tbody><tr>
+							<td class="colonne" style="text-align:center;">numéro client</td>
+							<td class="colonne" style="text-align:center;">nom</td>
+							<td class="colonne" style="text-align:center;">prénom</td>
+							<td class="colonne" style="text-align:center;">adresse</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">1</td>
+							<td class="colonne" style="text-align:center;">Dupont</td>
+							<td class="colonne" style="text-align:center;">Michel</td>
+							<td class="colonne" style="text-align:center;">127, rue...</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">2</td>
+							<td class="colonne" style="text-align:center;">Durand</td>
+							<td class="colonne" style="text-align:center;">Jean</td>
+							<td class="colonne" style="text-align:center;">314, boulevard...</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">3</td>
+							<td class="colonne" style="text-align:center;">Dubois</td>
+							<td class="colonne" style="text-align:center;">Claire</td>
+							<td class="colonne" style="text-align:center;">51, avenue...</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">4</td>
+							<td class="colonne" style="text-align:center;">Dupuis</td>
+							<td class="colonne" style="text-align:center;">Marie</td>
+							<td class="colonne" style="text-align:center;">2, impasse...</td>
+						</tr>
+						<tr>
+							<td class="colonne" style="text-align:center;">...</td>
+							<td class="colonne" style="text-align:center;">...</td>
+							<td class="colonne" style="text-align:center;">...</td>
+							<td class="colonne" style="text-align:center;">...</td>
+						</tr>
+					</tbody></table></div>
+          <div class="paragraph">Tableau&nbsp;28&nbsp;- Contenu de la table clients, avec en première ligne les intitulés des colonnes</div><br>
+        
+        <br><h3 class="TitreSection2" id="L3-2-2">3-2-2. Clés primaires et clés étrangères</h3>
+          
+          <div class="paragraph">Les lignes d'une table doivent être uniques, cela signifie qu'une colonne (au moins) doit servir à les identifier. Il s'agit de la <span style="text-decoration: underline;">clé primaire</span> de la table.</div><br>
+          <div class="paragraph">L'absence de valeur dans une clé primaire ne doit pas être autorisée. Autrement dit, la valeur vide (NULL) est interdite dans une colonne qui sert de clé primaire, ce qui n'est pas forcément le cas des autres colonnes, dont certaines peuvent ne pas être renseignées à toutes les lignes.</div><br>
+          <div class="paragraph">De plus, la valeur de la clé primaire d'une ligne ne devrait pas, en principe, changer au cours du temps.</div><br>
+          <div class="paragraph">Par ailleurs, il se peut qu'une colonne Colonne1 d'une table ne doive contenir que des valeurs prises par la colonne Colonne2 d'une autre table (par exemple, le numéro du client sur une commande doit correspondre à un vrai numéro de client). 2 doit être sans doublons (bien souvent il s'agit d'une clé primaire). On dit alors que 1 est <span style="text-decoration: underline;">clé étrangère</span> et qu'elle <span style="text-decoration: underline;">référence</span> 2.</div><br>
+          <div class="paragraph">Par convention, on souligne les clés primaires et on fait précéder les clés étrangères d'un dièse # dans la description des colonnes d'une table :</div><br>
+          <div class="paragraph">clients(<span style="text-decoration: underline;">numéro client</span>, nom client, prénom, adresse client)</div><br>
+          <div class="paragraph">commandes(<span style="text-decoration: underline;">numéro commande</span>, date de commande, #numéro client (non vide))</div><br>
+          
+					<div class="titreliste">Remarques :</div><ul style="list-style-type: disc;">
+						<li>une même table peut avoir plusieurs clés étrangères mais une seule clé primaire (éventuellement composées de plusieurs colonnes) ;</li>
+						<li>une colonne clé étrangère peut aussi être primaire (dans la même table) ;</li>
+						<li>une clé étrangère peut être composée (c'est le cas si la clé primaire référencée est composée) ;</li>
+						<li>implicitement, chaque colonne qui compose une clé primaire ne peut pas recevoir la valeur vide (NULL interdit) ;</li>
+						<li>par contre, si une colonne clé étrangère ne doit pas recevoir la valeur vide, alors il faut le préciser dans la description des colonnes.</li>
+					</ul>
+
+		  
+		  <div class="paragraph">Les SGBDR vérifient au coup par coup que chaque clé étrangère ne prend pas de valeurs en dehors de celles déjà prises par la ou les colonne(s) qu'elle référence. Ce mécanisme qui agit lors de l'insertion, de la suppression ou de la mise à jour de lignes dans les tables, garantit ce que l'on appelle l'<span style="text-decoration: underline;">intégrité référentielle</span> des données.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L3-2-3">3-2-3. Schéma relationnel</h3>
+          
+          <div class="paragraph">On peut représenter les tables d'une base de données relationnelle par un schéma relationnel dans lequel les tables sont appelées <span style="text-decoration: underline;">relations</span><span style="text-decoration: underline;"> </span>et les liens entre les clés étrangères et leur clé primaire est symbolisé par un connecteur (figure&nbsp;29).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig29.jpg" alt="Figure 29 - Schéma relationnel simple entre deux tables"><div class="legimage">Figure&nbsp;29&nbsp;- Schéma relationnel simple entre deux tables</div></div>
+
+
+          <div class="paragraph">Certains éditeurs inscrivent sur le connecteur un symbole 1 côté clé primaire et un symbole ? côté clé étrangère (à condition que celle-ci ne soit pas déjà clé primaire). Il faut prendre garde avec cette convention, car le symbole ? se trouve du côté <span style="text-decoration: underline;">opposé</span><span style="text-decoration: underline;"> </span>à la cardinalité maximale n correspondante.</div><br>
+        
+      
+      <br><h2 class="TitreSection1" id="L3-3">3-3. Traduction d'un MCD en un MLDR</h2>
+        
+        <div class="paragraph">Pour traduire un MCD en un MLDR, il suffit d'appliquer cinq règles.</div><br>
+        <div class="paragraph">Notations : on dit qu'une association binaire (entre deux entités ou réflexive) est de type :</div><br>
+        
+
+
+				<ul style="list-style-type: disc;">
+					<li>1 : 1 (un à un) si aucune des deux cardinalités maximales n'est n ;</li>
+					<li>1 : n (un à plusieurs) si une des deux cardinalités maximales est n ;</li>
+					<li>n : m (plusieurs à plusieurs) si les deux cardinalités maximales sont n.</li>
+				</ul>
+
+		
+		<div class="paragraph">En fait, un schéma relationnel ne peut faire la différence entre 0,n et 1,n. Par contre, il peut la faire entre 0,1 et 1,1 (règles 2 et 4).</div><br>
+        <div class="paragraph">
+          <b>Règle 1</b> : toute entité devient une table dans laquelle les attributs deviennent les colonnes. L'identifiant de l'entité constitue alors la clé primaire de la table.</div><br>
+        <div class="paragraph">Par exemple, l'entité articles de la figure&nbsp;13 devient la table :</div><br>
+        <div class="paragraph">articles(<span style="text-decoration: underline;">numéro article</span>, désignation, prix unitaire de vente)</div><br>
+        <div class="paragraph">
+          <b>Règle 2</b> : une association binaire de type 1 : n disparaît, au profit d'une clé étrangère dans la table côté 0,1 ou 1,1 qui référence la clé primaire de l'autre table. Cette clé étrangère ne peut pas recevoir la valeur vide si la cardinalité est 1,1.</div><br>
+        <div class="paragraph">Par exemple, l'association livrer de la figure&nbsp;13 est traduite par :</div><br>
+        <div class="paragraph">fournisseurs(<span style="text-decoration: underline;">n° fournisseur</span>, nom contact, n° téléphone contact)</div><br>
+        <div class="paragraph">livraisons(<span style="text-decoration: underline;">n° livraison</span>, date de livraison, nom livreur, #n° fournisseur (non vide))</div><br>
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig30.jpg" alt="Figure 30 - Traduction d&#39;une association de type 1 : n"><div class="legimage">Figure&nbsp;30&nbsp;- Traduction d'une association de type 1 : n</div></div>
+
+
+        <div class="paragraph">Il ne devrait pas y avoir d'attribut dans une association de type 1 : n, mais s'il en reste, alors ils glissent vers la table côté 1.</div><br>
+        <div class="paragraph">
+          <b>Règle 3</b> : une association binaire de type n : m devient une table <span style="text-decoration: underline;">supplémentaire</span><span style="text-decoration: underline;"> </span>(parfois appelée <span style="text-decoration: underline;">table de jonction</span>, table de jointure ou table d'association) dont la clé primaire est composée de <span style="text-decoration: underline;">deux</span> clés étrangères (qui référencent les deux clés primaires des deux tables en association). Les attributs de l'association deviennent des colonnes de cette nouvelle table.</div><br>
+        <div class="paragraph">Par exemple, l'association concerner (1) de la figure&nbsp;13 est traduite par la table supplémentaire lignes de commande :</div><br>
+        <div class="paragraph">lignes de commande(<span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">n° commande, </span><span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">n° article</span>, quantité commandée)</div><br>
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig31.jpg" alt="Figure 31 - Traduction d&#39;une association de type n : m"><div class="legimage">Figure&nbsp;31&nbsp;- Traduction d'une association de type n : m</div></div>
+
+
+        <div class="paragraph">
+          <b>Règle 4</b> : une association binaire de type 1 : 1 est traduite comme une association binaire de type 1 : n sauf que la clé étrangère se voit imposer une contrainte d'unicité en plus d'une éventuelle contrainte de non vacuité (cette contrainte d'unicité impose à la colonne correspondante de ne prendre que des valeurs distinctes).</div><br>
+        <div class="paragraph">Si les associations fantômes ont été éliminées, il devrait y avoir au moins un côté de cardinalité 0,1. C'est alors dans la table du côté opposé que doit aller la clé étrangère. Si les deux côtés sont de cardinalité 0,1 alors la clé étrangère peut être placée indifféremment dans l'une des deux tables.</div><br>
+        <div class="paragraph">Par exemple, l'association diriger de la figure&nbsp;32 est traduite par :</div><br>
+        <div class="paragraph">services(<span style="text-decoration: underline;">n° service</span>, nom service, #numéro employé (non vide, unique))</div><br>
+        <div class="paragraph">employés(<span style="text-decoration: underline;">numéro employé</span>, nom)</div><br>
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig32.jpg" alt="Figure 32 - Traduction d&#39;une association de type 1 : 1"><div class="legimage">Figure&nbsp;32&nbsp;- Traduction d'une association de type 1 : 1</div></div>
+
+
+        <div class="paragraph">En réalité, la règle 4 proposée ici considère qu'une association binaire de type 1 : 1 correspond à une association binaire de type 1 : n particulière. Une alternative consiste à voir une association binaire de type 1 : 1 comme une association binaire de type n : m particulière. Il suffit pour cela d'ajouter une contrainte d'unicité sur chacune des clés étrangères de la table de jonction supplémentaire :</div><br>
+        <div class="paragraph">services(<span style="text-decoration: underline;">n° service</span>, nom service)</div><br>
+        <div class="paragraph">directions(<span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">n° service (unique), </span><span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">numéro employé (unique)</span><span style="text-decoration: underline;">)</span></div><br>
+        <div class="paragraph">employés(<span style="text-decoration: underline;">numéro employé</span>, nom)</div><br>
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig33.jpg" alt="Figure 33 - Traduction alternative d&#39;une association de type 1 : 1"><div class="legimage">Figure&nbsp;33&nbsp;- Traduction alternative d'une association de type 1 : 1</div></div>
+
+
+        <div class="paragraph">Mais rien ne garantit, dans cette traduction alternative (figure&nbsp;33), qu'un service possède un dirigeant, alors que c'est obligatoire. La première traduction (figure&nbsp;32) est donc préférable.</div><br>
+        <div class="paragraph">Remarque : d'autres techniques sont parfois proposées pour cette règle 4 (fusionner les tables, utiliser une clé primaire identique, utiliser deux clés étrangères réflexives) mais elles ne sont pas exploitables dans le cas général.</div><br>
+        <div class="paragraph">
+          <b>Règle 5</b> : une association non binaire  est traduite par une table supplémentaire dont la clé primaire est composée d'autant de clés étrangères que d'entités en association. Les attributs de l'association deviennent des colonnes de cette nouvelle table.</div><br>
+        <div class="paragraph">Par exemple, l'association projeter de la figure&nbsp;8 devient la table :</div><br>
+        <div class="paragraph">projections(<span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">n° film, </span><span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">n° salle, </span><span style="text-decoration: underline;">#</span><span style="text-decoration: underline;">n° créneau</span>, tarif)</div><br>
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig34.jpg" alt="Figure 34 - Traduction d&#39;une association ternaire"><div class="legimage">Figure&nbsp;34&nbsp;- Traduction d'une association ternaire</div></div>
+
+
+      
+    
+    <br><h1 class="TitreSection0" id="L4">4. Modèle physique de données (MPD)</h1>
+      
+      <div class="paragraph">Un modèle physique de données est l'implémentation particulière du modèle logique de données par un logiciel.</div><br>
+      <br><h2 class="TitreSection1" id="L4-1">4-1. Distinction entre MLD et MPD</h2>
+        
+        <div class="paragraph">La traduction d'un MLD conduit à un MPD qui précise notamment le stockage de chaque donnée à travers son type et sa taille (en octets ou en bits). Cette traduction est également l'occasion d'un certain nombre de libertés prises par rapport aux règles de normalisation afin d'optimiser les performances du système d'information.</div><br>
+        <div class="paragraph">La traduction d'un MLD <span style="text-decoration: underline;">relationnel</span> en un modèle physique est la création (par des requêtes SQL de type CREATE TABLE et ADD CONSTRAINT) d'une base de données hébergée par un SGBD relationnel particulier. Il peut s'agir d'une base Oracle, d'une base SQL Server, d'une base Access ou d'une base DB2, par exemple. Le fait que tous les SGBDR reposent sur le même modèle logique (le schéma relationnel) permet à la fois la communication entre des bases hétérogènes et la conversion d'une base de données d'une SGBDR à l'autre.</div><br>
+      
+      <br><h2 class="TitreSection1" id="L4-2">4-2. Optimisations</h2>
+        
+        <div class="paragraph">L'optimisation des performances en temps de calcul se fait toujours au détriment de l'espace mémoire consommé. Dans le pire des cas, réduire les temps de réponse consiste à dé-normaliser <span style="text-decoration: underline;">volontairement</span> le système d'information, avec tous les risques d'incohérence et les problèmes de gestion que cela comporte.</div><br>
+
+
+				<div class="titreliste">Pour les bases de données relationnelles, l'optimisation qui vise à accélérer les requêtes peut passer par :</div><ul style="list-style-type: disc;">
+					<li>l'ajout d'index aux tables (au minimum sur les colonnes clés primaires et clés étrangères) ; ces index consomment de l'espace mémoire supplémentaire, mais la base de données reste normalisée ;</li>
+					<li>l'ajout de colonnes calculées ou de certaines redondances pour éviter des jointures coûteuses (auquel cas la base est dé-normalisée) ; il faut alors veiller à ce que la cohérence entre les colonnes soit respectée, soit par l'utilisation de déclencheurs, soit dans les applications clientes du système d'information ;</li>
+					<li>la suppression des contraintes d'unicité, de non vacuité ou encore de clé étrangère (auquel cas, l'intégrité des données doit être assurée par le code client du système d'information).</li>
+				</ul>
+   
+	   
+	    <div class="paragraph">Par exemple, la table commandes de la figure&nbsp;31 peut être supprimée et la date de commande est alors ajoutée à la table lignes de commandes.</div><br>
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig35.jpg" alt="Figure 35 - Sacrifice de la troisième forme normale"><div class="legimage">Figure&nbsp;35&nbsp;- Sacrifice de la troisième forme normale</div></div>
+
+
+        <div class="paragraph">On renonce donc à la troisième forme normale (figure&nbsp;35) puisque la date de commande est répétée autant de fois qu'il y a de lignes dans la commande, mais on évite ainsi une jointure coûteuse en temps de calcul lors des requêtes SQL..</div><br>
+        <div class="paragraph">Le conseil le plus précieux, en matière d'optimisation, est de ne jamais optimiser  <i>a priori</i>, mais toujours <i>a posteriori</i>, c'est-à-dire en réponse à une lenteur que le SGBDR n'est pas capable de résoudre tout seul. Il faut alors mesurer le gain de toute optimisation manuelle en effectuant des tests (chronométrages avant/après) sur un volume de données significatif et de préférence en exploitation.</div><br>
+      
+    
+    <br><h1 class="TitreSection0" id="L5">5. Rétro-conception</h1>
+      
+      <div class="paragraph">Dans la majorité des cas, le travail du concepteur de bases de données consiste non pas à créer une base de données  <i>ex nihilo</i>, mais plutôt à corriger ou étendre une base existante. Dans ce cas, la matière de travail initiale est un modèle physique et la méthode de <span style="text-decoration: underline;">rétro-conception</span> ou reverse engineering consiste à traduire ce MPD en un modèle conceptuel, modifier le MCD obtenu puis modifier le modèle physique en conséquence.</div><br>
+      <br><h2 class="TitreSection1" id="L5-1">5-1. Traduction inverse</h2>
+        
+        <div class="paragraph">Dans le cadre des bases de données relationnelles, il faut convertir le modèle physique en un schéma relationnel normalisé (en détricotant les optimisations éventuelles et en renommant les colonnes des tables pour assurer l'unicité et le caractère explicite (non codé) des noms), puis appliquer les règles de traduction de la section «&nbsp;Traduction d'un MCD en un MLDR&nbsp;» dans le sens inverse.</div><br>
+        <div class="paragraph">
+          <br>
+          <b>Étape 1</b> : chaque table dont la clé primaire ne contient pas de clé étrangère devient une entité dont l'identifiant est la clé primaire de la table et dont les attributs sont les colonnes de la table qui ne sont pas clé étrangère.</div><br>
+        <div class="paragraph">
+          <b>Étape 3</b> : chaque table dont la clé primaire est composée <span style="text-decoration: underline;">exclusivement</span> de clés étrangères qui référencent <span style="text-decoration: underline;">plusieurs</span> clés primaires, devient une association autour de laquelle toutes les cardinalités maximales valent n, c'est-a-dire soit une association binaire de type n : m soit une association ternaire ou plus (les autres colonnes non clés étrangères de la table deviennent des attributs de l'association).</div><br>
+        <div class="paragraph">
+          <b>Étape 5</b> : les colonnes clés étrangères restantes deviennent des associations binaires de type 1 : n s'il n'y a pas de contrainte d'unicité ou de type 1 : 1 s'il y a une contrainte d'unicité (il faut trouver un nom à cette association).</div><br>
+        <div class="paragraph">
+          <b>Étape 6</b> : la cardinalité minimale vaut 1 pour les clés étrangères qui font partie d'une clé primaire ou qui possèdent une contrainte (non vide), sinon elle vaut 0.</div><br>
+      
+      <br><h2 class="TitreSection1" id="L5-2">5-2. Cas particuliers</h2>
+        
+        <div class="paragraph">Malheureusement, ces quatre étapes ne suffisent pas pour traduire tous les schémas relationnels possibles. Notamment, les tables de la figure&nbsp;36 nécessitent l'insertion d'étapes supplémentaires.</div><br>
+        <ol style="list-style-type: lower-alpha;">
+          <li>clé sur une colonne, mais à la fois primaire et étrangère</li>
+					<li>clé primaire composée partiellement de clé étrangère</li>
+				</ol>
+        
+
+				<div class="image"><img src="./Conception d&#39;une base de données_files/fig36.jpg" alt="Figure 36 - Tables particulières en rétro-conception"><div class="legimage">Figure&nbsp;36&nbsp;- Tables particulières en rétro-conception</div></div>
+
+
+        <div class="paragraph">
+          <b>Étape 2</b> : chaque table dont la clé primaire est composée <span style="text-decoration: underline;">exclusivement</span> de clés étrangères qui référencent <span style="text-decoration: underline;">une seule</span> clé primaire, devient une sous-entité ou une sous-association (les autres colonnes non clés étrangères de la table deviennent des attributs de cette sous-entité).</div><br>
+        <div class="paragraph">
+          <b>Étape 4</b> : chaque table dont la clé primaire est composée <span style="text-decoration: underline;">partiellement</span> de clés étrangères provient soit d'une optimisation qu'il faire défaire (comme sur la figure&nbsp;35) soit d'un identifiant relatif d'une entité comme dans la section «&nbsp;Identifiant relatif ou lien identifiant&nbsp;» (auquel cas les autres colonnes non clés étrangères de la table deviennent des attributs de cette entité).</div><br>
+      
+    
+    <br><h1 class="TitreSection0" id="L6">6. Compléments</h1>
+      
+      <div class="paragraph">Aucune situation complète, ou presque, ne peut être parfaitement modélisée si le concepteur se contente des fonctionnalités abordées à ce stade du document. Ne serait-ce que pour comprendre l'élaboration des tables de la figure&nbsp;36, il est nécessaire d'introduire de nouvelles notations sur le schéma entités-associations. Les trois extensions majeures présentées dans cette section font partie de la version 2 de Merise [Panet  <i>et al.</i>]. Elles permettent de traiter davantage de situations réelles et souvent de manière plus simple.</div><br>
+      <div class="paragraph">Dans cette section, nous reprenons la démarche qui consiste à étudier les dépendances fonctionnelles directes sur le graphe de couverture minimale, puis à traduire ce graphe en schéma entités-associations, pour obtenir finalement un schéma relationnel. Les notions abordées ici ne permettent plus au schéma relationnel d'être écrit textuellement sans ambiguïté. Afin de lever toute ambiguïté pour savoir quelle clé primaire est référencée par telle clé étrangère, il est impératif de représenter le schéma relationnel de manière graphique, ce que nous nous contentons de faire.</div><br>
+      <br><h2 class="TitreSection1" id="L6-1">6-1. Agrégation</h2>
+        
+        <div class="paragraph">Une association n'est pas forcément établie exclusivement entre des entités.</div><br>
+        <br><h3 class="TitreSection2" id="L6-1-1">VI-A-1. Association de type 1&nbsp;:&nbsp;n</h3>
+          
+          <div class="paragraph">Considérons l'exemple de la figure&nbsp;37 issu du monde des courses hippiques. La dépendance fonctionnelle n° cheval + n° course  ? n° jockey est la première dépendance fonctionnelle non élémentaire <span style="text-decoration: underline;">vers un identifiant</span> que nous rencontrons. Ce type de dépendance fonctionnelle nous incite à créer une association binaire de type 1 : n entre l'entité jockeys et l'association binaire de type n : m qu'il y a entre les entités chevaux et courses. D'un point de vue sémantique, la logique est respectée puisque un jockey ne monte pas un cheval, mais un cheval-qui-participe-à-une-course.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig37.jpg" alt="Figure 37 - Association binaire de type 1 : n (monter), liée à une association binaire de type n : m (participer)"><div class="legimage">Figure&nbsp;37&nbsp;- Association binaire de type 1 : n (monter), liée à une association binaire de type n : m (participer)</div></div>
+
+
+          <div class="paragraph">Pour tenir compte de ce nouveau cas de dépendance fonctionnelle, il convient d'ajouter une sixième étape à la technique de traduction d'un graphe de couverture minimal en un schéma entités-associations, telle qu'elle est commencée section «&nbsp;Traduction vers un schéma entités-associations&nbsp;»&nbsp;:</div><br>
+          <div class="paragraph">
+            <b>Étape 6</b> : lorsqu'un identifiant dépend de plusieurs autres identifiants, son entité est en association de type 1 : n avec l'association qui lie les autres identifiants.</div><br>
+          <div class="paragraph">Certains auteurs considèrent que l'agrégation des entités chevaux, courses et de l'association participer constitue une nouvelle entité participations qui englobe ces trois éléments graphiques. Dans ce cas, l'association monter fait le lien entre les deux entités (participations et jockeys). Le résultat final sur le schéma relationnel est le même. Malheureusement, cette notation n'est pas très pratique car le schéma entités-associations devient vite illisible lorsqu'une entité participe à plusieurs agrégations.</div><br>
+          <div class="paragraph">Nous préférons donc autoriser, dans ce document, qu'une association puisse être liée à une association binaire de type n : m ou à une association ternaire (ou plus). Cependant pour ne pas confondre les liens entres associations et entités avec les liens entres associations, nous encadrons <span style="text-decoration: underline;">soigneusement</span> les associations qui interviennent dans une agrégation, comme sur la figure&nbsp;37 en bas à gauche.</div><br>
+          <div class="paragraph">En tout cas, une association ne peut pas être liée à une association binaire de type 1 : n ou 1 : 1. Dans ce cas, l'association doit être directement liée à l'entité qui se trouve du côté où la cardinalité maximale est 1.</div><br>
+          <div class="paragraph">Sur le schéma relationnel final (figure&nbsp;37 en bas à droite), la table de jonction participations reçoit une clé étrangère supplémentaire, mais qui contrairement aux autres, ne participe pas à la clé primaire.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L6-1-2">6-1-2. Association de type n&nbsp;:&nbsp;m</h3>
+          
+          <div class="paragraph">À présent, ajoutons les parieurs à notre exemple de la figure&nbsp;37. Étant donné que nous avons la dépendance fonctionnelle n° cheval + n° course + n° parieur  ? montant de la mise (figure&nbsp;38 en haut), nous pourrions avoir une association ternaire entre les entités chevaux, courses et parieurs. Mais dans ce cas, un parieur peut miser sur un cheval dans une course, alors que ce cheval ne participe pas à cette course.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig38.jpg" alt="Figure 38 - Association ternaire remplacée par deux associations binaires"><div class="legimage">Figure&nbsp;38&nbsp;- Association ternaire remplacée par deux associations binaires</div></div>
+
+
+          <div class="paragraph">Pour pallier cette lacune, on pourrait faire appel à des déclencheurs programmés dans la base de données finale. Les déclencheurs sont des procédures SQL qui, dans notre exemple, permettraient à chaque insertion ou mise à jour de lignes dans la table des paris, d'assurer qu'un pari ne puisse pas concerner un cheval dans une course à laquelle il ne participe pas. Cependant, il existe une solution plus simple qui repose uniquement sur l'intégrité référentielle.</div><br>
+          <div class="paragraph">En réalité (figure&nbsp;38 en bas), la vraie dépendance fonctionnelle directe est n° cheval + n° course) + n° parieur  ? montant, ce qui garantit qu'un parieur ne peut miser que sur un cheval-qui-participe-à-une-course.</div><br>
+          <div class="paragraph">Le fait qu'une association ternaire (ou plus) disparaissent au profit d'une ou plusieurs agrégations est très fréquent lorsque l'on modélise une situation complète. À tel point qu'on peut partir du principe qu'un schéma entités-associations <span style="text-decoration: underline;">sans agrégation</span> est généralement faux.</div><br>
+          <div class="paragraph">Dans notre exemple, la traduction de la nouvelle dépendance fonctionnelle en une association de type n : m (figure&nbsp;39 en haut) se fait en appliquant, comme d'habitude, l'étape 4 de la section&nbsp;«&nbsp;Traduction vers un schéma entités-associations&nbsp;».</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig39.jpg" alt="Figure 39 - Association binaire de type n : m (parier), liée à une autre association binaire de type n : m"><div class="legimage">Figure&nbsp;39&nbsp;- Association binaire de type n : m (parier), liée à une autre association binaire de type n&nbsp;:&nbsp;m</div></div>
+
+
+
+          <div class="paragraph">Sur le schéma relationnel obtenu (figure&nbsp;39 en bas), la traduction de l'association binaire de type n&nbsp;:&nbsp;m liée à une autre association binaire de type n : m fait apparaître dans la table paris une clé étrangère <span style="text-decoration: underline;">composite</span><span style="text-decoration: underline;"> </span>qui référence la clé primaire <span style="text-decoration: underline;">composite</span> de la table participations.</div><br>
+          <div class="paragraph">Rappelons qu'il est déconseillé d'utiliser des identifiants composites. Mais la clé primaire composite de la table participations est légitime puisqu'elle est issue d'une association binaire de type n&nbsp;:&nbsp;m. En conséquence de quoi la clé étrangère composite de la table paris est également légitime puisqu'elle est aussi issue d'une association binaire de type n : m.</div><br>
+          <div class="paragraph">On peut ainsi imaginer avoir sur un schéma relationnel des clés primaires ou étrangères composées d'un nombre arbitraire de colonnes, sans pour autant qu'il n'y ait un seul identifiant composite sur le schéma entités-associations correspondant.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L6-1-3">6-1-3. Tables de codification ou tables de référence</h3>
+          
+          <div class="paragraph">Certains attributs ne peuvent prendre qu'un jeu volontairement limité de valeurs. C'est le cas sur la figure&nbsp;40 à gauche, pour les attributs enseignant et matière. Cela évite sur cet exemple qu'une même matière ne soit décrite de deux manières différentes et qu'un même nom d'enseignant ne soit orthographié deux fois.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig40.jpg" alt="Figure 40 - Agrégation et entités de codification"><div class="legimage">Figure&nbsp;40&nbsp;- Agrégation et entités de codification</div></div>
+
+
+          <div class="paragraph">Il est recommandé de regrouper ces valeurs au sein d'une entité dite de codification (qui donnera ensuite une table de codification). Si l'attribut concerné appartient à une entité, alors cette entité est en association binaire de type 1 : n avec cette entité de codification. Par contre, si l'attribut fait partie d'une association, il faut recourir à l'agrégation afin de mettre en association l'entité de codification avec l'association de cet attribut (figure&nbsp;40 à droite).</div><br>
+          <div class="paragraph">Ainsi, l'agrégation évite notamment aux entités de codification de transformer une association binaire en une association ternaire (ou plus).</div><br>
+        
+      
+      <br><h2 class="TitreSection1" id="L6-2">6-2. Identifiant relatif ou lien identifiant</h2>
+        
+        <div class="paragraph">Même en utilisant des agrégations, il reste des situations où tout le potentiel de l'intégrité référentielle n'est pas exploité.</div><br>
+        <br><h3 class="TitreSection2" id="L6-2-1">6-2-1. Résolution d'un problème sur le schéma relationnel</h3>
+          
+          <div class="paragraph">Prenons par exemple le schéma relationnel en haut de la figure&nbsp;41, tiré d'une base de données pour un centre de golf. Dans la table trous, la clé primaire n° trou est en incrément automatique, tandis que la colonne n° trou dans parcours est un nombre (généralement compris entre 1 et 18) qui correspond à la numérotation des trous dans le parcours.</div><br>
+          <div class="paragraph">Le problème de ce schéma relationnel est qu'en l'état, il peut y avoir un score dans la table scores pour un trou qui n'appartient pas au parcours sur lequel la partie se joue (le lecteur est invité à bien observer la figure pour s'en apercevoir).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig41.jpg" alt="Figure 41 - Utilisation de clés primaires partiellement étrangères"><div class="legimage">Figure&nbsp;41&nbsp;- Utilisation de clés primaires partiellement étrangères</div></div>
+
+          <div class="paragraph">Pour régler ce problème, on peut à nouveau se reposer sur l'emploi de déclencheurs. Mais là-encore, il existe une solution ne faisant appel qu'à l'intégrité référentielle.</div><br>
+          <div class="paragraph">Cette solution consiste à faire entrer le numéro de parcours dans la numérotation des trous (remplaçant ainsi le n° trou) ainsi que dans la numérotation des parties (en conservant cette fois-ci le n° partie en incrément automatique). Les tables trous et parties possèdent alors une clé primaire composite et <span style="text-decoration: underline;">partiellement</span> étrangère (figure&nbsp;41 en bas).</div><br>
+          <div class="paragraph">Les clés étrangères des tables participations et scores qui référencent ces nouvelles clés primaires sont alors complétées par une nouvelle colonne (le numéro de parcours). Dans la table des scores, comme cette colonne n° parcours n'est introduite qu'une fois, il n'est plus possible pour un joueur d'avoir un score sur un trou qui n'appartient pas au parcours sur lequel se joue la partie.</div><br>
+        
+        <br><h3 class="TitreSection2" id="L6-2-2">6-2-2. Modèle conceptuel correspondant</h3>
+          
+          <div class="paragraph">En rétro-conception, pour tenir compte du fait que le numéro de parcours fera partie de la clé primaire de la table trous sur le schéma entités-associations, il suffit de mettre entre parenthèses la cardinalité 1,1 de l'association entre les entités trous et parcours (figure&nbsp;42). L'identifiant de l'entité côté 1,1 devient alors <span style="text-decoration: underline;">relatif</span> à celui de l'autre entité en association.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig42.jpg" alt="Figure 42 - Représentation des identifiants relatifs"><div class="legimage">Figure&nbsp;42&nbsp;- Représentation des identifiants relatifs</div></div>
+
+
+
+          <div class="paragraph">De même, sur le graphe de couverture minimal, nous introduisons une nouvelle notation (flèche en pointillés) pour représenter le caractère relatif des identifiants (figure&nbsp;43).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig43.jpg" alt="Figure 43 - Représentation des identifiants relatifs sur le graphe de couverture minimale"><div class="legimage">Figure&nbsp;43&nbsp;- Représentation des identifiants relatifs sur le graphe de couverture minimale</div></div>
+
+
+          <div class="paragraph">Si les flèches étaient pleines, les numéros de trou dans un parcours et de partie sur un parcours figureraient dans des entités séparées et réduites à leur identifiant (à éviter). </div><br>
+        
+        <br><h3 class="TitreSection2" id="L6-2-3">6-2-3. Discussion autour de la numérotation des exemplaires</h3>
+          
+          <div class="paragraph">Dans un magasin de location de vidéos, le gérant peut vouloir numéroter <span style="text-decoration: underline;">séparément</span> les exemplaires  de chaque vidéo (figure&nbsp;44 colonne de gauche), alors que le concepteur de la base de données aurait tendance à vouloir numéroter globalement l'ensemble des exemplaires (colonne de droite).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig44.jpg" alt="Figure 44 - Numérotations alternatives des exemplaires"><div class="legimage">Figure&nbsp;44&nbsp;- Numérotations alternatives des exemplaires</div></div>
+
+
+          <div class="paragraph">La seule différence entre les deux solutions est l'entrée ou non de la colonne numéro vidéo dans la clé primaire de la table exemplaire. L'inconvénient majeur de la solution avec identifiant relatif (colonne de gauche), est le traitement de l'incrément automatique du numéro d'exemplaire, car il faut un compteur <span style="text-decoration: underline;">pour chaque vidéo</span> et non pas un compteur pour l'ensemble des vidéos, contrairement à la solution de la colonne de droite. Le concepteur devrait donc retenir sa solution pour la base de données et proposer une colonne supplémentaire avec la numérotation du gérant, afin de lui faire plaisir.</div><br>
+        
+      
+      <br><h2 class="TitreSection1" id="L6-3">6-3. Héritage</h2>
+        
+        <div class="paragraph">Enfin, il est parfois utile de factoriser les attributs communs à plusieurs entités au sein d'une entité mère.</div><br>
+        <br><h3 class="TitreSection2" id="L6-3-1">6-3-1. Sous-entité</h3>
+          
+          <div class="paragraph">Considérons l'exemple suivant : les factures d'une entreprise font l'objet d'un règlement par chèque ou par carte. Cette entreprise souhaite connaître pour chaque règlement la date, le montant et :</div><br>
+
+					<ul style="list-style-type: disc;">
+						<li>le numéro et le nom de la banque des chèques ;</li>
+						<li>ou le numéro et la date d'expiration des paiements par carte.</li>
+					</ul>
+
+
+          <div class="paragraph">On a donc une entité <span style="text-decoration: underline;">générique</span> règlements et deux entités <span style="text-decoration: underline;">spécialisées</span> chèques et paiements par carte. Ces deux <span style="text-decoration: underline;">sous-entités</span> de l'entité règlements ont des attributs propres mais pas d'identifiant propre. Au niveau logique objet, on retrouve la notion d'héritage.</div><br>
+          <div class="paragraph">Conformément aux notations objets, sur le schéma entités-associations, on représente le lien qui unit une sous-entité à son entité générique par une flèche creuse (figure&nbsp;45 au centre). Ce lien remplace une association être de type 1 : 1 (un chèque « est un » règlement et un paiement par carte « est un » règlement).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig45.jpg" alt="Figure 45 - Représentation des sous-entités"><div class="legimage">Figure&nbsp;45&nbsp;- Représentation des sous-entités</div></div>
+
+
+          <div class="paragraph">Toutefois, il ne faut pas voir d'héritage à chaque fois que l'on peut dire « est un », car il faut en plus que l'entité mère <span style="text-decoration: underline;">ne</span> possède <span style="text-decoration: underline;">que</span> les attributs communs de ses entités filles. Par exemple, un cercle « est <span style="text-decoration: underline;">mathématiquement</span> un » ovale. Mais l'entité cercles (avec les attributs centre et rayon) n'est pas une sous-entité de l'entité ovales car celle-ci possède davantage d'attributs (centre, rayon principal, rayon secondaire et rotation).</div><br>
+          <div class="paragraph">La traduction des sous-entités au niveau logique relationnel fait intervenir une clé primaire identique à celle de l'entité mère, mais dans les sous-entités la clé primaire est aussi étrangère (figure&nbsp;45 en bas).</div><br>
+          <div class="paragraph">Sur le graphe de couverture minimale (figure&nbsp;45 en haut), l'identifiant dont dépendent les attributs communs est volontairement dupliqué autant de fois que nécessaire pour les attributs spécialisés. Nous pouvons alors remarquer que les attributs qui dépendent d'un même identifiant peuvent être regroupés avec des « et » logiques tandis que dès qu'il est nécessaire de faire appel à un « ou » logique, c'est le signe d'une spécialisation.</div><br>
+          <div class="paragraph">Sur la figure&nbsp;45, il est tentant de traduire directement le graphe de couverture minimale en le schéma relationnel, car il en est beaucoup plus proche que le schéma entités-associations. C'est une technique licite, à condition de traduire correctement les associations de type 1 : 1 (étape&nbsp;4).</div><br>
+        
+        <br><h3 class="TitreSection2" id="L6-3-2">6-3-2. Utilisation de l'héritage pour séparer les informations complémentaires</h3>
+          
+          <div class="paragraph">L'héritage peut être utilisé même lorsqu'il n'y a qu'une entité spécialisée. C'est utile pour stocker dans une table séparée des informations complémentaires.</div><br>
+          <div class="paragraph">Considérons la table clients dans laquelle nous stockons déjà le numéro, le nom et le code postal. Nous souhaitons désormais stocker également le numéro de téléphone, l'adresse courrier et l'adresse électronique. La première idée consiste à ajouter trois colonnes supplémentaires dans la table clients. Mais pour les clients qui ont déjà été saisis dans la table, ces trois colonnes seront vides.</div><br>
+          <div class="paragraph">Pour gagner de la place, ces trois colonnes peuvent constituer une nouvelle table annuaire clients dont la clé primaire référence celle de la table clients (figure&nbsp;46). Formellement, annuaire clients est issu d'une sous-entité de l'entité clients.</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig46.jpg" alt="Figure 46 - Séparation des informations complémentaires par héritage"><div class="legimage">Figure&nbsp;46&nbsp;- Séparation des informations complémentaires par héritage</div></div>
+
+
+          <div class="paragraph">La configuration d'héritage sur le schéma relationnel (figure&nbsp;46 à droite) constituera une occasion d'écrire des requêtes SQL avec des jointures externes (c'est-à-dire facultatives).</div><br>
+        
+        <br><h3 class="TitreSection2" id="L6-3-3">6-3-3. Spécialisation des associations</h3>
+          
+          <div class="paragraph">La notion d'héritage est valable également pour les associations. Nous pouvons donc faire appel à des sous-associations avec des attributs spécifiques et des associations génériques qui contiennent les attributs communs. Mais sans aller jusqu'à l'introduction de sous-associations, dès qu'un schéma entités-associations fait appel à des sous-entités, il est fréquent que les associations concernées par ces sous-entités soient elles-mêmes spécialisées.</div><br>
+          <div class="paragraph">Considérons une entreprise artisanale qui vend non seulement des articles produits en série à prix unitaire fixe, mais aussi des articles fait sur mesure et dont le prix unitaire est calculé à partir de la durée de confection et d'un taux horaire. Dans ce cas, non seulement l'entité articles est spécialisée en articles en série et articles sur mesure, mais en plus, l'association concerner entre les entités commandes et article est spécialisée selon qu'il s'agit d'un article en série ou sur mesure (figure&nbsp;47 au centre).</div><br>
+
+					<div class="image"><img src="./Conception d&#39;une base de données_files/fig47.jpg" alt="Figure 47 - Spécialisation des associations en présence de sous-entités"><div class="legimage">Figure&nbsp;47&nbsp;- Spécialisation des associations en présence de sous-entités</div></div>
+
+
+          <div class="paragraph">Le fait d'avoir volontairement dédoubler l'identifiant commun des entités en héritage, permet d'utiliser chaque identifiant dupliqué dans l'association qui le concerne.</div><br>
+          <div class="paragraph">Sur le schéma relationnel (figure&nbsp;47 en bas), les associations spécialisées sont traduites de manière classique. À charge ensuite pour le développeur du formulaire de facturation, d'effectuer la réunion des articles commandés.</div><br>
+        
+      
+    
+    <br><h1 class="TitreSection0" id="L7">7. Conclusion</h1>
+      
+      <div class="paragraph">Avec la pratique, vient un moment où le concepteur peut se passer du modèle entités-associations et produire directement des schémas relationnels corrects. Pourtant, continuer de travailler à un niveau conceptuel plutôt qu'à un niveau logique reste une tactique payante pour lui, dans la mesure où les données pourtant stockées sous une forme relationnelle, doivent de nos jours être accédées par des applications orientées objet. Le modèle conceptuel permet de faire le lien entre d'une part la représentation objet des données et d'autre le stockage relationnel des mêmes données.</div><br>
+      <div class="paragraph">Par exemple, on peut très bien imaginer qu'un schéma entités-associations soit d'un côté traduit en un schéma relationnel puis implémenté dans une base de données Oracle ; tandis qu'en parallèle, il est traduit en un diagramme de classe (modèle logique objet), lui-même implémenté dans un ensemble de classes Java. Ces classes Java permettent ensuite aux développeurs de construire des applications clientes orientées objet et qui attaquent de manière transparente les données de la base Oracle. Il s'agit d'une solution de passage entre la modélisation orientée objet (pertinente pour développer des interfaces graphiques) et la modélisation relationnelle (pertinente pour gérer les données).</div><br>
+      <div class="paragraph">Par ailleurs, la méthodologie Merise est certes typiquement française, mais en Grande-Bretagne, la méthodologie standard s'appelle SSADM (Structured Systems Analysis ans Design Method) et repose sur les mêmes principes. Les nord-américains quant à eux utilisent ce qu'on appelle des diagrammes  de flux, dont les principes sont repris par la version 2 de Merise.</div><br>
+      <div class="paragraph">Aujourd'hui, ce sont les modélisations objets et leur unification UML (Unified Modeling Language, autrement dit langage unifié de modélisation) qui se placent à la pointe de l'état de l'art. Malheureusement, UML n'est qu'un ensemble de notations (d'ailleurs moins intuitives que celles des schémas entités-associations). La connaissance de ce langage ne permet donc pas au concepteur de faire l'économie d'une méthodologie de conception. Voilà pourquoi il n'est pas anachronique de ré-éditer en 2005 un document sur des méthodes qui auront bientôt 30 ans ;-)</div><br>
+    
+    <br><h1 class="TitreSection0" id="L8">8. Références</h1>
+      
+      <div class="paragraph">[Akoka et Comyn-Wattiau]Akoka, J. et Comyn-Wattiau I. Conception de bases de données relationnelles. Vuibert Informatique. <i>Ce livre très didactique contient de bon</i><i>s</i><i> exercices sur la phase de conception d'un système d'information.</i></div><br>
+      <div class="paragraph">[Gabay] Gabay, J. Apprendre et pratiquer Merise. Masson, 1989. <i>Ce livre très synthétique permet de s'exercer sur la méthode.</i></div><br>
+      <div class="paragraph">[Matheron]Matheron, J.-P. Comprendre Merise. Eyrolles, 1994. <i>Cet ouvrage très accessible permet vraiment de comprendre la méthode.</i></div><br>
+      <div class="paragraph">[Nanci  <i>et al.</i>] Nanci, D., Espinasse, B., Cohen, B. et Heckenroth, H. Ingénierie des systèmes d'information avec Merise. Sybex, 1992. <i>Cet ouvrage complet détaille la méthode dans son ensemble.</i></div><br>
+      <div class="paragraph">[Panet  <i>et al.</i>] Panet, G., Letouche, R. et Tardieu, H. Merise/2 : Modèles et techniques Merise avancés. Édition d'organisation, 1994. <i>Ce livre décrit la version 2 de la méthode.</i></div><br>
+      <div class="paragraph">[Tardieu  <i>et al.</i>] Tardieu, H., Rochfeld, A. et Coletti, R. La méthode Merise. Principes et outils. Édition d'organisation, 1986. <i>Il s'agit-là du livre de référence par les auteurs de la méthode.</i></div><br>
+    
+										  </td>
+										</tr>
+									</tbody></table></div>
+								</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+
+</tbody></table>
+
+
+
+	
+</body></html>
