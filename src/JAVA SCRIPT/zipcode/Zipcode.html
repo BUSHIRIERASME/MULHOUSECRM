@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><strong>LES CODES POSTAUX DES COMMUNES</strong></title>
+    <script src="Zipcode.js" defer></script>
+</head>
+<body>
+    <form action="#">
+    <h3><strong>LES CODES POSTAUX DES COMMUNES</strong></h3>
+    <label for="codes_postaux"><strong>code postal ou nom de commune</strong></label><br>
+    <input list="datalist_code_postaux" id="codes_postaux"/>
+    <datalist id="datalist_code_postaux" for="codes_postaux">
+        <option value="code postal">Nom de commune</option><br>
+        <!-- <option value="search"></option>
+        <option value="valid"></option>
+        <option value="delete"></option> -->
+   </datalist>
+    <br>
+    <button for="valid" id="btn_validation"><strong>valid</strong></button>
+    <button for="delete"><strong>Delete</strong></delete>
+    </form>
+    <div id="resultat_recherche">
+
+    </div>
+</body>
+</html>

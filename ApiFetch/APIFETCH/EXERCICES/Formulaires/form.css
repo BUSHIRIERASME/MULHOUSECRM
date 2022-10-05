@@ -1,0 +1,50 @@
+
+form{
+    /*uniquement centrer le formulaire sur la page*/ 
+    margin:o auto;
+    width: 400px;
+    /*Encadrer pour voir les limites du formulaire*/
+    padding: 1em;
+    border: 1px  solid #CCC;
+    background-color: teal;
+}
+form div + div {
+    margin-top: 1em;
+}
+label{
+    /* pour être sûrs que toutes les etiquettes ont 
+    la même taille et sont correctement alignées*/
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+input , textarea{
+    /*Pour s'assurer que tout le champs texte ont la même
+    police. Par défaut les textarea ont une police monospace*/
+font: 1em sans-serif;
+/* pour que tous les champs texte aient la même dimension*/
+width: 300px;
+box-sizing: border-box;
+/* Pour harmonoser le lool et feel des bordures des champs texte*/
+border: 1px solid #999;
+}
+input:focus,textarea:focus{
+    /*Pour souligner légerement les elements actifs*/
+    border-color: #000;
+}
+textarea{
+/* Pour aligner les champs texte multiligne avec leur étiquette*/
+    vertical-align: top;
+    /*Pour donner assez de place pour ecrire du texte*/
+    height: 5em;
+}
+.button{
+    /* Pour placer le button à la même position que les champs texte*/
+    padding-left: 90px;
+  /*  même taille que les étiquettes */
+}
+button{
+    /* cette marge supplementaire represente grosso modo
+    le même espace que celui entre les étiquettes et les champs texte*/
+    margin-left: .5em;
+}
